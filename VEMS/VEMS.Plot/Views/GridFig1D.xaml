@@ -1,0 +1,280 @@
+﻿<Window x:Class="VEMS.Plot.GridFig1D"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VEMS.Plot" 
+        d:DataContext="{d:DesignInstance Type=local:GridFig1DModel}"
+        mc:Ignorable="d"
+        Title="VPlot1D" Height="600" Width="1200">
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="b2v" />
+        <Style TargetType="DataGrid" x:Key="DataGridStyle">
+            <Style.Setters>
+                <Setter Property="CanUserAddRows" Value="False"/>
+                <Setter Property="AutoGenerateColumns" Value="False"/>
+                <Setter Property="RowHeaderWidth" Value="0"/>
+                <Setter Property="HeadersVisibility" Value="None"/>
+                <!--Setter Property="RowHeight" Value="22"/-->
+                <Setter Property="VerticalGridLinesBrush" Value="LightGray"/>
+                <Setter Property="HorizontalGridLinesBrush" Value="LightGray"/>
+                <Setter Property="BorderBrush" Value="LightGray"/>
+            </Style.Setters>
+        </Style>
+        <Style TargetType="DataGridRow" x:Key="DataGridRowStyle">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="LightGray"/>
+                    <Setter Property="FontWeight" Value="Bold" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="TextBlockStyle">
+            <Style.Setters>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style.Setters>
+        </Style>
+    </Window.Resources>
+
+    <Grid ShowGridLines="False">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" Name="PlotColumn"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="460" Name="AdvColumn"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <GridSplitter Grid.Column="1" Grid.Row="1" Width="2" 
+                      VerticalAlignment="Stretch" HorizontalAlignment="Center" 
+                      Background="Transparent" ShowsPreview="True">
+        </GridSplitter>
+
+        <Menu Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" >
+            <MenuItem Header="_File" Height="24">
+                <MenuItem Header="_Save As" Height="24"/>
+                <MenuItem Header="_Export" Height="24"/>
+            </MenuItem>
+            <MenuItem Header="_Functions" Height="24" >
+                <MenuItem Header="_Test" Height="24" Command="{Binding HideLegendCommand}" />
+                <MenuItem Header="_Fourier Transform" Height="24" />
+                <MenuItem Header="_FFT" Height="24" />
+                <MenuItem Header="_Normalize" Height="24"/>
+            </MenuItem>
+            <CheckBox Content="_Advanced Options" Name="AdvancedCheckBox" IsChecked="True"
+                      Checked="AdvancedCheckBox_Checked" Unchecked="AdvancedCheckBox_Unchecked"/>
+        </Menu>
+
+        <WpfPlot Grid.Row="1" Grid.Column="0" Margin="2"
+                 BorderThickness="0.5" BorderBrush="LightGray" 
+                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                 Focusable="False" AllowDrop="True" Name="PlotFrame">
+            <!--="{Binding Figures.Frame}"-->
+        </WpfPlot>
+
+        <ScrollViewer Grid.Row="1" Grid.Column="2" Margin="2" 
+                      BorderBrush="LightGray" BorderThickness="0.5"
+                      VerticalScrollBarVisibility="Auto"
+                      Visibility="{Binding IsChecked,ElementName=AdvancedCheckBox,Converter={StaticResource b2v}}" >
+            <StackPanel Margin="10,5,10,5" Orientation="Vertical">
+
+                <Expander Margin="0,8,0,8" IsExpanded="False">
+                    <Expander.Header>
+                        <TextBlock FontSize="14" Foreground="SteelBlue" FontWeight="SemiBold">
+                            Data Properties
+                        </TextBlock>
+                    </Expander.Header>
+                    <DataGrid RowHeight="24" Margin="0,8,0,8" ItemsSource="{Binding GridPlotList}"
+                              Style="{StaticResource DataGridStyle}" HeadersVisibility="Column"
+                              RowStyle="{StaticResource DataGridRowStyle}" CanUserSortColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="_Label" Width="3*" 
+                                                ElementStyle="{StaticResource TextBlockStyle}"
+                                                Binding="{Binding Label}" />
+                            <DataGridTextColumn Header="_Start" Width="2.5*" 
+                                                ElementStyle="{StaticResource TextBlockStyle}"
+                                                Binding="{Binding Start}" />
+                            <DataGridTextColumn Header="_Spacing" Width="2.5*"
+                                                ElementStyle="{StaticResource TextBlockStyle}"
+                                                Binding="{Binding Spacing}" />
+                            <DataGridTextColumn Header="_Count" Width="2.0*" IsReadOnly="True"
+                                                ElementStyle="{StaticResource TextBlockStyle}"
+                                                Binding="{Binding Points}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Expander>
+                <Expander Margin="0,8,0,8" IsExpanded="False">
+                    <Expander.Header>
+                        <TextBlock FontSize="14" Foreground="SteelBlue" FontWeight="SemiBold">
+                            Line Style
+                        </TextBlock>
+                    </Expander.Header>
+                    <DataGrid RowHeight="24" Margin="0,8,0,0" ItemsSource="{Binding GridPlotList}"
+                              TextBlock.FontStyle="Normal" CanUserSortColumns="False"
+                              Style="{StaticResource DataGridStyle}" HeadersVisibility="Column"
+                              RowStyle="{StaticResource DataGridRowStyle}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="_Label" Width="3.0*" 
+                                                ElementStyle="{StaticResource TextBlockStyle}"
+                                                Binding="{Binding Label}" />
+                            <DataGridTextColumn Header="_Width" Width="1.25*" 
+                                                ElementStyle="{StaticResource TextBlockStyle}"
+                                                Binding="{Binding LineWidth}" />
+                            <DataGridTextColumn Header="_Marker" Width="1.5*"
+                                                ElementStyle="{StaticResource TextBlockStyle}"
+                                                Binding="{Binding MarkerSize}" />
+                            <DataGridTemplateColumn Header="_Color" Width="2.5*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ComboBox Height="22" 
+                                                  ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.LineColorList}"
+                                                  SelectedValue="{Binding LineColor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                        </ComboBox>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="_Visible" Width="1.75*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ComboBox Height="22" 
+                                                  ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.DrawOptionList}"
+                                                  SelectedValue="{Binding VisualOption, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                        </ComboBox>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Expander>
+                <Expander Margin="0,8,0,8" IsExpanded="False">
+                    <Expander.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" FontSize="14" 
+                                       Foreground="SteelBlue" FontWeight="SemiBold">
+                                View Ranges
+                            </TextBlock>
+                            <Button Grid.Column="1" Margin="8,0,0,0" 
+                                    Content="Auto" Command="{Binding AutoViewRangeCommand}"/>
+                        </Grid>
+                    </Expander.Header>
+                    <DataGrid RowHeight="24" Margin="0,8,0,0" ItemsSource="{Binding ViewRange}"
+                              TextBlock.FontStyle="Normal" CanUserSortColumns="False"
+                              Style="{StaticResource DataGridStyle}" HeadersVisibility="Column"
+                              RowStyle="{StaticResource DataGridRowStyle}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="_Axis" Width="3*" IsReadOnly="True"
+                                                ElementStyle="{StaticResource TextBlockStyle}"
+                                                Binding="{Binding Name}" />
+                            <DataGridTextColumn Header="_Min Value" Width="3.5*" 
+                                                ElementStyle="{StaticResource TextBlockStyle}"
+                                                Binding="{Binding MinValue}" />
+                            <DataGridTextColumn Header="_Max Value" Width="3.5*"
+                                                ElementStyle="{StaticResource TextBlockStyle}"
+                                                Binding="{Binding MaxValue}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Expander>
+                <Expander Margin="0,8,0,8" IsExpanded="False">
+                    <Expander.Header>
+                        <TextBlock FontSize="14" Foreground="SteelBlue" FontWeight="SemiBold">
+                            Figure Text
+                        </TextBlock>
+                    </Expander.Header>
+                    <StackPanel>
+                        <DataGrid RowHeight="24" Margin="0,8,0,0" ItemsSource="{Binding FigureInfo}"
+                              TextBlock.FontStyle="Normal" CanUserSortColumns="False"
+                              Style="{StaticResource DataGridStyle}" HeadersVisibility="Column"
+                              RowStyle="{StaticResource DataGridRowStyle}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="_Axis" Width="3.0*" IsReadOnly="True"
+                                                ElementStyle="{StaticResource TextBlockStyle}"
+                                                Binding="{Binding Name}" />
+                                <DataGridTextColumn Header="_Min Value" Width="7.0*" 
+                                                ElementStyle="{StaticResource TextBlockStyle}"
+                                                Binding="{Binding Value}" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <Grid Margin="0,4,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="28"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <CheckBox Grid.Column="0" Content="Show Legend" VerticalContentAlignment="Center" 
+                                      Name="LegendCheckBox" IsChecked="{Binding ShowLegend}">
+                            </CheckBox>
+                            <Label Grid.Column="1" Content="Legend Location:" HorizontalContentAlignment="Right"
+                                   Visibility="{Binding IsChecked,ElementName=LegendCheckBox,Converter={StaticResource b2v}}"/>
+                            <ComboBox Grid.Column="2" Height="22" ItemsSource="{Binding LegendLocationList}"
+                                      SelectedValue="{Binding LegendLocation}"
+                                      Visibility="{Binding IsChecked,ElementName=LegendCheckBox,Converter={StaticResource b2v}}">
+                            </ComboBox>
+                        </Grid>
+                    </StackPanel>
+                </Expander>
+                <Expander Margin="0,8,0,8" IsExpanded="False">
+                    <Expander.Header>
+                        <TextBlock FontSize="14" Foreground="SteelBlue" FontWeight="SemiBold">
+                            Value Monitor
+                        </TextBlock>
+                    </Expander.Header>
+                    <StackPanel>
+                        <DataGrid RowHeight="24" Margin="0,8,0,0" ItemsSource="{Binding MonitorInfo}"
+                              TextBlock.FontStyle="Normal" CanUserSortColumns="False"
+                              Style="{StaticResource DataGridStyle}" HeadersVisibility="Column"
+                              RowStyle="{StaticResource DataGridRowStyle}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="_Info Type" Width="3*" IsReadOnly="True"
+                                                ElementStyle="{StaticResource TextBlockStyle}"
+                                                Binding="{Binding Name}" />
+                                <DataGridTextColumn Header="_X Location" Width="3.5*" 
+                                                ElementStyle="{StaticResource TextBlockStyle}"
+                                                Binding="{Binding XString}" />
+                                <DataGridTextColumn Header="_Y Location" Width="3.5*"
+                                                ElementStyle="{StaticResource TextBlockStyle}"
+                                                Binding="{Binding YString}" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <!--Grid Margin="0,4,0,0" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Content="Selected Plot " />
+                            <TextBox Grid.Column="1" Margin="0,0,4,0" Text="{Binding ActiveIndexText}" IsReadOnly="True"
+                                     VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+                            <Button Grid.Column="2" Content="Prev" Height="18" Width="40" 
+                                    Command="{Binding PrevActiveIndexCommand}"/>
+                            <Button Grid.Column="3" Content="Next" Height="18" Width="40"
+                                    Command="{Binding NextActiveIndexCommand}"/>
+                        </Grid-->
+                    </StackPanel>
+                </Expander>
+
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+
+
+
+
+</Window>

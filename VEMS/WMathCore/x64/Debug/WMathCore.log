@@ -1,0 +1,2103 @@
+﻿  pch.cpp
+  AssemblyInfo.cpp
+  IBLAS.cpp
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(124,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorI.#ctor(WMathCore.WVectorI)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/IBLAS.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(268,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorD.#ctor(WMathCore.WVectorD,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/IBLAS.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(448,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorDi.#ctor(WMathCore.WVectorDi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/IBLAS.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(640,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZ.#ctor(WMathCore.WVectorZ,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/IBLAS.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(836,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZi.#ctor(WMathCore.WVectorZi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/IBLAS.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1015,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/IBLAS.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1033,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/IBLAS.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1141,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixDi.#ctor(WMathCore.WMatrixDi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/IBLAS.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: XML 文档注释 应用于“WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”: XML 格式不正确: 此位置不允许空格。
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: 
+  (编译源文件“/IBLAS.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1409,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/IBLAS.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1427,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/IBLAS.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1528,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZi.#ctor(WMathCore.WMatrixZi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/IBLAS.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transa”不是在此函数的声明中命名的参数。
+  (编译源文件“/IBLAS.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transb”不是在此函数的声明中命名的参数。
+  (编译源文件“/IBLAS.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Scal”与 ref 基类方法不匹配
+  (编译源文件“/IBLAS.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/IBLAS.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/IBLAS.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Rot”与 ref 基类方法不匹配
+  (编译源文件“/IBLAS.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Cabs”与 ref 基类方法不匹配
+  (编译源文件“/IBLAS.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemv”与 ref 基类方法不匹配
+  (编译源文件“/IBLAS.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemm”与 ref 基类方法不匹配
+  (编译源文件“/IBLAS.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/IBLAS.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/IBLAS.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRSolve”与 ref 基类方法不匹配
+  (编译源文件“/IBLAS.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRQmult”与 ref 基类方法不匹配
+  (编译源文件“/IBLAS.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3299,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorDi,System.Double*,System.Double)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/IBLAS.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3310,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorZi,System.Void*,WMathCore.WComplex)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/IBLAS.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3623,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixDi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/IBLAS.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3630,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixZi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/IBLAS.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/IBLAS.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “indexing”不是在此函数的声明中命名的参数。
+  (编译源文件“/IBLAS.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “rows”不是在此函数的声明中命名的参数。
+  (编译源文件“/IBLAS.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols”不是在此函数的声明中命名的参数。
+  (编译源文件“/IBLAS.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_start”不是在此函数的声明中命名的参数。
+  (编译源文件“/IBLAS.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_end”不是在此函数的声明中命名的参数。
+  (编译源文件“/IBLAS.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “row_indx”不是在此函数的声明中命名的参数。
+  (编译源文件“/IBLAS.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “values”不是在此函数的声明中命名的参数。
+  (编译源文件“/IBLAS.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3905,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseAdd(System.Int32,WMathCore.WMatrixDi,System.Double,WMathCore.WMatrixDi)”: 错误: “c”不是在此函数的声明中命名的参数。
+  (编译源文件“/IBLAS.cpp”)
+  
+  IntelMKL.cpp
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(124,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorI.#ctor(WMathCore.WVectorI)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/IntelMKL.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(268,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorD.#ctor(WMathCore.WVectorD,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/IntelMKL.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(448,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorDi.#ctor(WMathCore.WVectorDi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/IntelMKL.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(640,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZ.#ctor(WMathCore.WVectorZ,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/IntelMKL.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(836,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZi.#ctor(WMathCore.WVectorZi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/IntelMKL.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1015,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/IntelMKL.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1033,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/IntelMKL.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1141,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixDi.#ctor(WMathCore.WMatrixDi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/IntelMKL.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: XML 文档注释 应用于“WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”: XML 格式不正确: 此位置不允许空格。
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: 
+  (编译源文件“/IntelMKL.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1409,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/IntelMKL.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1427,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/IntelMKL.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1528,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZi.#ctor(WMathCore.WMatrixZi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/IntelMKL.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transa”不是在此函数的声明中命名的参数。
+  (编译源文件“/IntelMKL.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transb”不是在此函数的声明中命名的参数。
+  (编译源文件“/IntelMKL.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Scal”与 ref 基类方法不匹配
+  (编译源文件“/IntelMKL.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/IntelMKL.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/IntelMKL.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Rot”与 ref 基类方法不匹配
+  (编译源文件“/IntelMKL.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Cabs”与 ref 基类方法不匹配
+  (编译源文件“/IntelMKL.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemv”与 ref 基类方法不匹配
+  (编译源文件“/IntelMKL.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemm”与 ref 基类方法不匹配
+  (编译源文件“/IntelMKL.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/IntelMKL.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/IntelMKL.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRSolve”与 ref 基类方法不匹配
+  (编译源文件“/IntelMKL.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRQmult”与 ref 基类方法不匹配
+  (编译源文件“/IntelMKL.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3299,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorDi,System.Double*,System.Double)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/IntelMKL.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3310,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorZi,System.Void*,WMathCore.WComplex)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/IntelMKL.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3623,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixDi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/IntelMKL.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3630,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixZi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/IntelMKL.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/IntelMKL.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “indexing”不是在此函数的声明中命名的参数。
+  (编译源文件“/IntelMKL.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “rows”不是在此函数的声明中命名的参数。
+  (编译源文件“/IntelMKL.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols”不是在此函数的声明中命名的参数。
+  (编译源文件“/IntelMKL.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_start”不是在此函数的声明中命名的参数。
+  (编译源文件“/IntelMKL.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_end”不是在此函数的声明中命名的参数。
+  (编译源文件“/IntelMKL.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “row_indx”不是在此函数的声明中命名的参数。
+  (编译源文件“/IntelMKL.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “values”不是在此函数的声明中命名的参数。
+  (编译源文件“/IntelMKL.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3905,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseAdd(System.Int32,WMathCore.WMatrixDi,System.Double,WMathCore.WMatrixDi)”: 错误: “c”不是在此函数的声明中命名的参数。
+  (编译源文件“/IntelMKL.cpp”)
+  
+  WComplex.cpp
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(124,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorI.#ctor(WMathCore.WVectorI)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WComplex.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(268,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorD.#ctor(WMathCore.WVectorD,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WComplex.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(448,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorDi.#ctor(WMathCore.WVectorDi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WComplex.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(640,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZ.#ctor(WMathCore.WVectorZ,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WComplex.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(836,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZi.#ctor(WMathCore.WVectorZi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WComplex.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1015,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WComplex.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1033,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WComplex.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1141,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixDi.#ctor(WMathCore.WMatrixDi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WComplex.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: XML 文档注释 应用于“WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”: XML 格式不正确: 此位置不允许空格。
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: 
+  (编译源文件“/WComplex.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1409,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WComplex.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1427,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WComplex.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1528,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZi.#ctor(WMathCore.WMatrixZi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WComplex.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transa”不是在此函数的声明中命名的参数。
+  (编译源文件“/WComplex.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transb”不是在此函数的声明中命名的参数。
+  (编译源文件“/WComplex.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Scal”与 ref 基类方法不匹配
+  (编译源文件“/WComplex.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/WComplex.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/WComplex.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Rot”与 ref 基类方法不匹配
+  (编译源文件“/WComplex.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Cabs”与 ref 基类方法不匹配
+  (编译源文件“/WComplex.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemv”与 ref 基类方法不匹配
+  (编译源文件“/WComplex.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemm”与 ref 基类方法不匹配
+  (编译源文件“/WComplex.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/WComplex.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/WComplex.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRSolve”与 ref 基类方法不匹配
+  (编译源文件“/WComplex.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRQmult”与 ref 基类方法不匹配
+  (编译源文件“/WComplex.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3299,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorDi,System.Double*,System.Double)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/WComplex.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3310,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorZi,System.Void*,WMathCore.WComplex)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/WComplex.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3623,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixDi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WComplex.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3630,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixZi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WComplex.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WComplex.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “indexing”不是在此函数的声明中命名的参数。
+  (编译源文件“/WComplex.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “rows”不是在此函数的声明中命名的参数。
+  (编译源文件“/WComplex.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols”不是在此函数的声明中命名的参数。
+  (编译源文件“/WComplex.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_start”不是在此函数的声明中命名的参数。
+  (编译源文件“/WComplex.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_end”不是在此函数的声明中命名的参数。
+  (编译源文件“/WComplex.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “row_indx”不是在此函数的声明中命名的参数。
+  (编译源文件“/WComplex.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “values”不是在此函数的声明中命名的参数。
+  (编译源文件“/WComplex.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3905,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseAdd(System.Int32,WMathCore.WMatrixDi,System.Double,WMathCore.WMatrixDi)”: 错误: “c”不是在此函数的声明中命名的参数。
+  (编译源文件“/WComplex.cpp”)
+  
+  WLinAlg.cpp
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(124,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorI.#ctor(WMathCore.WVectorI)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WLinAlg.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(268,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorD.#ctor(WMathCore.WVectorD,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WLinAlg.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(448,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorDi.#ctor(WMathCore.WVectorDi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WLinAlg.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(640,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZ.#ctor(WMathCore.WVectorZ,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WLinAlg.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(836,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZi.#ctor(WMathCore.WVectorZi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WLinAlg.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1015,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WLinAlg.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1033,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WLinAlg.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1141,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixDi.#ctor(WMathCore.WMatrixDi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WLinAlg.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: XML 文档注释 应用于“WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”: XML 格式不正确: 此位置不允许空格。
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: 
+  (编译源文件“/WLinAlg.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1409,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WLinAlg.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1427,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WLinAlg.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1528,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZi.#ctor(WMathCore.WMatrixZi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WLinAlg.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transa”不是在此函数的声明中命名的参数。
+  (编译源文件“/WLinAlg.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transb”不是在此函数的声明中命名的参数。
+  (编译源文件“/WLinAlg.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Scal”与 ref 基类方法不匹配
+  (编译源文件“/WLinAlg.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/WLinAlg.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/WLinAlg.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Rot”与 ref 基类方法不匹配
+  (编译源文件“/WLinAlg.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Cabs”与 ref 基类方法不匹配
+  (编译源文件“/WLinAlg.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemv”与 ref 基类方法不匹配
+  (编译源文件“/WLinAlg.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemm”与 ref 基类方法不匹配
+  (编译源文件“/WLinAlg.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/WLinAlg.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/WLinAlg.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRSolve”与 ref 基类方法不匹配
+  (编译源文件“/WLinAlg.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRQmult”与 ref 基类方法不匹配
+  (编译源文件“/WLinAlg.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3299,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorDi,System.Double*,System.Double)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/WLinAlg.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3310,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorZi,System.Void*,WMathCore.WComplex)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/WLinAlg.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3623,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixDi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WLinAlg.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3630,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixZi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WLinAlg.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WLinAlg.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “indexing”不是在此函数的声明中命名的参数。
+  (编译源文件“/WLinAlg.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “rows”不是在此函数的声明中命名的参数。
+  (编译源文件“/WLinAlg.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols”不是在此函数的声明中命名的参数。
+  (编译源文件“/WLinAlg.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_start”不是在此函数的声明中命名的参数。
+  (编译源文件“/WLinAlg.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_end”不是在此函数的声明中命名的参数。
+  (编译源文件“/WLinAlg.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “row_indx”不是在此函数的声明中命名的参数。
+  (编译源文件“/WLinAlg.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “values”不是在此函数的声明中命名的参数。
+  (编译源文件“/WLinAlg.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3905,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseAdd(System.Int32,WMathCore.WMatrixDi,System.Double,WMathCore.WMatrixDi)”: 错误: “c”不是在此函数的声明中命名的参数。
+  (编译源文件“/WLinAlg.cpp”)
+  
+  SPVectorD.cpp
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(124,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorI.#ctor(WMathCore.WVectorI)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/SPVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(268,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorD.#ctor(WMathCore.WVectorD,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/SPVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(448,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorDi.#ctor(WMathCore.WVectorDi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/SPVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(640,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZ.#ctor(WMathCore.WVectorZ,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/SPVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(836,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZi.#ctor(WMathCore.WVectorZi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/SPVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1015,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/SPVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1033,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/SPVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1141,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixDi.#ctor(WMathCore.WMatrixDi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/SPVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: XML 文档注释 应用于“WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”: XML 格式不正确: 此位置不允许空格。
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: 
+  (编译源文件“/SPVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1409,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/SPVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1427,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/SPVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1528,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZi.#ctor(WMathCore.WMatrixZi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/SPVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transa”不是在此函数的声明中命名的参数。
+  (编译源文件“/SPVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transb”不是在此函数的声明中命名的参数。
+  (编译源文件“/SPVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Scal”与 ref 基类方法不匹配
+  (编译源文件“/SPVectorD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/SPVectorD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/SPVectorD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Rot”与 ref 基类方法不匹配
+  (编译源文件“/SPVectorD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Cabs”与 ref 基类方法不匹配
+  (编译源文件“/SPVectorD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemv”与 ref 基类方法不匹配
+  (编译源文件“/SPVectorD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemm”与 ref 基类方法不匹配
+  (编译源文件“/SPVectorD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/SPVectorD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/SPVectorD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRSolve”与 ref 基类方法不匹配
+  (编译源文件“/SPVectorD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRQmult”与 ref 基类方法不匹配
+  (编译源文件“/SPVectorD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3299,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorDi,System.Double*,System.Double)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/SPVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3310,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorZi,System.Void*,WMathCore.WComplex)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/SPVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3623,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixDi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/SPVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3630,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixZi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/SPVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/SPVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “indexing”不是在此函数的声明中命名的参数。
+  (编译源文件“/SPVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “rows”不是在此函数的声明中命名的参数。
+  (编译源文件“/SPVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols”不是在此函数的声明中命名的参数。
+  (编译源文件“/SPVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_start”不是在此函数的声明中命名的参数。
+  (编译源文件“/SPVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_end”不是在此函数的声明中命名的参数。
+  (编译源文件“/SPVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “row_indx”不是在此函数的声明中命名的参数。
+  (编译源文件“/SPVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “values”不是在此函数的声明中命名的参数。
+  (编译源文件“/SPVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3905,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseAdd(System.Int32,WMathCore.WMatrixDi,System.Double,WMathCore.WMatrixDi)”: 错误: “c”不是在此函数的声明中命名的参数。
+  (编译源文件“/SPVectorD.cpp”)
+  
+  WMatrixD.cpp
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(124,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorI.#ctor(WMathCore.WVectorI)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(268,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorD.#ctor(WMathCore.WVectorD,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(448,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorDi.#ctor(WMathCore.WVectorDi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(640,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZ.#ctor(WMathCore.WVectorZ,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(836,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZi.#ctor(WMathCore.WVectorZi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1015,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1033,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1141,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixDi.#ctor(WMathCore.WMatrixDi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: XML 文档注释 应用于“WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”: XML 格式不正确: 此位置不允许空格。
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: 
+  (编译源文件“/WMatrixD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1409,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1427,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1528,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZi.#ctor(WMathCore.WMatrixZi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transa”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transb”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Scal”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Rot”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Cabs”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemv”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemm”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRSolve”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRQmult”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3299,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorDi,System.Double*,System.Double)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3310,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorZi,System.Void*,WMathCore.WComplex)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3623,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixDi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3630,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixZi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “indexing”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “rows”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_start”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_end”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “row_indx”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “values”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3905,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseAdd(System.Int32,WMathCore.WMatrixDi,System.Double,WMathCore.WMatrixDi)”: 错误: “c”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixD.cpp”)
+  
+  WMatrixDi.cpp
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(124,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorI.#ctor(WMathCore.WVectorI)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(268,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorD.#ctor(WMathCore.WVectorD,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(448,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorDi.#ctor(WMathCore.WVectorDi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(640,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZ.#ctor(WMathCore.WVectorZ,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(836,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZi.#ctor(WMathCore.WVectorZi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1015,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1033,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1141,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixDi.#ctor(WMathCore.WMatrixDi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: XML 文档注释 应用于“WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”: XML 格式不正确: 此位置不允许空格。
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: 
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1409,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1427,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1528,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZi.#ctor(WMathCore.WMatrixZi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transa”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transb”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Scal”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixDi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixDi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixDi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Rot”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixDi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Cabs”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixDi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemv”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixDi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemm”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixDi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixDi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixDi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRSolve”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixDi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRQmult”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixDi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3299,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorDi,System.Double*,System.Double)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3310,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorZi,System.Void*,WMathCore.WComplex)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3623,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixDi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3630,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixZi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “indexing”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “rows”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_start”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_end”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “row_indx”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “values”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3905,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseAdd(System.Int32,WMathCore.WMatrixDi,System.Double,WMathCore.WMatrixDi)”: 错误: “c”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMatrixDi.cpp(16,15): warning C4244: “=”: 从“__int64”转换到“long”，可能丢失数据
+  (编译源文件“/WMatrixDi.cpp”)
+  
+  WMatrixZ.cpp
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(124,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorI.#ctor(WMathCore.WVectorI)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(268,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorD.#ctor(WMathCore.WVectorD,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(448,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorDi.#ctor(WMathCore.WVectorDi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(640,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZ.#ctor(WMathCore.WVectorZ,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(836,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZi.#ctor(WMathCore.WVectorZi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1015,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1033,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1141,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixDi.#ctor(WMathCore.WMatrixDi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: XML 文档注释 应用于“WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”: XML 格式不正确: 此位置不允许空格。
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: 
+  (编译源文件“/WMatrixZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1409,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1427,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1528,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZi.#ctor(WMathCore.WMatrixZi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transa”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transb”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Scal”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixZ.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixZ.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixZ.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Rot”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixZ.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Cabs”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixZ.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemv”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixZ.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemm”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixZ.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixZ.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixZ.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRSolve”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixZ.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRQmult”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixZ.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3299,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorDi,System.Double*,System.Double)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3310,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorZi,System.Void*,WMathCore.WComplex)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3623,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixDi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3630,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixZi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “indexing”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “rows”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_start”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_end”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “row_indx”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “values”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3905,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseAdd(System.Int32,WMathCore.WMatrixDi,System.Double,WMathCore.WMatrixDi)”: 错误: “c”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZ.cpp”)
+  
+  WMatrixZi.cpp
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(124,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorI.#ctor(WMathCore.WVectorI)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(268,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorD.#ctor(WMathCore.WVectorD,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(448,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorDi.#ctor(WMathCore.WVectorDi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(640,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZ.#ctor(WMathCore.WVectorZ,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(836,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZi.#ctor(WMathCore.WVectorZi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1015,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1033,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1141,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixDi.#ctor(WMathCore.WMatrixDi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: XML 文档注释 应用于“WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”: XML 格式不正确: 此位置不允许空格。
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: 
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1409,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1427,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1528,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZi.#ctor(WMathCore.WMatrixZi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transa”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transb”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Scal”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixZi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixZi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixZi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Rot”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixZi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Cabs”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixZi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemv”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixZi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemm”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixZi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixZi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixZi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRSolve”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixZi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRQmult”与 ref 基类方法不匹配
+  (编译源文件“/WMatrixZi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3299,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorDi,System.Double*,System.Double)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3310,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorZi,System.Void*,WMathCore.WComplex)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3623,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixDi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3630,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixZi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “indexing”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “rows”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_start”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_end”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “row_indx”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “values”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3905,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseAdd(System.Int32,WMathCore.WMatrixDi,System.Double,WMathCore.WMatrixDi)”: 错误: “c”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMatrixZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMatrixZi.cpp(17,15): warning C4244: “=”: 从“__int64”转换到“long”，可能丢失数据
+  (编译源文件“/WMatrixZi.cpp”)
+  
+  WVectorI.cpp
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(124,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorI.#ctor(WMathCore.WVectorI)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorI.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(268,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorD.#ctor(WMathCore.WVectorD,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorI.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(448,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorDi.#ctor(WMathCore.WVectorDi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorI.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(640,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZ.#ctor(WMathCore.WVectorZ,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorI.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(836,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZi.#ctor(WMathCore.WVectorZi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorI.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1015,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorI.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1033,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorI.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1141,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixDi.#ctor(WMathCore.WMatrixDi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorI.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: XML 文档注释 应用于“WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”: XML 格式不正确: 此位置不允许空格。
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: 
+  (编译源文件“/WVectorI.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1409,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorI.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1427,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorI.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1528,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZi.#ctor(WMathCore.WMatrixZi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorI.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transa”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorI.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transb”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorI.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Scal”与 ref 基类方法不匹配
+  (编译源文件“/WVectorI.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/WVectorI.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/WVectorI.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Rot”与 ref 基类方法不匹配
+  (编译源文件“/WVectorI.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Cabs”与 ref 基类方法不匹配
+  (编译源文件“/WVectorI.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemv”与 ref 基类方法不匹配
+  (编译源文件“/WVectorI.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemm”与 ref 基类方法不匹配
+  (编译源文件“/WVectorI.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/WVectorI.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/WVectorI.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRSolve”与 ref 基类方法不匹配
+  (编译源文件“/WVectorI.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRQmult”与 ref 基类方法不匹配
+  (编译源文件“/WVectorI.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3299,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorDi,System.Double*,System.Double)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorI.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3310,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorZi,System.Void*,WMathCore.WComplex)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorI.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3623,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixDi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorI.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3630,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixZi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorI.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorI.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “indexing”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorI.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “rows”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorI.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorI.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_start”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorI.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_end”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorI.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “row_indx”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorI.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “values”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorI.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3905,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseAdd(System.Int32,WMathCore.WMatrixDi,System.Double,WMathCore.WMatrixDi)”: 错误: “c”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorI.cpp”)
+  
+  WVectorZ.cpp
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(124,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorI.#ctor(WMathCore.WVectorI)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(268,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorD.#ctor(WMathCore.WVectorD,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(448,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorDi.#ctor(WMathCore.WVectorDi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(640,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZ.#ctor(WMathCore.WVectorZ,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(836,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZi.#ctor(WMathCore.WVectorZi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1015,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1033,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1141,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixDi.#ctor(WMathCore.WMatrixDi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: XML 文档注释 应用于“WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”: XML 格式不正确: 此位置不允许空格。
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: 
+  (编译源文件“/WVectorZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1409,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1427,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1528,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZi.#ctor(WMathCore.WMatrixZi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transa”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transb”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Scal”与 ref 基类方法不匹配
+  (编译源文件“/WVectorZ.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/WVectorZ.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/WVectorZ.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Rot”与 ref 基类方法不匹配
+  (编译源文件“/WVectorZ.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Cabs”与 ref 基类方法不匹配
+  (编译源文件“/WVectorZ.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemv”与 ref 基类方法不匹配
+  (编译源文件“/WVectorZ.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemm”与 ref 基类方法不匹配
+  (编译源文件“/WVectorZ.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/WVectorZ.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/WVectorZ.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRSolve”与 ref 基类方法不匹配
+  (编译源文件“/WVectorZ.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRQmult”与 ref 基类方法不匹配
+  (编译源文件“/WVectorZ.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3299,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorDi,System.Double*,System.Double)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3310,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorZi,System.Void*,WMathCore.WComplex)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3623,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixDi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3630,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixZi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “indexing”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “rows”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_start”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_end”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “row_indx”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “values”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZ.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3905,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseAdd(System.Int32,WMathCore.WMatrixDi,System.Double,WMathCore.WMatrixDi)”: 错误: “c”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZ.cpp”)
+  
+  WVectorD.cpp
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(124,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorI.#ctor(WMathCore.WVectorI)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(268,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorD.#ctor(WMathCore.WVectorD,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(448,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorDi.#ctor(WMathCore.WVectorDi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(640,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZ.#ctor(WMathCore.WVectorZ,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(836,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZi.#ctor(WMathCore.WVectorZi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1015,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1033,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1141,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixDi.#ctor(WMathCore.WMatrixDi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: XML 文档注释 应用于“WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”: XML 格式不正确: 此位置不允许空格。
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: 
+  (编译源文件“/WVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1409,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1427,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1528,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZi.#ctor(WMathCore.WMatrixZi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transa”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transb”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Scal”与 ref 基类方法不匹配
+  (编译源文件“/WVectorD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/WVectorD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/WVectorD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Rot”与 ref 基类方法不匹配
+  (编译源文件“/WVectorD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Cabs”与 ref 基类方法不匹配
+  (编译源文件“/WVectorD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemv”与 ref 基类方法不匹配
+  (编译源文件“/WVectorD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemm”与 ref 基类方法不匹配
+  (编译源文件“/WVectorD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/WVectorD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/WVectorD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRSolve”与 ref 基类方法不匹配
+  (编译源文件“/WVectorD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRQmult”与 ref 基类方法不匹配
+  (编译源文件“/WVectorD.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3299,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorDi,System.Double*,System.Double)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3310,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorZi,System.Void*,WMathCore.WComplex)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3623,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixDi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3630,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixZi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “indexing”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “rows”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_start”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_end”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “row_indx”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “values”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorD.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3905,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseAdd(System.Int32,WMathCore.WMatrixDi,System.Double,WMathCore.WMatrixDi)”: 错误: “c”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorD.cpp”)
+  
+  WVectorDi.cpp
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(124,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorI.#ctor(WMathCore.WVectorI)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(268,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorD.#ctor(WMathCore.WVectorD,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(448,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorDi.#ctor(WMathCore.WVectorDi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(640,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZ.#ctor(WMathCore.WVectorZ,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(836,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZi.#ctor(WMathCore.WVectorZi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1015,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1033,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1141,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixDi.#ctor(WMathCore.WMatrixDi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: XML 文档注释 应用于“WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”: XML 格式不正确: 此位置不允许空格。
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: 
+  (编译源文件“/WVectorDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1409,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1427,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1528,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZi.#ctor(WMathCore.WMatrixZi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transa”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transb”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Scal”与 ref 基类方法不匹配
+  (编译源文件“/WVectorDi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/WVectorDi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/WVectorDi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Rot”与 ref 基类方法不匹配
+  (编译源文件“/WVectorDi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Cabs”与 ref 基类方法不匹配
+  (编译源文件“/WVectorDi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemv”与 ref 基类方法不匹配
+  (编译源文件“/WVectorDi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemm”与 ref 基类方法不匹配
+  (编译源文件“/WVectorDi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/WVectorDi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/WVectorDi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRSolve”与 ref 基类方法不匹配
+  (编译源文件“/WVectorDi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRQmult”与 ref 基类方法不匹配
+  (编译源文件“/WVectorDi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3299,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorDi,System.Double*,System.Double)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3310,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorZi,System.Void*,WMathCore.WComplex)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3623,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixDi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3630,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixZi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “indexing”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “rows”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_start”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_end”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “row_indx”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “values”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorDi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3905,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseAdd(System.Int32,WMathCore.WMatrixDi,System.Double,WMathCore.WMatrixDi)”: 错误: “c”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorDi.cpp”)
+  
+  WMathCore.cpp
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(124,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorI.#ctor(WMathCore.WVectorI)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMathCore.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(268,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorD.#ctor(WMathCore.WVectorD,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMathCore.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(448,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorDi.#ctor(WMathCore.WVectorDi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMathCore.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(640,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZ.#ctor(WMathCore.WVectorZ,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMathCore.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(836,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZi.#ctor(WMathCore.WVectorZi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMathCore.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1015,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMathCore.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1033,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMathCore.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1141,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixDi.#ctor(WMathCore.WMatrixDi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMathCore.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: XML 文档注释 应用于“WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”: XML 格式不正确: 此位置不允许空格。
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: 
+  (编译源文件“/WMathCore.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1409,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMathCore.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1427,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMathCore.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1528,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZi.#ctor(WMathCore.WMatrixZi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMathCore.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transa”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMathCore.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transb”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMathCore.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Scal”与 ref 基类方法不匹配
+  (编译源文件“/WMathCore.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/WMathCore.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/WMathCore.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Rot”与 ref 基类方法不匹配
+  (编译源文件“/WMathCore.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Cabs”与 ref 基类方法不匹配
+  (编译源文件“/WMathCore.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemv”与 ref 基类方法不匹配
+  (编译源文件“/WMathCore.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemm”与 ref 基类方法不匹配
+  (编译源文件“/WMathCore.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/WMathCore.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/WMathCore.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRSolve”与 ref 基类方法不匹配
+  (编译源文件“/WMathCore.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRQmult”与 ref 基类方法不匹配
+  (编译源文件“/WMathCore.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3299,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorDi,System.Double*,System.Double)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMathCore.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3310,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorZi,System.Void*,WMathCore.WComplex)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMathCore.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3623,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixDi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMathCore.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3630,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixZi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMathCore.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMathCore.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “indexing”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMathCore.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “rows”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMathCore.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMathCore.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_start”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMathCore.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_end”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMathCore.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “row_indx”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMathCore.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “values”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMathCore.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3905,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseAdd(System.Int32,WMathCore.WMatrixDi,System.Double,WMathCore.WMatrixDi)”: 错误: “c”不是在此函数的声明中命名的参数。
+  (编译源文件“/WMathCore.cpp”)
+  
+  WVectorZi.cpp
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(124,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorI.#ctor(WMathCore.WVectorI)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(268,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorD.#ctor(WMathCore.WVectorD,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(448,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorDi.#ctor(WMathCore.WVectorDi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(640,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZ.#ctor(WMathCore.WVectorZ,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(836,1): warning C4633: XML 文档注释 应用于“WMathCore.WVectorZi.#ctor(WMathCore.WVectorZi,System.Int32)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1015,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1033,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixD.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1141,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixDi.#ctor(WMathCore.WMatrixDi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: XML 文档注释 应用于“WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”: XML 格式不正确: 此位置不允许空格。
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1288,1): warning C4635: 
+  (编译源文件“/WVectorZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1409,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Rows(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1427,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZ.set_Cols(System.Int64)”: 错误: “n”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1528,1): warning C4633: XML 文档注释 应用于“WMathCore.WMatrixZi.#ctor(WMathCore.WMatrixZi)”: 错误: “other”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transa”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(1926,1): warning C4633: XML 文档注释 应用于“WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)”: 错误: “transb”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Scal”与 ref 基类方法不匹配
+  (编译源文件“/WVectorZi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2684,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/WVectorZi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2691,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Swap”与 ref 基类方法不匹配
+  (编译源文件“/WVectorZi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2687,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Rot”与 ref 基类方法不匹配
+  (编译源文件“/WVectorZi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2712,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Cabs”与 ref 基类方法不匹配
+  (编译源文件“/WVectorZi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2722,10):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemv”与 ref 基类方法不匹配
+  (编译源文件“/WVectorZi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2733,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gemm”与 ref 基类方法不匹配
+  (编译源文件“/WVectorZi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2749,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/WVectorZi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2789,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::Gthrz”与 ref 基类方法不匹配
+  (编译源文件“/WVectorZi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2786,8):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRSolve”与 ref 基类方法不匹配
+  (编译源文件“/WVectorZi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2940,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19): warning C4490: “override”: 重写说明符的用法不正确；“WMathCore::IntelMKL::SparseQRQmult”与 ref 基类方法不匹配
+  (编译源文件“/WVectorZi.cpp”)
+      D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(2945,19):
+      只有存在来自 ref 类的匹配基方法时，才允许使用“new”或“override”
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3299,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorDi,System.Double*,System.Double)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3310,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.Axpyi(WMathCore.WVectorZi,System.Void*,WMathCore.WComplex)”: 错误: “x”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3623,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixDi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3630,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixZi)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “source”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “indexing”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “rows”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_start”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “cols_end”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “row_indx”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3682,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)”: 错误: “values”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZi.cpp”)
+  
+D:\Vemssentcom\VEMS\WMathCore\WMathCore.h(3905,1): warning C4633: XML 文档注释 应用于“WMathCore.WLinAlg.SparseAdd(System.Int32,WMathCore.WMatrixDi,System.Double,WMathCore.WMatrixDi)”: 错误: “c”不是在此函数的声明中命名的参数。
+  (编译源文件“/WVectorZi.cpp”)
+  
+  正在生成代码...
+D:\Vemssentcom\VEMS\WMathCore\WVectorD.cpp(63,1): warning C4700: 使用了未初始化的局部变量“dummy”
+D:\Vemssentcom\VEMS\WMathCore\WVectorZ.cpp(78,1): warning C4700: 使用了未初始化的局部变量“dummy”
+D:\Vemssentcom\VEMS\WMathCore\WMatrixZ.cpp(79,1): warning C4700: 使用了未初始化的局部变量“dummy”
+D:\Vemssentcom\VEMS\WMathCore\WMatrixD.cpp(69,1): warning C4700: 使用了未初始化的局部变量“dummy”
+D:\Vemssentcom\VEMS\WMathCore\WLinAlg.cpp(888,1): warning C4715: “WMathCore::WLinAlg::SparseStatusConverter”: 不是所有的控件路径都返回值
+D:\Vemssentcom\VEMS\WMathCore\WLinAlg.cpp(709,1): warning C4715: “WMathCore::WLinAlg::SparseAdd”: 不是所有的控件路径都返回值
+  .NETCoreApp,Version=v8.0.AssemblyAttributes.cpp
+  AssemblyInfo.obj : 遇到了 MSIL 模块；对 MSIL 禁用了增量链接；正在执行完全链接
+WVectorZi.obj : warning LNK4248: 无法解析 typeref 标记(01000016)(为“sparse_matrix”)；映像可能无法运行
+WMathCore.obj : warning LNK4248: 无法解析 typeref 标记(01000016)(为“sparse_matrix”)；映像可能无法运行
+WVectorDi.obj : warning LNK4248: 无法解析 typeref 标记(01000014)(为“sparse_matrix”)；映像可能无法运行
+WVectorD.obj : warning LNK4248: 无法解析 typeref 标记(01000016)(为“sparse_matrix”)；映像可能无法运行
+WVectorZ.obj : warning LNK4248: 无法解析 typeref 标记(01000016)(为“sparse_matrix”)；映像可能无法运行
+WVectorI.obj : warning LNK4248: 无法解析 typeref 标记(01000016)(为“sparse_matrix”)；映像可能无法运行
+WMatrixZi.obj : warning LNK4248: 无法解析 typeref 标记(01000016)(为“sparse_matrix”)；映像可能无法运行
+WMatrixZ.obj : warning LNK4248: 无法解析 typeref 标记(01000016)(为“sparse_matrix”)；映像可能无法运行
+WMatrixDi.obj : warning LNK4248: 无法解析 typeref 标记(01000016)(为“sparse_matrix”)；映像可能无法运行
+WMatrixD.obj : warning LNK4248: 无法解析 typeref 标记(01000016)(为“sparse_matrix”)；映像可能无法运行
+SPVectorD.obj : warning LNK4248: 无法解析 typeref 标记(01000016)(为“sparse_matrix”)；映像可能无法运行
+WLinAlg.obj : warning LNK4248: 无法解析 typeref 标记(01000016)(为“sparse_matrix”)；映像可能无法运行
+WComplex.obj : warning LNK4248: 无法解析 typeref 标记(01000016)(为“sparse_matrix”)；映像可能无法运行
+IntelMKL.obj : warning LNK4248: 无法解析 typeref 标记(01000016)(为“sparse_matrix”)；映像可能无法运行
+IBLAS.obj : warning LNK4248: 无法解析 typeref 标记(01000016)(为“sparse_matrix”)；映像可能无法运行
+  WMathCore.vcxproj -> D:\Vemssentcom\VEMS\x64\Debug\WMathCore.dll

@@ -1,0 +1,22 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:OpticalChainSimulator.ViewModels"
+             x:Class="OpticalChainSimulator.Views.Docks.PropertiesToolView"
+             x:DataType="vm:MainWindowViewModel">
+  
+  <Border Classes="Panel" Padding="10">
+    <ScrollViewer>
+      <StackPanel Spacing="10">
+        <TextBlock Classes="PanelTitle" Text="选中元件属性"/>
+        
+        <Border Classes="PanelAlt" Padding="10">
+          <StackPanel Spacing="6">
+            <TextBlock Text="{Binding SelectedElement.Name, StringFormat='名称:  {0}'}"/>
+            <TextBlock Text="{Binding SelectedElement.Type, StringFormat='类型: {0}'}"/>
+            <TextBlock Text="{Binding SelectedElement.MainParameterSummary, StringFormat='参数:  {0}'}"/>
+          </StackPanel>
+        </Border>
+      </StackPanel>
+    </ScrollViewer>
+  </Border>
+</UserControl>

@@ -1,0 +1,4 @@
+D:\Vemssentcom\VEMS\x64\Debug\Ijwhost.dll
+D:\Vemssentcom\VEMS\x64\Debug\WMathCore.deps.json
+D:\Vemssentcom\VEMS\x64\Debug\WMathCore.runtimeconfig.json
+D:\Vemssentcom\VEMS\WMathCore\x64\Debug\WMathCore.genruntimeconfig.cache

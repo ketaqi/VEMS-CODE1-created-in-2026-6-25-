@@ -1,0 +1,116 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:roslynPad="using:RoslynPad"
+             xmlns:roslyn="clr-namespace:Microsoft.CodeAnalysis;assembly=Microsoft.CodeAnalysis"
+             xmlns:ui="using:RoslynPad.UI"
+             x:Class="RoslynPad.RunAndDebugView"
+             xmlns:converters="clr-namespace:RoslynPad.Converters"
+             x:DataType="ui:OpenDocumentViewModel">
+    <UserControl.Resources>
+        <converters:DoubleToPercentageTextConverter x:Key="DoubleToPercentageTextConverter" />
+    </UserControl.Resources>
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <!-- 空白分隔行 -->
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="0">
+            <TextBlock x:CompileBindings="False"
+                       Text="{Binding DataContext.LM_LeftMenuItem5, RelativeSource={RelativeSource AncestorType=Window}}"
+                       VerticalAlignment="Center"
+                       Width="150"
+                       HorizontalAlignment="Center"
+                       FontSize="20"/>
+        </StackPanel>
+        <Border Grid.Row="1" Height="1" Background="#DDDDDD" Margin="8,0,8,0"/>
+        <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="4">
+            <TextBlock x:CompileBindings="False"
+                        Text="{Binding DataContext.LM_LeftMenuItem6, RelativeSource={RelativeSource AncestorType=Window}}"
+                       VerticalAlignment="Center" Width="150" HorizontalAlignment="Right"/>
+            <Button Command="{Binding RunCommand, Mode=OneTime}"
+                    ToolTip.Tip="Run (F5)"
+                    Width="150">
+                <Grid>
+                    <Image Source="{StaticResource Run}"
+                           Width="16"
+                           Height="16"/>
+                    <ProgressBar VerticalAlignment="Bottom"
+                                 Height="4"
+                                 IsIndeterminate="{Binding IsRunning}"
+                                 BorderThickness="0"
+                                 IsVisible="{Binding IsRunning}" />
+                </Grid>
+            </Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="6">
+            <TextBlock x:CompileBindings="False"
+                        Text="{Binding DataContext.LM_LeftMenuItem7, RelativeSource={RelativeSource AncestorType=Window}}"
+                       VerticalAlignment="Center" Width="150" HorizontalAlignment="Right"/>
+            <Button Command="{Binding TerminateCommand, Mode=OneTime}"
+        ToolTip.Tip="{OnPlatform Terminate process (Shift+F5), macOS=Terminate process (⇧ F5)}"
+        IsEnabled="True"
+                    Width="150"
+                    >
+                <Image Source="{StaticResource Stop}"
+                       Width="16"
+                       Height="16" />
+            </Button>
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="7">
+            <TextBlock x:CompileBindings="False"
+                        Text="{Binding DataContext.LM_LeftMenuItem8, RelativeSource={RelativeSource AncestorType=Window}}"
+                       VerticalAlignment="Center"
+                       Width="150"
+                       HorizontalAlignment="Right"/>
+            <ComboBox ItemsSource="{Binding ProcessFilterOptions, Mode=OneTime}"
+                      SelectedItem="{Binding SelectedProcessFilter}"
+                      Width="150"/>
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="8">
+            <TextBlock x:CompileBindings="False"
+                        Text="{Binding DataContext.LM_LeftMenuItem9, RelativeSource={RelativeSource AncestorType=Window}}"
+                       VerticalAlignment="Center" Width="150" HorizontalAlignment="Right"/>
+            <ComboBox ItemsSource="{Binding AvailablePlatforms, Mode=OneTime}"
+                      SelectedItem="{Binding Platform}"
+                      Width="150"/>
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="9">
+            <TextBlock x:CompileBindings="False"
+                        Text="{Binding DataContext.LM_LeftMenuItem10, RelativeSource={RelativeSource AncestorType=Window}}"
+                       VerticalAlignment="Center" Width="150" HorizontalAlignment="Right"/>
+            <Button ToolTip.Tip="Set platform as default"
+                    Command="{Binding SetDefaultPlatformCommand, Mode=OneTime}"
+                    Width="150"
+                    >
+                <Image Source="{StaticResource SetPlatform}"
+                       Width="16"
+                       Height="16"/>
+            </Button>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

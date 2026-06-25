@@ -1,0 +1,9 @@
+*.pfx
+*.cer
+*.pvk
+*.mapping
+*.appx
+*.zip
+*.tgz
+*.pri
+*.dmg

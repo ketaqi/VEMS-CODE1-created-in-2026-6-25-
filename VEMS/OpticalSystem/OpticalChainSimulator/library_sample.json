@@ -1,0 +1,72 @@
+{
+    "Name": "Basic Optics Library",
+    "Items": [
+        {
+            "Name": "Flat Mirror (Small)",
+            "Type": "Mirror",
+            "X": -1.0,
+            "Y": 0.6,
+            "Z": -1.0,
+            "Yaw": 20,
+            "Pitch": 60,
+            "W": 2.0,
+            "H": 1.2,
+            "Q": 1.2
+        },
+        {
+            "Name": "Thin Lens f=3",
+            "Type": "Lens",
+            "X": 0.0,
+            "Y": 2.3,
+            "Z": 0.0,
+            "Yaw": 0,
+            "Pitch": 90,
+            "W": 2.4,
+            "H": 2.0,
+            "FocalLength": 3.0
+        },
+        {
+            "Name": "Detector (Wide)",
+            "Type": "Detector",
+            "X": 0.0,
+            "Y": 4.6,
+            "Z": 0.8,
+            "Yaw": 0,
+            "Pitch": 90,
+            "W": 6.0,
+            "H": 2.0
+        },
+        {
+            "Name": "Reflector Box",
+            "Type": "Box",
+            "X": 0.0,
+            "Y": 1.2,
+            "Z": 0.0,
+            "Yaw": 20,
+            "Pitch": 0,
+            "Roll": 0,
+            "W": 1.6,
+            "H": 1.0,
+            "Depth": 1.0,
+            "BoxKind": "Reflector"
+        },
+        {
+            "Name": "PortBox passthrough",
+            "Type": "PortBox",
+            "X": 0.5,
+            "Y": 2.0,
+            "Z": 0.0,
+            "Yaw": 0,
+            "Pitch": 0,
+            "Roll": 0,
+            "W": 1.6,
+            "H": 1.0,
+            "Depth": 1.0,
+            "InFace": "Z+",
+            "OutFace": "Z-",
+            "ApertureW": 1.0,
+            "ApertureH": 0.8,
+            "Processor": "PassThrough"
+        }
+    ]
+}

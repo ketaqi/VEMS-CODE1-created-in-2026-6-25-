@@ -1,0 +1,1398 @@
+﻿<Window x:Class="VEMS.WorkBench.VEditor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VEMS.WorkBench" 
+        xmlns:Fluent="urn:fluent-ribbon"
+        d:DataContext="{d:DesignInstance Type=local:VEditorModel}"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        mc:Ignorable="d"
+        Title="{Binding WindowTitle}"
+        Height="900" Width="1600">
+
+  
+    <Window.Resources>
+        <SolidColorBrush Color="#E5E5E5" x:Key="MenuColor"/>
+        <SolidColorBrush Color="WhiteSmoke" x:Key="TreeColor"/>
+        <SolidColorBrush Color="White" x:Key="EditorColor"/>
+        <SolidColorBrush Color="White" x:Key="ConsoleColor"/>
+        <SolidColorBrush Color="Transparent" x:Key="SplitterColor"/>
+        <SolidColorBrush Color="Gray" x:Key="SiderColor" />
+        <SolidColorBrush Color="WhiteSmoke" x:Key="ButtonColor" />
+        <SolidColorBrush Color="#ECECEC" x:Key="TabColor"/>
+        <SolidColorBrush Color="LightSteelBlue" x:Key="BottomColor"/>
+
+        <Style TargetType="DataGrid" x:Key="DataGridStyle">
+            <Style.Setters>
+                <Setter Property="CanUserAddRows" Value="False"/>
+                <Setter Property="AutoGenerateColumns" Value="False"/>
+                <Setter Property="RowHeaderWidth" Value="0"/>
+                <Setter Property="HeadersVisibility" Value="None"/>
+                <!--Setter Property="RowHeight" Value="22"/-->
+                <Setter Property="VerticalGridLinesBrush" Value="LightGray"/>
+                <Setter Property="HorizontalGridLinesBrush" Value="LightGray"/>
+                <Setter Property="BorderBrush" Value="LightGray"/>
+            </Style.Setters>
+        </Style>
+        <Style TargetType="DataGridRow" x:Key="DataGridRowStyle">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="LightGray"/>
+                    <Setter Property="FontWeight" Value="Bold" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="TextBlockStyle">
+            <Style.Setters>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style.Setters>
+        </Style>
+        <Style TargetType="TabItem" x:Key="TabItemStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabItem">
+                        <Grid Name="Panel">
+                            <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="Panel" Property="Background" Value="LightSkyBlue" />
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="False">
+                                <Setter TargetName="Panel" Property="Background" Value="White" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="ButtonStyle">
+            <Style.Setters>
+                <Setter Property="Background" Value="WhiteSmoke"/>
+                <Setter Property="BorderBrush" Value="LightGray"/>
+                <Setter Property="Width" Value="72"/>
+            </Style.Setters>
+        </Style>
+
+    </Window.Resources>
+    <Window.InputBindings>
+        <!--<KeyBinding Gesture="Ctrl+N" Command="{StaticResource ShortCutNew}"/>
+        <KeyBinding Gesture="Ctrl+O" Command="{StaticResource ShortCutOpen}"/>
+        <KeyBinding Gesture="Ctrl+S" Command="{StaticResource ShortCutSave}"/>
+        <KeyBinding Gesture="Ctrl+Shift+S" Command="{StaticResource ShortCutSaveAs}"/>
+        <KeyBinding Gesture="Ctrl+F4" Command="{StaticResource ShortCutCloseTab}"/>
+        <KeyBinding Gesture="Ctrl+F" Command="{StaticResource ShortCutFind}"/>
+        <KeyBinding Gesture="Ctrl+H" Command="{StaticResource ShortCutReplace}"/>
+        <KeyBinding Gesture="Ctrl+Alt+F" Command="{StaticResource ShortCutFormat}"/>
+        <KeyBinding Gesture="Ctrl+Alt+C" Command="{StaticResource ShortCutComment}"/>
+        <KeyBinding Gesture="Ctrl+Alt+U" Command="{StaticResource ShortCutUncomment}"/>
+        <KeyBinding Gesture="F5" Command="{StaticResource ShortCutDiagnostic}"/>
+        <KeyBinding Gesture="Ctrl+F5" Command="{StaticResource ShortCutRun}"/>
+        <KeyBinding Gesture="Ctrl+Alt+D" Command="{StaticResource ShortCutClearMessage}"/>-->
+        
+        <KeyBinding Gesture="Ctrl+N" Command="{Binding NewEmptyCommand}"/>
+        <KeyBinding Gesture="Ctrl+Shift+F4" Command="{Binding CloseAllVFramesCommand}"/>
+        <KeyBinding Gesture="Ctrl+O" Command="{Binding OpenFileCommand}"/>
+        <KeyBinding Gesture="Ctrl+S" Command="{Binding SaveFileCommand}"/>
+        <KeyBinding Gesture="Ctrl+Shift+S" Command="{Binding SaveFileAsCommand}"/>
+        <KeyBinding Gesture="Ctrl+F4" Command="{Binding CloseFileCommand}"/>
+        <KeyBinding Gesture="Ctrl+F" Command="{Binding FindCommand}"/>
+        <KeyBinding Gesture="Ctrl+H" Command="{Binding ReplaceCommand}"/>
+        <KeyBinding Gesture="Ctrl+Alt+F" Command="{Binding FormatCodeCommand}"/>
+        <KeyBinding Gesture="Ctrl+Alt+C" Command="{Binding CommentLinesCommand}"/>
+        <KeyBinding Gesture="Ctrl+Alt+U" Command="{Binding UncommentLinesCommand}"/>
+        <KeyBinding Gesture="F5" Command="{Binding CompileDiagnosticCommand}"/>
+        <KeyBinding Gesture="Ctrl+F5" Command="{Binding RunCommand}"/>
+        <KeyBinding Gesture="Ctrl+Alt+D" Command="{Binding ClearConsoleCommand}"/>
+    </Window.InputBindings>
+
+    <Grid ShowGridLines="false">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+            <ColumnDefinition Width="1.67*"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="5*"></ColumnDefinition>
+            <ColumnDefinition Width="2"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="24"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Column="0" Grid.Row="2" Grid.RowSpan="3" Background="{StaticResource SiderColor}" />
+        <GridSplitter Grid.Column="2" Grid.Row="2" Grid.RowSpan="3" Width="5" VerticalAlignment="Stretch"
+                      HorizontalAlignment="Center" Background="{StaticResource SplitterColor}"  ShowsPreview="True"></GridSplitter>
+        <Border Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="5" Background="{StaticResource BottomColor}"/>
+
+        <Fluent:Ribbon Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">
+            <Fluent:Ribbon.Menu>
+                <Fluent:Backstage Header="VEMS">
+                    <Fluent:BackstageTabControl>
+                        <Fluent:BackstageTabItem Header="Info"/>
+                        <Fluent:BackstageTabItem Header="Exit"/>
+                    </Fluent:BackstageTabControl>
+                </Fluent:Backstage>
+            </Fluent:Ribbon.Menu>
+            <Fluent:RibbonTabItem Header="File">
+                <Fluent:RibbonGroupBox Header="file">
+                    <Fluent:Button Header="_New file" Width="64" 
+                                   Command="{Binding NewEmptyCommand}"
+                                   KeyTip="Ctrl+N">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe665;"
+                                       ToolTip="Ctrl+N"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="_Open file" Width="64"
+                                   Command="{Binding OpenFileCommand}"
+                                   KeyTip="Ctrl+O">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe69d;"
+                                       ToolTip="Ctrl+O"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="folder">
+                    <Fluent:Button Header="_Open Folder" Width="64"
+                                   Command="{Binding OpenNewFolderCommand}">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe6a4;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="_Default Folder" Width="64"
+                                   Command="{Binding OpenDefaultFolderCommand}">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe69e;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="save">
+                    <Fluent:Button Header="_Save file" Width="64"
+                                   Command="{Binding SaveFileCommand}" 
+                                   KeyTip="Ctrl+S" >
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe66e;"
+                                       ToolTip="Ctrl+S"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="_Save as" Width="64"
+                                   Command="{Binding SaveFileAsCommand}" 
+                                   KeyTip="Ctrl+Shift+S" >
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe693;"
+                                       ToolTip="Ctrl+Shift+S"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="_Save all" Width="64"
+                                   Command="{Binding SaveAllFilesCommand}">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe6ad;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="close">
+                    <Fluent:Button Header="_Close tab" Width="64"
+                                   Command="{Binding CloseFileCommand}" 
+                                   KeyTip="Ctrl+F4">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe679;"
+                                       ToolTip="Ctrl+F4"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="_Close all" Width="64"
+                                   Command="{Binding CloseAllFilesCommand}">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe696;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="_Exit app" Width="64"
+                                   Command="{Binding ExitAppCommand}">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe6a1;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="tests..." Visibility="Hidden">
+                    <Fluent:Button Header="Rename"  
+                                   IsEnabled="False" />
+                    <Fluent:Button Header="VFrames Info"
+                                   Command="{Binding CheckVFrameInfoCommand}"/>
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+            <Fluent:RibbonTabItem Header="Code">
+                <Fluent:RibbonGroupBox Header="search">
+                    <Fluent:Button Header="_Search text" Width="64"
+                                   Command="{Binding FindCommand}"
+                                   KeyTip="Ctrl+F">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe690;"
+                                       ToolTip="Ctrl+F"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="_Replace text" Width="64"
+                                   Command="{Binding ReplaceCommand}"
+                                   KeyTip="Ctrl+H">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe6dc;"
+                                       ToolTip="Ctrl+H"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="format">
+                    <Fluent:Button Header="_Format code" Width="64"
+                                   Command="{Binding FormatCodeCommand}"
+                                   KeyTip="Ctrl+Alt+F">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe6b6;"
+                                       ToolTip="Ctrl+Alt+F"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="comment">
+                    <Fluent:Button Header="_Comment selection" Width="64"
+                                   Command="{Binding CommentLinesCommand}"
+                                   KeyTip="Ctrl+Alt+C">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe673;"
+                                       ToolTip="Ctrl+Alt+C"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="_Uncomment selection" Width="80"
+                                   Command="{Binding UncommentLinesCommand}"
+                                   KeyTip="Ctrl+Alt+U">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe671;"
+                                       ToolTip="Ctrl+Alt+U"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="compile">
+                    <Fluent:Button Header="_Debug code" Width="64"
+                                   Command="{Binding CompileDiagnosticCommand}" 
+                                   KeyTip="F5">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe6b3;"
+                                       ToolTip="F5"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="_Run code" Width="64"
+                                   Command="{Binding RunCommand}"
+                                   KeyTip="Ctrl+F5">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe6ed;"
+                                       ToolTip="Ctrl+F5"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="_Run (STA)" Width="64"
+                                   Command="{Binding RunSTACommand}"
+                                   Visibility="Collapsed" >
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe66c;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="coding">
+                    <Fluent:Button Header="_Add class" Width="64"
+                                   Command="{Binding AddClassCommand}"
+                                   IsEnabled="False">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe678;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="_Add method" Width="64"
+                                   Command="{Binding AddMethodCommand}"
+                                   IsEnabled="False">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe678;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="task" Visibility="Hidden">
+                    <Fluent:Button Header="_Start task" Width="64"
+                                   Command="{Binding }"
+                                   IsEnabled="False"/>
+                    <Fluent:Button Header="_Stop task" Width="64"
+                                   Command="{Binding }"
+                                   IsEnabled="False"/>
+                    <Fluent:Button Header="_Check Status" Width="64"
+                                   Command="{Binding }"
+                                   IsEnabled="False"/>
+                    <Fluent:Button Header="_Script" Width="64"
+                                   Command="{Binding }"
+                                   IsEnabled="False"/>
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+            <Fluent:RibbonTabItem Header="Output">
+                <Fluent:RibbonGroupBox Header="message">
+                    <Fluent:Button Header="_Copy message" Width="64"
+                                   Command="{Binding CopyConsoleTextCommand}">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe6d5;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="_Clear message" Width="64"
+                                   Command="{Binding ClearConsoleCommand}"
+                                   KeyTip="Ctrl+Alt+D">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe6c4;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="figures">
+                    <Fluent:Button Header="_All figures minimized" Width="64"
+                                   Command="{Binding MinimizeAllVFramesCommand}">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe6ac;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="_Close all figures" Width="64"
+                                   Command="{Binding CloseAllVFramesCommand}">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe696;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="tests ..." Visibility="Hidden">
+                    <Fluent:Button Header="Delete Plot" Width="64"
+                                   Command="{Binding DeleteVFrameCommand}"/>
+                    <Fluent:Button Header="Show Selected VFrame Index" Width="64"
+                                   Command="{Binding ShowSelectedVFrameIndexCommand}"/>
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+            <Fluent:RibbonTabItem Header="Network" IsEnabled="False" >
+                <Fluent:RibbonGroupBox Header="info">
+                    <Fluent:Button Header="_Check Info" Width="64"
+                                   Command="{Binding CheckIPInfoCommand}">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe6c2;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:ComboBox Width="128" Header="IP" ItemsSource="{Binding Ips}"
+                                     SelectedItem="{Binding Ip, Mode=TwoWay}" />
+                    <Fluent:TextBox Header="Port" Text="{Binding Port}" Visibility="Hidden" />
+                    <Label Content="... of this computer"/>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="service" Visibility="Collapsed">
+                    <Fluent:Button Header="_Enable service" Width="64"
+                                   Command="{Binding EnableParallelServiceCommand}">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe6ad;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="_Start as node" Width="64"
+                                   Command="{Binding StartAsNodeCommand}">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe6d3;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="_Stop service" Width="64" 
+                                   IsEnabled="False">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe6d0;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="_Check status" Width="64"
+                                   IsEnabled="False">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe6a3;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="connection" Visibility="Collapsed">
+                    <Fluent:Button Header="_Hello to ..." Width="64"
+                                   Command="{Binding LinkToCommand}">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe6da;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:TextBox Header="IP" Text="{Binding IpTarget}" />
+                    <Fluent:TextBox Header="Port" Text="{Binding PortTarget}" />
+                    <Label Content="... of target computer"/>
+                    <Fluent:Button Header="_Link to ..." Width="64"
+                                   IsEnabled="False">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe6d5;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="run">
+                    <Fluent:Button Header="_Run..." Width="64"
+                                   Command="{Binding RunCommand}"
+                                   IsEnabled="true" >
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe66c;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+            <Fluent:RibbonTabItem Header="Help">
+                <Fluent:RibbonGroupBox Header="welcome" Visibility="Collapsed">
+                    <Fluent:Button Header="_Welcome" Width="64"
+                                   Command="{Binding }"
+                                   IsEnabled="False">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe697;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="help">
+                    <Fluent:Button Header="_Get started" Width="64"
+                                   Command="{Binding }"
+                                   IsEnabled="False">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe6b0;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="_VEMS Docs" Width="64"
+                                   Command="{Binding }"
+                                   IsEnabled="False">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe677;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="_Links" Width="64"
+                                   Command="{Binding }"
+                                   IsEnabled="False">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe6c0;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="_Help" Width="64"
+                                   Command="{Binding PrintHelpInfoCommand}"
+                                   IsEnabled="True">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe6b4;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="license">
+                    <Fluent:Button Header="_License info" Width="64"
+                                   Command="{Binding PrintLicenseInfoCommand}"
+                                   IsEnabled="True">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe6df;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="_Update app" Width="64"
+                                    Command="{Binding OpenDownloadPageForVEMSCommand}">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe68D;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox Header="about">
+                    <Fluent:Button Header="_About VEMS" Width="64"
+                                   Command="{Binding PrintAboutInfoCommand}">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe6c0;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="_Contact us" Width="64"
+                                   Command="{Binding PrintContactInfoCommand}"
+                                   IsEnabled="True">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe6dd;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Header="_Join" Width="64"
+                                   Command="{Binding }"
+                                   IsEnabled="False">
+                        <Fluent:Button.LargeIcon>
+                            <TextBlock Foreground="DimGray"
+                                       FontSize="32"
+                                       FontFamily="/Fonts/#iconfont"
+                                       Text="&#xe6e0;"/>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+        </Fluent:Ribbon>
+
+        <TabControl Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2"
+                    TabStripPlacement="Left"
+                    BorderThickness="0.0" Background="WhiteSmoke">
+            <TabItem Width="50" Height="50" Margin="-4,-6,0,0"
+                     Background="Gray" BorderBrush="Transparent" BorderThickness="0" >
+                <TabItem.Header>
+                    <TextBlock ToolTip="Files" Foreground="DarkGray" Background="Transparent"
+                               FontFamily="/Fonts/#iconfont" FontSize="32" Text="&#xe70f;">
+                    </TextBlock>
+                </TabItem.Header>
+                <Grid Margin="10,2,10,2" IsHitTestVisible="True">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="155"></ColumnDefinition>
+                            <ColumnDefinition Width="8*"></ColumnDefinition>
+                            <ColumnDefinition Width="35"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Content="Documents" Foreground="SteelBlue" FontSize="24" FontWeight="Normal" />
+                        <TextBox Grid.Column="1" Name="searchBox" Text="{Binding SearchModel.SearchName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged }" 
+                             Height="25" Margin="5,5,0,5"    VerticalContentAlignment="Center" Background="White" BorderBrush="LightGray" >
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="KeyUp">
+                                    <i:InvokeCommandAction Command="{Binding SearchFileCommand}" CommandParameter="Update"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </TextBox>
+                        <Button Grid.Column="2" Content="Aa" Width="25" Height="25" Margin="5,0,5,0"  HorizontalAlignment="Left"  
+                            Opacity="0.6"  Command="{Binding SearchCapitalBtnCommand}" >
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding searchModel.IsCapital}" Value="true">
+                                            <Setter Property="Background" Value="White"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding searchModel.IsCapital}" Value="false">
+                                            <Setter Property="Background" Value="Gray"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </Grid>
+                    <Separator Grid.Row="1"/>
+                    <ListView Grid.Row="2" Background="Transparent" BorderThickness="0.0"
+                          ItemsSource="{Binding AppFiles}" SelectedItem="{Binding SelectedVFileItem, Mode=TwoWay}"
+                          SelectionMode="Single" >
+                        <ListView.ContextMenu>
+                            <ContextMenu Name="cm"  StaysOpen="True">
+                                <MenuItem Header="New" IsEnabled="False"/>
+                                <MenuItem Header="Open" Command="{Binding LoadSelectedFileCommand}"/>
+                                <MenuItem Header="Open Containing Folder" Command="{Binding OpenContainingFolderCommand}"/>
+                                <MenuItem Header="Copy File Path" Command="{Binding CopyFilePathCommand}"/>
+                                <MenuItem Header="Copy Folder Path" Command="{Binding CopyFolderPathCommand}"/>
+                                <MenuItem Header="Rename" IsEnabled="False"/>
+                                <!--<MenuItem Header="Save" Command="{Binding SaveFileCommand}" />
+                                <MenuItem Header="SaveAs" Command="{Binding SaveFileAsCommand}" />-->
+                                <MenuItem Header="Delete"  Command="{Binding DeleteFileCommand}"/>
+                                <!--<MenuItem Header="Show Selected"  Command="{Binding ShowSelectedFileCommand}"/>-->
+                                <!--<MenuItem Header="Refresh"  Click="ContextMenuItem_Refresh" IsEnabled="False"/>-->
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="MouseDoubleClick">
+                                <i:InvokeCommandAction  Command="{Binding LoadSelectedFileCommand}" CommandParameter="Update"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </ListView>
+                    <Separator Grid.Row="3"/>
+                </Grid>
+            </TabItem>
+            <TabItem Width="50" Height="50" Margin="-4,-6,0,0"
+                     Background="Gray" BorderBrush="Transparent" BorderThickness="0">
+                <TabItem.Header>
+                    <TextBlock ToolTip="User Preference" Foreground="DarkGray" 
+                               FontFamily="/Fonts/#iconfont" FontSize="32" Text="&#xe702;">
+                    </TextBlock>
+                </TabItem.Header>
+                <StackPanel Margin="10,2,10,2" >
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="155"></ColumnDefinition>
+                            <ColumnDefinition Width="8*"></ColumnDefinition>
+                            <ColumnDefinition Width="48"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Content="Preference" Foreground="SteelBlue" FontSize="24" FontWeight="Normal" />
+                        <Button Grid.Column="2" Content="Save" Width="38" Height="25" Margin="5,0,5,0"  HorizontalAlignment="Left"  
+                                Opacity="0.6"  Command="{Binding Preference.SaveSettingsToXmlCommand}" >
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding searchModel.IsCapital}" Value="true">
+                                            <Setter Property="Background" Value="White"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding searchModel.IsCapital}" Value="false">
+                                            <Setter Property="Background" Value="Gray"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </Grid>
+                    <Separator/>
+                    <Grid Background="LightGray">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Directory" Foreground="DimGray" FontWeight="Bold"/>
+                        <Button Grid.Column="2" Width="64" Height="22" Background="{StaticResource ButtonColor}"
+                            Margin="4,0,4,0" HorizontalAlignment="Right" Content="Default" 
+                                Command="{Binding Preference.LoadDefaultDirectorySettingsCommand}"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" Content="Working Folder"/>
+                        <TextBox Grid.Row="0" Grid.Column="1" Height="20" BorderThickness="1" 
+                                HorizontalContentAlignment="Left"
+                                VerticalContentAlignment="Center" IsEnabled="true"
+                                Text="{Binding Preference.WorkingDirectory}" />
+                        <Button Grid.Row="0" Grid.Column="2" Content="Confirm" 
+                                Width="64" Margin="0,4,0,4" 
+                                Command="{Binding Preference.CheckWorkingDirectoryCommand}"/>
+                    </Grid>
+                    <Separator/>
+                    <Grid Background="LightGray">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Font" Foreground="DimGray" FontWeight="Bold"/>
+                        <Button Grid.Column="2" Width="64" Height="22" Background="{StaticResource ButtonColor}"
+                            Margin="4,0,4,0" HorizontalAlignment="Right" Content="Default" 
+                                Command="{Binding Preference.LoadDefaultFontSettingsCommand}"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" Content="Code Editor"/>
+                        <ComboBox Grid.Row="0" Grid.Column="1" Height="20" VerticalContentAlignment="Center"
+                                  ItemsSource="{Binding Preference.FontFamilyList}"
+                                  SelectedValue="{Binding Preference.CodeEditorFontFamily}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Source}" FontFamily="{Binding}" />
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="SelectionChanged">
+                                    <i:InvokeCommandAction Command="{Binding UpdateCodeEditorFontFamilyCommand}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </ComboBox>
+                        <ComboBox Grid.Row="0" Grid.Column="2" Height="20" VerticalContentAlignment="Center"
+                              ItemsSource="{Binding Preference.FontSizeList}"
+                              SelectedValue="{Binding Preference.CodeEditorFontSize}">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="SelectionChanged">
+                                    <i:InvokeCommandAction Command="{Binding UpdateCodeEditorFontSizeCommand}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </ComboBox>
+                        <Label Grid.Row="1" Grid.Column="0" Content="Output"/>
+                        <ComboBox Grid.Row="1" Grid.Column="1" Height="20" VerticalContentAlignment="Center"
+                              ItemsSource="{Binding Preference.FontFamilyList}"
+                              SelectedValue="{Binding Preference.ConsoleFontFamily}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Source}" FontFamily="{Binding}" />
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="SelectionChanged">
+                                    <i:InvokeCommandAction Command="{Binding UpdateConsoleFontFamilyCommand}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </ComboBox>
+                        <ComboBox Grid.Row="1" Grid.Column="2" Height="20"
+                              ItemsSource="{Binding Preference.FontSizeList}"
+                              SelectedValue="{Binding Preference.ConsoleFontSize}">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="SelectionChanged">
+                                    <i:InvokeCommandAction Command="{Binding UpdateConsoleFontSizeCommand}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </ComboBox>
+                    </Grid>
+                    <Separator/>
+                    <Grid Background="LightGray">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Number" Foreground="DimGray" FontWeight="Bold"/>
+                        <Button Grid.Column="2" Width="64" Height="22" Background="{StaticResource ButtonColor}"
+                            Margin="4,0,4,0" HorizontalAlignment="Right" Content="Default" 
+                                Command="{Binding DefaultPrinterCommand}"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Content="Culture/Region"/>
+                        <ComboBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Height="20" VerticalContentAlignment="Center"
+                                  ItemsSource="{Binding Preference.CultureList}"
+                                  SelectedValue="{Binding Preference.Culture}">
+                        </ComboBox>
+                        <Label Grid.Row="1" Grid.Column="0" Content="Numeric Format"/>
+                        <ComboBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Height="20" VerticalContentAlignment="Center"
+                                  ItemsSource="{Binding Preference.NumberFormatList}" 
+                                  SelectedValue="{Binding Preference.NumberFormat}">
+                        </ComboBox>
+                        <Label Grid.Row="2" Grid.Column="0" Content="Number of Digits" />
+                        <TextBox Grid.Row="2" Grid.Column="1" Height="20" BorderThickness="1" 
+                                HorizontalContentAlignment="Left"
+                                VerticalContentAlignment="Center"
+                                Text="{Binding Preference.NumberOfDigits}" />
+                        <Button Grid.Row="2" Grid.Column="2" Content="Confirm" 
+                                Width="64" Margin="0,4,0,4" 
+                                Command="{Binding Preference.CheckNumberOfDigitsCommand}"/>
+                        <Label Grid.Row="3" Grid.Column="0" Content="Complex Format"/>
+                        <ComboBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Height="20" VerticalContentAlignment="Center"
+                                  ItemsSource="{Binding Preference.ComplexFormatList}" 
+                                  SelectedValue="{Binding Preference.ComplexNumberFormat}">
+                        </ComboBox>
+                        <Label Grid.Row="4" Grid.Column="0" Content="Column Separator"/>
+                        <ComboBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Height="20" VerticalContentAlignment="Center"
+                                  ItemsSource="{Binding Preference.CharSeparatorList}" 
+                                  SelectedValue="{Binding Preference.ColumnSeparator}">
+                        </ComboBox>
+                    </Grid>
+                    <Separator/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Width="50" Height="50" Margin="-4,-6,0,0"
+                     Background="Gray" BorderBrush="Transparent" BorderThickness="0">
+                <TabItem.Header >
+                    <TextBlock ToolTip="Performance Settings" Foreground="DarkGray"
+                               FontFamily="/Fonts/#iconfont" FontSize="32" Text="&#xe709;" >
+                    </TextBlock>
+                </TabItem.Header>
+                <StackPanel Margin="10,2,10,2" >
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="155"></ColumnDefinition>
+                            <ColumnDefinition Width="8*"></ColumnDefinition>
+                            <ColumnDefinition Width="48"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Content="Performance" Foreground="SteelBlue" FontSize="24" FontWeight="Normal" />
+                        <Button Grid.Column="2" Content="Save" Width="38" Height="25" Margin="5,0,5,0"  HorizontalAlignment="Left"  
+                                Opacity="0.6"  Command="{Binding Performance.SaveSettingsToXmlCommand}" >
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding searchModel.IsCapital}" Value="true">
+                                            <Setter Property="Background" Value="White"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding searchModel.IsCapital}" Value="false">
+                                            <Setter Property="Background" Value="Gray"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </Grid>
+                    <Separator/>
+                    <Grid Background="LightGray">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Content="CPU" Foreground="DimGray" FontWeight="Bold"/>
+                        <Button Grid.Column="2" Width="64" Height="22" 
+                            Margin="4,0,4,0" HorizontalAlignment="Right" Content="Default" Style="{StaticResource ButtonStyle}"
+                            Command="{Binding Performance.LoadDefaultSettingsCommand}"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" Content="Number of Cores" />
+                        <TextBox Grid.Row="0" Grid.Column="1" Height="20" BorderThickness="1"
+                             HorizontalContentAlignment="Left"
+                             VerticalContentAlignment="Center"
+                             Text="{Binding Performance.NumberOfCPUCores}"/>
+                        <Button Grid.Row="0" Grid.Column="2" Content="Confirm" 
+                            Width="64" Margin="0,4,0,4" Command="{Binding Performance.CheckNumberOfCPUCoresCommand}"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Content="BLAS Library" />
+                        <ComboBox Grid.Row="1" Grid.Column="1" Height="24" IsEnabled="False"/>
+                        <Button Grid.Row="1" Grid.Column="2" Content="Auto" IsEnabled="False"
+                            Width="64" Margin="0,4,0,4"/>
+
+                        <Label Grid.Row="2" Grid.Column="0" Content="LAPACK Library" />
+                        <ComboBox Grid.Row="2" Grid.Column="1" Height="24" IsEnabled="False"/>
+                        <Button Grid.Row="2" Grid.Column="2" Content="Auto" IsEnabled="False"
+                            Width="64" Margin="0,4,0,4"/>
+
+                        <Label Grid.Row="3" Grid.Column="0" Content="FFT Library" />
+                        <ComboBox Grid.Row="3" Grid.Column="1" Height="24" IsEnabled="False" />
+                        <Button Grid.Row="3" Grid.Column="2" Content="Auto" IsEnabled="False"
+                            Width="64" Margin="0,4,0,4"/>
+
+                    </Grid>
+                    <Separator/>
+                    <Grid Background="LightGray">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Content="Benchmark" Foreground="DimGray" FontWeight="Bold"/>
+                        <Button Grid.Column="2" Width="64" Height="22" Margin="4,0,4,0" 
+                                HorizontalAlignment="Right" Content="Default" Style="{StaticResource ButtonStyle}" 
+                                Command="{Binding Benchmark.LoadDefaultSettingsCommand}"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" Content="Number of Test Runs" />
+                        <TextBox Grid.Row="0" Grid.Column="1" Height="20" BorderThickness="1" 
+                                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
+                                 Text="{Binding Benchmark.NumberOfTestRuns}"/>
+                        <Button Grid.Row="0" Grid.Column="2" Content="Confirm" Width="64" Margin="0,4,0,4" 
+                                Command="{Binding Benchmark.CheckNumberOfTestRunsCommand}"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Content="Matrix Product" />
+                        <CheckBox Grid.Row="1" Grid.Column="1" Height="24" Content="Complex" VerticalContentAlignment="Center"
+                                  IsChecked="{Binding Benchmark.IsMatrixProductComplex}"/>
+                        <Button Grid.Row="1" Grid.Column="2" Content="Run" IsEnabled="True" Width="64" Margin="0,4,0,4"
+                                Command="{Binding Benchmark.MatrixProductCommand}"/>
+
+                        <Label Grid.Row="2" Grid.Column="0" Content="Linear System Solve" />
+                        <CheckBox Grid.Row="2" Grid.Column="1" Height="24" Content="Complex" VerticalContentAlignment="Center"
+                                  IsChecked="{Binding Benchmark.IsLinearSolveComplex}"/>
+                        <Button Grid.Row="2" Grid.Column="2" Content="Run" IsEnabled="True" Width="64" Margin="0,4,0,4"
+                                Command="{Binding Benchmark.LinearSolveCommand}"/>
+
+                        <Label Grid.Row="3" Grid.Column="0" Content="Singular Value Decompose" />
+                        <CheckBox Grid.Row="3" Grid.Column="1" Height="24" Content="Complex" VerticalContentAlignment="Center"
+                                  IsChecked="{Binding Benchmark.IsMatrixSVDComplex}"/>
+                        <Button Grid.Row="3" Grid.Column="2" Content="Run" IsEnabled="True" Width="64" Margin="0,4,0,4"
+                                Command="{Binding Benchmark.MatrixSVDCommand}"/>
+
+                        <Label Grid.Row="4" Grid.Column="0" Content="Eigenvalue Decompose" />
+                        <CheckBox Grid.Row="4" Grid.Column="1" Height="24" Content="Complex" VerticalContentAlignment="Center"
+                                  IsChecked="{Binding Benchmark.IsMatrixEigenComplex}"/>
+                        <Button Grid.Row="4" Grid.Column="2" Content="Run" IsEnabled="True" Width="64" Margin="0,4,0,4"
+                                Command="{Binding Benchmark.MatrixEigenCommand}"/>
+
+                        <Label Grid.Row="5" Grid.Column="0" Content="Fast Fourier Transform" />
+                        <CheckBox Grid.Row="5" Grid.Column="1" Height="24" Content="Complex" VerticalContentAlignment="Center"
+                                  IsEnabled="False"
+                                  IsChecked="{Binding Benchmark.IsMatrixFFTComplex}"/>
+                        <Button Grid.Row="5" Grid.Column="2" Content="Run" IsEnabled="True" Width="64" Margin="0,4,0,4"
+                                Command="{Binding Benchmark.MatrixFFTCommand}"/>
+
+                    </Grid>
+                    <Separator/>
+
+                </StackPanel>
+            </TabItem>
+            <TabItem Width="50" Height="50" Margin="-4,-6,0,0"
+                     Background="Gray" BorderBrush="Transparent" BorderThickness="0">
+                <TabItem.Header >
+                    <TextBlock ToolTip="Default Parameters" Foreground="DarkGray"
+                               FontFamily="/Fonts/#iconfont" FontSize="32" Text="&#xe711;" >
+                    </TextBlock>
+                </TabItem.Header>
+                <StackPanel>
+                    
+                </StackPanel>
+            </TabItem>
+            <TabItem Visibility="Hidden" Width="50" Height="50" Margin="-4,-6,0,0"
+                     Background="Gray" BorderBrush="Transparent" BorderThickness="0">
+                <TabItem.Header>
+                    <TextBlock ToolTip="Workspace" Foreground="DarkGray"
+                               FontFamily="/Fonts/#iconfont" FontSize="32" Text="&#xe6fc;" >
+                    </TextBlock>
+                </TabItem.Header>
+                <Grid Margin="10,2,10,2" IsHitTestVisible="True">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="155"></ColumnDefinition>
+                            <ColumnDefinition Width="8*"></ColumnDefinition>
+                            <ColumnDefinition Width="35"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Content="Workspace" Foreground="SteelBlue" FontSize="24" FontWeight="Normal" />
+                    </Grid>
+                    <Separator Grid.Row="1"/>
+                    <TreeView Grid.Row="2" x:Name="MTrv" Background="Transparent" 
+                              BorderBrush="Transparent" BorderThickness="0">
+                        <!--ItemsSource="{Binding AppTree.Items}">-->
+                        <TreeView.Resources>
+                            <Style TargetType="local:VTreeItem">
+                                <Setter Property="HeaderTemplate">
+                                    <Setter.Value>
+                                        <DataTemplate>
+                                            <Border>
+                                                <TextBlock Text="{Binding}"/>
+                                                <Border.Style>
+                                                    <Style TargetType="Border">
+                                                        <Setter Property="Height" Value="20"/>
+                                                        <Setter Property="BorderThickness" Value="1"/>
+                                                        <Setter Property="BorderBrush" Value="Transparent"/>
+                                                        <Style.Triggers>
+                                                            <MultiDataTrigger>
+                                                                <MultiDataTrigger.Conditions>
+                                                                    <Condition Binding="{Binding RelativeSource={RelativeSource Self},
+                                                                        Path=IsMouseOver}" Value="True"/>
+                                                                    <Condition Binding="{Binding RelativeSource={RelativeSource AncestorType=local:VTreeItem},
+                                                                        Path=IsSelected}" Value="False"/>
+                                                                </MultiDataTrigger.Conditions>
+                                                                <Setter Property="Background" Value="AliceBlue"/>
+                                                                <Setter Property="BorderBrush" Value="SteelBlue"/>
+                                                            </MultiDataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Border.Style>
+                                            </Border>
+                                        </DataTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </TreeView.Resources>
+                        <TreeView.ContextMenu>
+                            <ContextMenu StaysOpen="True">
+                                <MenuItem Header="New" IsEnabled="False"/>
+                                <MenuItem Header="Open" Command="{Binding TrvLoadSelectedFileCommand}"/>
+                                <MenuItem Header="Open Containing Folder" Command="{Binding TrvOpenContainingFolderCommand}"/>
+                                <MenuItem Header="Copy File Path" Command="{Binding TrvCopyFilePathCommand}"/>
+                                <MenuItem Header="Copy Folder Path" Command="{Binding TrvCopyFolderPathCommand}"/>
+                                <MenuItem Header="Rename" IsEnabled="False"/>
+                                <!--<MenuItem Header="Save" Command="{Binding SaveFileCommand}" />
+                                <MenuItem Header="SaveAs" Command="{Binding SaveFileAsCommand}" />-->
+                                <MenuItem Header="Delete"  Command="{Binding TrvDeleteFileCommand}"/>
+                                <!--<MenuItem Header="Show Selected"  Command="{Binding ShowSelectedFileCommand}"/>-->
+                                <!--<MenuItem Header="Refresh"  Click="ContextMenuItem_Refresh" IsEnabled="False"/>-->
+                            </ContextMenu>
+                        </TreeView.ContextMenu>
+                    </TreeView>
+                    <Separator Grid.Row="3"/>
+                </Grid>
+            </TabItem>
+            <TabControl.Resources>
+                <Style TargetType="TabItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="TabItem">
+                                <Grid>
+                                    <Border Name="Border" Background="Transparent"
+                                            BorderBrush="Transparent" 
+                                            BorderThickness="0"
+                                            CornerRadius="0">
+                                        <ContentPresenter x:Name="ContentSite"
+                                                          VerticalAlignment="Center"
+                                                          HorizontalAlignment="Center"
+                                                          ContentSource="Header"
+                                                          Margin="0"
+                                                          RecognizesAccessKey="True"/>
+                                    </Border>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="Border" Property="Background" Value="WhiteSmoke" />
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="Border" Property="Background" Value="WhiteSmoke" />
+                                        <Setter TargetName="Border" Property="BorderThickness" Value="0,2,0,2" />
+                                        <Setter TargetName="Border" Property="BorderBrush" Value="LightSteelBlue" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TabControl.Resources>
+        </TabControl>
+
+        <Grid Grid.Column="3" Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Margin="10,2,10,2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="353*"/>
+                    <RowDefinition Height="118*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Orientation="Horizontal" >
+                    <Label Content="Code Editor" Foreground="SteelBlue"
+                       FontSize="24" FontWeight="Normal" />
+                </StackPanel>
+                <Separator Grid.Row="1" Margin="0,2,0,2"/>
+                <TabControl Grid.Row="1" Name="tabs" ItemsSource="{Binding VEditTabs}"
+                            BorderThickness="0.0" SelectedIndex="{Binding SelectedTabIndex}" Margin="0,5,0,5" Grid.RowSpan="4">
+                    <TabControl.Resources>
+                        <Style TargetType="local:REditTab">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="TabItem">
+                                        <Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="Gainsboro" CornerRadius="2,2,0,0" Margin="1,0">
+                                            <ContentPresenter x:Name="ContentSite" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                                              ContentSource="Header" Margin="10,2"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter TargetName="Border" Property="Background" Value="LightSteelBlue" />
+                                                <Setter Property="TextElement.FontWeight" TargetName="ContentSite" Value="SemiBold"/>
+                                            </Trigger>
+                                            <Trigger Property="IsSelected" Value="False">
+                                                <Setter TargetName="Border" Property="Background" Value="WhiteSmoke" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </TabControl.Resources>
+                </TabControl>
+                <Separator Grid.Row="4" Margin="0,2,0,2"/>
+            </Grid>
+            <GridSplitter Grid.Row="1" Height="5" VerticalAlignment="Center" HorizontalAlignment="Stretch"
+                          Background="{StaticResource SplitterColor}" ShowsPreview="True">
+            </GridSplitter>
+            <Grid Grid.Row="2" Margin="10,2,10,2" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Orientation="Horizontal">
+                    <Label Content="Output" Foreground="SteelBlue"
+                       FontSize="24" FontWeight="Normal" />
+                </StackPanel>
+                <Separator Grid.Row="1"></Separator>
+                <TabControl Grid.Row="2" BorderThickness="0.0" >
+                    <TabControl.Resources>
+                        <Style TargetType="TabItem">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="TabItem">
+                                        <Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="Gainsboro" CornerRadius="2,2,0,0" Margin="1,0">
+                                            <ContentPresenter x:Name="ContentSite" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                                              ContentSource="Header" Margin="10,2"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter TargetName="Border" Property="Background" Value="LightSteelBlue" />
+                                                <Setter Property="TextElement.FontWeight" TargetName="ContentSite" Value="SemiBold"/>
+                                            </Trigger>
+                                            <Trigger Property="IsSelected" Value="False">
+                                                <Setter TargetName="Border" Property="Background" Value="WhiteSmoke" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </TabControl.Resources>
+                    <TabItem Header="Messages">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="10*"></ColumnDefinition>
+                                <ColumnDefinition Width="40"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Margin="0,4,0,0" Height="Auto"  Grid.Column="0"
+                                 x:Name="txtBox_Console" VerticalAlignment="Stretch"
+                                 TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True" VerticalScrollBarVisibility="Auto" 
+                                 BorderBrush="LightGray" BorderThickness="0.0" Foreground="DimGray"
+                                 FontFamily="{Binding VConsole.FontFamily}"
+                                 FontSize="{Binding VConsole.FontSize}" 
+                                 Text="{Binding VConsole.Content}">
+                                                    </TextBox>
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0" >
+                                    <Button  VerticalAlignment="Bottom" Background="transparent" BorderBrush="Transparent"  
+                                             Command="{Binding CopyConsoleTextCommand}" ToolTip="Copy message" ToolTipService.InitialShowDelay="100">
+                                        <TextBlock Foreground="DimGray" FontSize="32" FontFamily="/Fonts/#iconfont"
+                                        Text="&#xe6d5;"  VerticalAlignment="Top"/>
+                                    </Button>
+                                </Grid>
+                                <Grid Grid.Row="1" >
+                                    <Button  VerticalAlignment="Bottom" Background="transparent" BorderBrush="Transparent" 
+                                             Command="{Binding ClearConsoleCommand}" ToolTip="Clear message" ToolTipService.InitialShowDelay="100">
+                                        <TextBlock Foreground="DimGray" FontSize="32" FontFamily="/Fonts/#iconfont"
+                                        Text="&#xe6c4;"  VerticalAlignment="Bottom"/>
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Figures">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="10*"></ColumnDefinition>
+                                <ColumnDefinition Width="40"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <DataGrid Grid.Column="0"  RowHeight="24" Margin="0,4,0,0" Background="Transparent"
+                              TextBlock.FontStyle="Normal" CanUserSortColumns="False"
+                              Style="{StaticResource DataGridStyle}" HeadersVisibility="Column"
+                              RowStyle="{StaticResource DataGridRowStyle}"
+                              ItemsSource="{Binding AppFrames}"
+                              SelectedIndex="{Binding SelectedVFrameIndex}">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="_Plot Document" Width="3*"
+                                        ElementStyle="{StaticResource TextBlockStyle}"
+                                        Binding="{Binding DocName}"/>
+                                    <DataGridTemplateColumn Header="_Manipulation" Width="4*">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                        <Button Content="Show up" Grid.Column="0" Height="20" Margin="2,0,2,0"
+                                                            HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                                                            Command="{Binding DataContext.ShowUpSelectedVFrameCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}}"/>
+                                                        <Button Content="Minimize" Grid.Column="1" Height="20" Margin="2,0,2,0"
+                                                            HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                                                            Command="{Binding DataContext.MinimizeSelectedVFrameCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}}"/>
+                                                    <Button Content="Close" Grid.Column="2" Height="20" Margin="2,0,2,0"
+                                                            HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                                                            Command="{Binding DataContext.CloseSelectedVFrameCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}}"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTextColumn Header="_User Comment" Width="9*"
+                                         ElementStyle="{StaticResource TextBlockStyle}"
+                                         Binding ="{Binding UserComment}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <Grid Grid.Column="1"  Margin="0,4,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0" >
+                                    <Button  VerticalAlignment="Bottom" Background="transparent" BorderBrush="Transparent"  
+                                        Command="{Binding MinimizeAllVFramesCommand}" ToolTip="All figures minimized" ToolTipService.InitialShowDelay="100">
+                                        <TextBlock Foreground="DimGray" FontSize="32" FontFamily="/Fonts/#iconfont"
+                                            Text="&#xe6ac;"  VerticalAlignment="Top"/>
+                                    </Button>
+                                </Grid>
+                                <Grid Grid.Row="1">
+                                    <Button  VerticalAlignment="Bottom" Background="transparent" BorderBrush="Transparent" 
+                                        Command="{Binding CloseAllVFramesCommand}" ToolTip="Close all figures" ToolTipService.InitialShowDelay="100">
+                                        <TextBlock Foreground="DimGray" FontSize="32" FontFamily="/Fonts/#iconfont"
+                                            Text="&#xe696;"  VerticalAlignment="Bottom"/>
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                        
+                    </TabItem>
+                </TabControl>
+            </Grid>
+        </Grid>
+
+    </Grid>
+
+</Window>

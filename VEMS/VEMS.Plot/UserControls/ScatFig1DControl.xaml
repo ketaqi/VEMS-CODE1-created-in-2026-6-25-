@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="VEMS.Plot.ScatFig1DControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VEMS.Plot"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1200">
+    
+    <Grid ShowGridLines="True" Background="White">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" Name="PlotColumn"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="460" Name="AdvColumn"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <GridSplitter Grid.Column="1" Grid.Row="1" Width="2"
+                      VerticalAlignment="Stretch" HorizontalAlignment="Center"
+                      Background="Transparent" ShowsPreview="True">
+        </GridSplitter>
+
+        <Menu Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+            <MenuItem Header="_File" Height="24" >
+                <MenuItem Header="_Save As" Height="24"/>
+                <MenuItem Header="_Export" Height="24"/>
+            </MenuItem>
+            <MenuItem Header="_Functions" Height="24">
+                <MenuItem Header="_Test" Height="24" />
+                <MenuItem Header="_Fourier Transform" Height="24"/>
+                <MenuItem Header="_FFT" Height="24"/>
+                <MenuItem Header="_Normalize" Height="24"/>
+            </MenuItem>
+            <CheckBox Content="_Advanced Options" Name="AdvancedCheckBox" IsChecked="True"/>
+        </Menu>
+        <WpfPlot Grid.Row="1" Grid.Column="0" Margin="2"
+                 BorderThickness="0.5" BorderBrush="LightGray"
+                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                 Focusable="False" AllowDrop="True" Name="PlotFrame">
+        </WpfPlot>
+        <ScrollViewer Grid.Row="1" Grid.Column="2" Margin="2"
+                      BorderBrush="LightGray" BorderThickness="0.5"
+                      VerticalScrollBarVisibility="Auto">
+            
+        </ScrollViewer>
+
+
+    </Grid>
+
+</UserControl>

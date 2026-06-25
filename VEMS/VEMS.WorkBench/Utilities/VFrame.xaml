@@ -1,0 +1,51 @@
+﻿<Window x:Class="VEMS.WorkBench.VFrame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VEMS.Plot;assembly=VEMS.Plot"
+        mc:Ignorable="d"
+        Title="VFrame" Height="600" Width="1080">
+    <Window.Resources>
+        <RoutedCommand x:Key="CopyImageKey"/>
+        <RoutedCommand x:Key="SaveImageKey"/>
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource CopyImageKey}" Executed="CopyImage_Executed"/>
+        <CommandBinding Command="{StaticResource SaveImageKey}" Executed="SaveImage_Executed"/>
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Gesture="Ctrl+C" Command="{StaticResource CopyImageKey}"/>
+        <KeyBinding Gesture="Ctrl+S" Command="{StaticResource SaveImageKey}"/>
+    </Window.InputBindings>
+    
+    <Grid ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="24"/>
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="_File" Height="24">
+                <MenuItem Header="_Image" >
+                    <MenuItem Header="_Save Image (Ctrl+S)" Click="Show_PathDialog"/>
+                    <MenuItem Header="_Copy Image (Ctrl+C)" Click="Copy_ImgeClick"/>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Functions" Height="24">
+                <MenuItem Header="_Width Info" Click="WidthInfo_Click"/>
+                <MenuItem Header="_Delete Last Plot" Click="DeleteLast_Click"/>
+                <!--<MenuItem Header="_Show Data Label" Click="ShowDataLabel_Click" />-->
+            </MenuItem>
+            <!--<CheckBox Content="_Advanced Options" Name="AdvCheckBox"
+                      IsChecked="True"
+                      Checked="AdvCheckBox_Checked"
+                      Unchecked="AdvCheckBox_Unchecked"/>-->
+        </Menu>
+        <local:FrameExt Grid.Row="1" x:Name="FrameExt"/>
+        <Border Grid.Row="2" Background="LightSteelBlue"/>
+    </Grid>
+    
+
+
+</Window>

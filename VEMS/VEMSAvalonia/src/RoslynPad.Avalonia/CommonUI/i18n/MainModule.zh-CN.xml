@@ -1,0 +1,114 @@
+﻿<!-- MainModule.zh-CN.xml -->
+<Localization language="Chinese (Simplified)" description="中文简体" cultureName="zh-CN">
+  <MainWindow>
+    <ButtonContent>操作按钮</ButtonContent>
+    <ButtonContent1>操作按钮1</ButtonContent1>
+    <ButtonContent2>操作按钮2</ButtonContent2>
+      <Explorer>资源管理器</Explorer>
+      <MenuItem0>Ctrl+N</MenuItem0>
+    <MenuItem1>文件</MenuItem1>
+      <MenuItem11>文件</MenuItem11>
+      <MenuItem111>新建&#x000A;文件</MenuItem111>
+      <MenuItem112>打开&#x000A;文件</MenuItem112>
+      <MenuItem12>文件夹</MenuItem12>
+      <MenuItem121>打开&#x000A;文件夹</MenuItem121>
+      <MenuItem122>关闭&#x000A;文件夹</MenuItem122>
+      <MenuItem13>保存</MenuItem13>
+      <MenuItem131>保存&#x000A;文件</MenuItem131>
+      <MenuItem132>另存&#x000A;文件</MenuItem132>
+      <MenuItem133>保存&#x000A;全部</MenuItem133>
+      <MenuItem14>关闭</MenuItem14>
+      <MenuItem141>关闭&#x000A;当前</MenuItem141>
+      <MenuItem142>关闭&#x000A;全部</MenuItem142>
+      <MenuItem143>退出&#x000A;应用</MenuItem143>
+      <MenuItem2>代码</MenuItem2>
+      <MenuItem21>查询</MenuItem21>
+      <MenuItem211>查找&#x000A;</MenuItem211>
+      <MenuItem212>替换&#x000A;</MenuItem212>
+      <MenuItem22>格式</MenuItem22>
+      <MenuItem221>代码&#x000A;格式</MenuItem221>
+      <MenuItem23>comment</MenuItem23>
+      <MenuItem231>注释&#x000A;代码</MenuItem231>
+      <MenuItem232>取消&#x000A;注释</MenuItem232>
+      <MenuItem24>编译</MenuItem24>
+      <MenuItem241>调试&#x000A;</MenuItem241>
+      <MenuItem242>运行&#x000A;</MenuItem242>
+      <MenuItem25>编程</MenuItem25>
+      <MenuItem251>创建&#x000A;类</MenuItem251>
+      <MenuItem252>创建&#x000A;方法</MenuItem252>
+      <MenuItem3>输出</MenuItem3>
+      <MenuItem31>信息</MenuItem31>
+      <MenuItem311>复制&#x000A;信息</MenuItem311>
+      <MenuItem312>清空&#x000A;信息</MenuItem312>
+      <MenuItem32>figures</MenuItem32>
+      <MenuItem321>视图&#x000A;最小化</MenuItem321>
+      <MenuItem322>关闭&#x000A;视图</MenuItem322>
+      <MenuItem4>帮助</MenuItem4>
+      <MenuItem41>帮助</MenuItem41>
+      <MenuItem411>定位&#x000A;</MenuItem411>
+      <MenuItem412>VEMS&#x000A;文档</MenuItem412>
+      <MenuItem413>链接&#x000A;</MenuItem413>
+      <MenuItem414>帮助&#x000A;</MenuItem414>
+      <MenuItem42>许可证</MenuItem42>
+      <MenuItem421>许可&#x000A;时效</MenuItem421>
+      <MenuItem422>更新&#x000A;</MenuItem422>
+      <MenuItem43>关于</MenuItem43>
+      <MenuItem431>关于&#x000A;VEMS</MenuItem431>
+      <MenuItem432>联系&#x000A;我们</MenuItem432>
+      <MenuItem433>加入&#x000A;我们</MenuItem433>
+      
+      <!-- 左侧活动栏 -->
+      <leftMenuItem1>资源管理器</leftMenuItem1>
+      <leftMenuItem2>用户偏好</leftMenuItem2>
+      <leftMenuItem3>性能设置</leftMenuItem3>
+      <!--<leftMenuItem4>默认参数</leftMenuItem4>-->
+      <leftMenuItem5>拓展</leftMenuItem5>
+      <leftMenuItem7>运行和调试</leftMenuItem7>
+
+
+     
+      <!-- 输出功能区 -->
+      <OutputMenuItem1>树形输出</OutputMenuItem1>
+      <OutputMenuItem2>文本输出</OutputMenuItem2>
+
+      <HomeItem0>主页</HomeItem0>
+      <!-- 设置功能区 -->
+      <SettingItem>设置</SettingItem>
+      <SettingItem1>语言</SettingItem1>
+      <SettingItem2>中文</SettingItem2>
+      <SettingItem3>英文</SettingItem3>
+      <SettingItem4>主题</SettingItem4>
+      <SettingItem5>Light</SettingItem5>
+      <SettingItem6>Dark</SettingItem6>
+      <SettingItem7>OldVEMS</SettingItem7>
+      <SettingItem8>Quiet</SettingItem8>
+      <SettingItem9>Solarized</SettingItem9>
+      <SettingItem10>Red</SettingItem10>
+      <SettingItem11>Abyss</SettingItem11>
+      <SettingItem12>KimbieDark</SettingItem12>
+
+      <!-- 主页功能区 -->
+      <HomeItem>当前系统</HomeItem>
+      <HomeItem1>当前主题</HomeItem1>
+      <HomeItem2>当前语言</HomeItem2>
+      <HomeItem3>编辑器字号</HomeItem3>
+      <HomeItem4>输出区字号</HomeItem4>
+      <HomeItem5>输出字体</HomeItem5>
+      <HomeItem6>编辑器字体</HomeItem6>
+      <!-- 右键菜单区 -->
+      <RightMenuItem0>新建文件</RightMenuItem0>
+      <RightMenuItem1>新建文件夹</RightMenuItem1>
+      <RightMenuItem2>打开</RightMenuItem2>
+      <RightMenuItem3>打开所在的文件夹</RightMenuItem3>
+      <RightMenuItem4>复制文件路径</RightMenuItem4>
+      <RightMenuItem5>复制文件夹路径</RightMenuItem5>
+      <RightMenuItem6>重命名</RightMenuItem6>
+      <RightMenuItem7>删除</RightMenuItem7>
+      <!-- 编辑器右键菜单区 -->
+      <RightMenuItem8>全选</RightMenuItem8>
+      <RightMenuItem9>复制</RightMenuItem9>
+      <RightMenuItem10>剪切</RightMenuItem10>
+      <RightMenuItem11>粘贴</RightMenuItem11>
+  
+  </MainWindow>
+</Localization>

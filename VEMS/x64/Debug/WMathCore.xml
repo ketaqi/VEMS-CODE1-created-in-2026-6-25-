@@ -1,0 +1,3210 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        "WMathCore"
+    </assembly>
+    <members>
+        <member name="M:WMathCore.WLinAlg.SparseStatusConverter(sparse_status_t)">
+            <summary>
+converts sparse status to integer format
+</summary>
+            <param name="status"> input sparse status </param>
+            <returns> output in integer format </returns>
+            <summary>
+converts sparse status to integer format
+</summary>
+            <param name="status"> input sparse status </param>
+            <returns> output in integer format </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseMemoryUsageConverter(System.Int32)">
+            <summary>
+converts sparse memory usage from integer format
+into the sparse_memoery_usage_t format
+</summary>
+            <param name="usage"> input in the integer format </param>
+            <returns> output in the sparse_memory_usage_t format </returns>
+            <summary>
+converts sparse memory usage from integer format
+into the sparse_memoery_usage_t format
+</summary>
+            <param name="usage"> input in the integer format </param>
+            <returns> output in the sparse_memory_usage_t format </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseLayoutConverter(System.Int32)">
+            <summary>
+converts sparse layout from integer format
+into the sparse_layout_t format
+</summary>
+            <param name="layout"> input in the integer format </param>
+            <returns> output in the sparse_layout_t format </returns>
+            <summary>
+converts sparse layout from integer format
+into the sparse_layout_t format
+</summary>
+            <param name="layout"> input in the integer format </param>
+            <returns> output in the sparse_layout_t format </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseDiagTypeConverter(System.Int32)">
+            <summary>
+converts sparse diagonal type from integer format
+into the sparse_diag_type_t format
+</summary>
+            <param name="type"> input in the integer format </param>
+            <returns> output in the sparse_diag_type_t format </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseFillModeConverter(System.Int32)">
+            <summary>
+converts sparse fill mode from integer format
+to the sparse_fill_mode_t format
+</summary>
+            <param name="mode"> input in the integer format </param>
+            <returns> output in the sparse_fill_mode_t format </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseMatrixTypeConverter(System.Int32)">
+            <summary>
+converts sparse matrix type from integer format
+to the sparse_matrix_type_t format
+</summary>
+            <param name="type"> input in the integer format </param>
+            <returns> output in the sparse_matrix_type_t format </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseOperationConverter(System.Int32)">
+            <summary>
+convetst operation option from integer format
+to the sparse_operation_t format
+</summary>
+            <param name="operation"> input in the integer format </param>
+            <returns> output in the sparse_operation_t format </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseQRRsolve(WMathCore.WMatrixDi,System.Int32,System.Int32,System.Int64,System.Double*,System.Int64,System.Double*,System.Int64)">
+            <summary>
+second stage of the solving step of the SPARSE QR solver
+</summary>
+            <param name="a"> sparse matrix a </param>
+            <param name="operation"> operation on the sparse matrix a </param>
+            <param name="layout"> storage scheme for the dense matrix </param>
+            <param name="columns"> number of columns in matrix b </param>
+            <param name="x"> dense matrix x </param>
+            <param name="ldx"> leading dimension of matrix x </param>
+            <param name="b"> dense matrix b </param>
+            <param name="ldb"> leading dimension of matrix b </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseQRQmult(WMathCore.WMatrixDi,System.Int32,System.Int32,System.Int64,System.Double*,System.Int64,System.Double*,System.Int64)">
+            <summary>
+first stage of the solving step of the SPARSE QR solver
+</summary>
+            <param name="a"> sparse matrix a </param>
+            <param name="operation"> operation on the sparse matrix a </param>
+            <param name="layout"> storage scheme for the dense matrix </param>
+            <param name="columns"> number of columns in matrix b </param>
+            <param name="x"> dense matrix x </param>
+            <param name="ldx"> leading dimension of matrix x </param>
+            <param name="b"> dense matrix b </param>
+            <param name="ldb"> leading dimension of matrix b </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseQRSolve(WMathCore.WMatrixDi,System.Double*,System.Int32,System.Int32,System.Int64,System.Double*,System.Int64,System.Double*,System.Int64)">
+            <summary>
+solving step of the SPARSE QR solver
+</summary>
+            <param name="a"> sparse matrix a </param>
+            <param name="alt_values"> alternative values </param>
+            <param name="operation"> operation on the sparse matrix a </param>
+            <param name="layout"> storage scheme for the dense matrix </param>
+            <param name="columns"> number of columns in matrix b </param>
+            <param name="x"> dense matrix x </param>
+            <param name="ldx"> leading dimension of matrix x </param>
+            <param name="b"> dense matrix b </param>
+            <param name="ldb"> leading dimension of matrix b </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseQRFactorize(WMathCore.WMatrixDi,System.Double*)">
+            <summary>
+factorization step of the SPARSE QR solver
+</summary>
+            <param name="a"> sparse matrix a </param>
+            <param name="alt_values"> alternative values </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseQRReorder(WMathCore.WMatrixDi,System.Int32,System.Int32,System.Int32)">
+            <summary>
+reordering step of SPARSE QR solver
+</summary>
+            <param name="a"> sparse matrix a </param>
+            <param name="matrixType"> sparse matrix type option </param>
+            <param name="fillMode"> sparse fill mode option </param>
+            <param name="diagType"> sparse diagnoal type option </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseQR(WMathCore.WMatrixDi,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int64,System.Double*,System.Int64,System.Double*,System.Int64)">
+            <summary>
+computes the QR decomposition for the matrix of a
+sparse linear system and calculates the solution
+A*x = b, so that A = Q*R
+</summary>
+            <param name="a"> sparse matrix a </param>
+            <param name="operation"> operation on the sparse matrix a </param>
+            <param name="matrixType"> sparse matrix type option </param>
+            <param name="fillMode"> sparse fill mode option </param>
+            <param name="diagType"> sparse diagnoal type option </param>
+            <param name="layout"> storage scheme for the dense matrix </param>
+            <param name="columns"> number of columns in matrix b </param>
+            <param name="x"> dense matrix x (to be overwritten) </param>
+            <param name="ldx"> leading dimension of matrix x </param>
+            <param name="b"> dense matrix b </param>
+            <param name="ldb"> leading dimension of matrix b </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseSetQRHint(WMathCore.WMatrixDi)">
+            <summary>
+defines the pivot strategy for further calls
+</summary>
+            <param name="a"> handle containing a sparse matrix </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseAdd(System.Int32,WMathCore.WMatrixDi,System.Double,WMathCore.WMatrixDi)">
+            <summary>
+computes the sum of two sparse matrices and store
+the result in a newly allocated sparse matrix
+C := alpha*op(A) + B
+</summary>
+            <param name="operation"> specifies operation on the input matrix a </param>
+            <param name="a"> input sparse matrix a </param>
+            <param name="alpha"> scalar constant alpha </param>
+            <param name="b"> input sparse matrix b </param>
+            <param name="c"> result sparse matrix c </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+            <summary>
+computes the sum of two sparse matrices and store
+the result in a newly allocated sparse matrix
+C := alpha*op(A) + B
+</summary>
+            <param name="operation"> specifies operation on the input matrix a </param>
+            <param name="a"> input sparse matrix a </param>
+            <param name="alpha"> scalar constant alpha </param>
+            <param name="b"> input sparse matrix b </param>
+            <returns> result sparse matrix c </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseTRSM(System.Int32,System.Double,WMathCore.WMatrixDi,System.Int32,System.Int32,System.Int32,System.Int32,System.Double*,System.Int64,System.Int64,System.Double*,System.Int64)">
+            <summary>
+solves a system of linear equations with multiple 
+right-hand sides for a triangular sparse matrix
+Y := alpha*inv(op(A))*X
+op(A)*y = alpha * x
+</summary>
+            <param name="operation"> specifies operation on the input matrix a </param>
+            <param name="alpha"> scalar constant alpha </param>
+            <param name="a"> input sparse matrix a </param>
+            <param name="matrixType"> sparse matrix type option </param>
+            <param name="fillMode"> sparse fill mode option </param>
+            <param name="diagType"> sparse diagnoal type option </param>
+            <param name="layout"> storage scheme for the dense matrix </param>
+            <param name="x"> dense matrix x </param>
+            <param name="columns"> number of columns in matrix y </param>
+            <param name="ldx"> leading dimension of matrix x </param>
+            <param name="y"> dense matrix y (to be overwritten) </param>
+            <param name="ldy"> leading dimension in matrix y </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseMM(System.Int32,System.Double,WMathCore.WMatrixDi,System.Int32,System.Int32,System.Int32,System.Int32,System.Double*,System.Int64,System.Int64,System.Double,System.Double*,System.Int64)">
+            <summary>
+computes the product of a sparse matrix and a dense
+matrix and stores the result as a dense matrix
+C := alpha*op(A)*B + beta*C
+</summary>
+            <param name="operation"> specifies operation on the input matrix a </param>
+            <param name="alpha"> scalar constant alpha </param>
+            <param name="a"> input sparse matrix a </param>
+            <param name="matrixType"> sparse matrix type option </param>
+            <param name="fillMode"> sparse fill mode option </param>
+            <param name="diagType"> sparse diagnoal type option </param>
+            <param name="layout"> storage scheme for the dense matrix </param>
+            <param name="b"> dense matrix b </param>
+            <param name="columns"> number of colums in matrix c </param>
+            <param name="ldb"> leading dimension of matrix b. </param>
+            <param name="beta"> scalar constant beta </param>
+            <param name="c"> dense matrix c (to be overwrittem) </param>
+            <param name="ldc"> leading dimension of matrix c </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseTRSV(System.Int32,System.Double,WMathCore.WMatrixDi,System.Int32,System.Int32,System.Int32,System.Double*,System.Double*)">
+            <summary>
+solves a system of linear equations for 
+a triangular sparse matrix
+op(A)*y = alpha * x
+</summary>
+            <param name="operation"> specifies operation on the input matrix a </param>
+            <param name="alpha"> scalar constant alpha </param>
+            <param name="a"> input sparse matrix a </param>
+            <param name="matrixType"> sparse matrix type option </param>
+            <param name="fillMode"> sparse fill mode option </param>
+            <param name="diagType"> sparse diagnoal type option </param>
+            <param name="x"> vector x </param>
+            <param name="y"> vector y (to be overwritten) </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseMV(System.Int32,System.Double,WMathCore.WMatrixDi,System.Int32,System.Int32,System.Int32,System.Double*,System.Double,System.Double*)">
+            <summary>
+computes a sparse matrix- vector product
+y := alpha*op(A)*x + beta*y
+</summary>
+            <param name="operation"> specifies operation on the input matrix a </param>
+            <param name="alpha"> scalar constant alpha </param>
+            <param name="a"> input sparse matrix a </param>
+            <param name="matrixType"> sparse matrix type option </param>
+            <param name="fillMode"> sparse fill mode option </param>
+            <param name="diagType"> sparse diagnoal type option </param>
+            <param name="x"> vector x </param>
+            <param name="beta"> scalar constant beta </param>
+            <param name="y"> vector y (to be overwritten) </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseOptimize(WMathCore.WMatrixDi)">
+            <summary>
+analyzes matrix structure and performs optimizations
+using the hints provided in the handle
+</summary>
+            <param name="a"> input sparse matrix a </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseSetMemoryHint(WMathCore.WMatrixDi,System.Int32)">
+            <summary>
+provides memory requirements for performance
+optimization purposes
+</summary>
+            <param name="a"> input sparse matrix a </param>
+            <param name="policy"> memory utilization policy </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseSetSMHint(WMathCore.WMatrixDi,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int64,System.Int64)">
+            <summary>
+provides estimate of number and type of upcoming
+triangular matrix solve with multiple right hand sides
+</summary>
+            <param name="a"> input sparse matrix a </param>
+            <param name="operation"> operation on input matrix a </param>
+            <param name="matrixType"> sparse matrix type option </param>
+            <param name="fillMode"> sparse fill mode option </param>
+            <param name="diagType"> sparse diagnoal type option </param>
+            <param name="layout"> sparse layout option </param>
+            <param name="dense_matrix_size"> number of columns in dense matrix </param>
+            <param name="expected_calls"> number of expected calls to execution routine </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseSetMMHint(WMathCore.WMatrixDi,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int64,System.Int64)">
+            <summary>
+provides estimate of number and type of upcoming
+matrix - matrix multiplication operations
+</summary>
+            <param name="a"> input sparse matrix a </param>
+            <param name="operation"> operation on input matrix a </param>
+            <param name="matrixType"> sparse matrix type option </param>
+            <param name="fillMode"> sparse fill mode option </param>
+            <param name="diagType"> sparse diagnoal type option </param>
+            <param name="layout"> sparse layout option </param>
+            <param name="dense_matrix_size"> number of columns in dense matrix </param>
+            <param name="expected_calls"> number of expected calls to execution routine </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseSetSVHint(WMathCore.WMatrixDi,System.Int32,System.Int32,System.Int32,System.Int32,System.Int64)">
+            <summary>
+provides estimate of number and type of upcoming
+triangular system solver operations
+</summary>
+            <param name="a"> input sparse matrix a </param>
+            <param name="operation"> operation on input matrix a </param>
+            <param name="matrixType"> sparse matrix type option </param>
+            <param name="fillMode"> sparse fill mode option </param>
+            <param name="diagType"> sparse diagnoal type option </param>
+            <param name="expected_calls"> number of expected calls to execution routine </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseSetMVHint(WMathCore.WMatrixDi,System.Int32,System.Int32,System.Int32,System.Int32,System.Int64)">
+            <summary>
+provides estimate of number and type of upcoming
+matrix - vector operations
+</summary>
+            <param name="a"> input sparse matrix a </param>
+            <param name="operation"> operation on input matrix a </param>
+            <param name="matrixType"> sparse matrix type option </param>
+            <param name="fillMode"> sparse fill mode option </param>
+            <param name="diagType"> sparse diagnoal type option </param>
+            <param name="expected_calls"> number of expected calls to execution routine </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseUpdateValues(WMathCore.WMatrixZi,System.Int64,System.Int64*,System.Int64*,System.Void*)">
+            <summary>
+changes all or selected elements values in a sparse matrix
+</summary>
+            <param name="a"> sparse matrix a </param>
+            <param name="nvalues"> number of values changed </param>
+            <param name="row_indx"> pointer to the row indices of the new values </param>
+            <param name="col_indx"> pointer to the column indices of the new values </param>
+            <param name="values"> pointer to the new values </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseUpdateValues(WMathCore.WMatrixDi,System.Int64,System.Int64*,System.Int64*,System.Double*)">
+            <summary>
+changes all or selected elements values in a sparse matrix
+</summary>
+            <param name="a"> sparse matrix a </param>
+            <param name="nvalues"> number of values changed </param>
+            <param name="row_indx"> pointer to the row indices of the new values </param>
+            <param name="col_indx"> pointer to the column indices of the new values </param>
+            <param name="values"> pointer to the new values </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixZi,System.Int64,System.Int64,WMathCore.WComplex)">
+            <summary>
+changes a single element value in a sparse matrix [complex-valued]
+</summary>
+            <param name="a"> sparse matrix a </param>
+            <param name="row"> row index </param>
+            <param name="col"> column index </param>
+            <param name="value"> target value of the selected element </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseSetValue(WMathCore.WMatrixDi,System.Int64,System.Int64,System.Double)">
+            <summary>
+exports CSC matrix from internal representation
+</summary>
+            <param name="source"> handle containing the sparse matrix </param>
+            <param name="indexing"> indicates how input arrays are indexed </param>
+            <param name="rows"> number of rows of the matrix </param>
+            <param name="cols"> number of columns of the matrix </param>
+            <param name="cols_start"> pointer to the starting indices of columns </param>
+            <param name="cols_end"> pointer to the ending indices of columns </param>
+            <param name="row_indx"> pointer to the non-zero row indices </param>
+            <param name="values"> pointer to the non-zero values </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+virtual sparse_status_t SparseExportCSC(sparse_matrix_t source,
+sparse_index_base_t* indexing, long long* rows, long long* cols,
+long long** cols_start, long long** cols_end, long long** row_indx,
+double** values);
+<summary>
+changes a single element value in a sparse matrix [real-valued]
+</summary><param name="a"> sparse matrix a </param><param name="row"> row index </param><param name="col"> column index </param><param name="value"> target value of the selected element </param></member>
+        <member name="M:WMathCore.WLinAlg.SparseExportCSR(sparse_matrix*,sparse_index_base_t*,System.Int64*,System.Int64*,System.Int64**,System.Int64**,System.Int64**,System.Double**)">
+            <summary>
+exports CSR matrix from internal representation
+</summary>
+            <param name="source"> handle containing the sparse matrix </param>
+            <param name="indexing"> indicates how input arrays are indexed </param>
+            <param name="rows"> number of rows of the matrix </param>
+            <param name="cols"> number of columns of the matrix </param>
+            <param name="rows_start"> pointer to the starting indices of rows </param>
+            <param name="rows_end"> pointer to the ending indices of rows </param>
+            <param name="col_indx"> pointer to the non-zero column indices </param>
+            <param name="values"> pointer to the non-zero values </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseConvert2CSR(WMathCore.WMatrixZi,System.Int32)">
+            <summary>
+converts a sparse matrix to CSR format [complex-valued]
+</summary>
+            <param name="a"> source sparse matrix a </param>
+            <param name="operation"> operation on the input matrix </param>
+            <returns> result sparse matrix in CSR format </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseConvert2CSR(WMathCore.WMatrixDi,System.Int32)">
+            <summary>
+converts a sparse matrix to CSR format [real-valued]
+</summary>
+            <param name="a"> source sparse matrix a </param>
+            <param name="operation"> operation on the input matrix </param>
+            <returns> result sparse matrix in CSR format </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseDestroy(WMathCore.WMatrixZi)">
+            <summary>
+frees memory allocated for sparse matrix [complex-valued]
+</summary>
+            <param name="a"> sparse matrix a </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseDestroy(WMathCore.WMatrixDi)">
+            <summary>
+frees memory allocated for sparse matrix [real-valued]
+</summary>
+            <param name="a"> sparse matrix a </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixZi)">
+            <summary>
+creates a copy of a sparse matrix [complex-valued]
+</summary>
+            <param name="source"> source sparse matrix a </param>
+            <returns> copy of the sparse matrix </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseCopy(WMathCore.WMatrixDi)">
+            <summary>
+creates a copy of a sparse matrix [real-valued]
+</summary>
+            <param name="source"> source sparse matrix a </param>
+            <returns> copy of the sparse matrix </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseCreateCOO(WMathCore.WMatrixZi,System.Int64*,System.Int64*,System.Void*)">
+            <summary>
+creates a COO-format matrix [complex-valued]
+</summary>
+            <param name="a"> sparse matrix a </param>
+            <param name="row_indx"> non-zero row indices </param>
+            <param name="col_indx"> non-zero column indices </param>
+            <param name="values"> non-zero values </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseCreateCOO(WMathCore.WMatrixDi,System.Int64*,System.Int64*,System.Double*)">
+            <summary>
+creates a COO-format matrix [real-valued]
+</summary>
+            <param name="a"> sparse matrix a </param>
+            <param name="row_indx"> non-zero row indices </param>
+            <param name="col_indx"> non-zero column indices </param>
+            <param name="values"> non-zero values </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseCreateCSC(WMathCore.WMatrixZi,System.Int64*,System.Int64*,System.Void*)">
+            <summary>
+creates a CSC-format matrix [complex-valued]
+</summary>
+            <param name="a"> sparse matrix a </param>
+            <param name="colPtr"> column start/end indices </param>
+            <param name="row_indx"> non-zero row indices </param>
+            <param name="values"> non-zero values </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseCreateCSC(WMathCore.WMatrixDi,System.Int64*,System.Int64*,System.Double*)">
+            <summary>
+creates a CSC-format matrix [real-valued]
+</summary>
+            <param name="a"> sparse matrix a </param>
+            <param name="colPtr"> column start/end indices </param>
+            <param name="row_indx"> non-zero row indices </param>
+            <param name="values"> non-zero values </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseCreateCSR(WMathCore.WMatrixZi,System.Int64*,System.Int64*,System.Void*)">
+            <summary>
+creates a CSR-format matrix [complex-valued]
+</summary>
+            <param name="a"> sparse matrix a </param>
+            <param name="rowPtr"> row start/end indices </param>
+            <param name="col_indx"> non-zero column indices </param>
+            <param name="values"> non-zero element values </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.SparseCreateCSR(WMathCore.WMatrixDi,System.Int64*,System.Int64*,System.Double*)">
+            <summary>
+creates a CSR-format matrix [real-valued]
+</summary>
+            <param name="a"> sparse matrix a </param>
+            <param name="rowPtr"> row start/end indices </param>
+            <param name="col_indx"> non-zero column indices </param>
+            <param name="values"> non-zero element values </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Iamin(WMathCore.WVectorZi,System.Int64)">
+            <summary>
+finds the index of the element in the vector
+with minimum absolute value
+</summary>
+            <param name="xi"> compressed sparse vector x </param>
+            <param name="incx"> increment </param>
+            <returns> index of the element </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Iamin(WMathCore.WVectorDi,System.Int64)">
+            <summary>
+finds the index of the element in the vector
+with minimum absolute value
+</summary>
+            <param name="xi"> compressed sparse vector x </param>
+            <param name="incx"> increment </param>
+            <returns> index of the element </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Iamax(WMathCore.WVectorZi,System.Int64)">
+            <summary>
+finds the index of the element in the vector
+with maximum absolute value
+</summary>
+            <param name="xi"> compressed sparse vector x </param>
+            <param name="incx"> increment </param>
+            <returns> index of the element </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Iamax(WMathCore.WVectorDi,System.Int64)">
+            <summary>
+finds the index of the element in the vector
+with maximum absolute value
+</summary>
+            <param name="xi"> compressed sparse vector x </param>
+            <param name="incx"> increment </param>
+            <returns> index of the element </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Scal(WMathCore.WComplex,WMathCore.WVectorZi,System.Int64)">
+            <summary>
+computes the product of a vector by a scalar
+x = a*x
+</summary>
+            <param name="alpha"> scalar multiple </param>
+            <param name="xi"> compressed sparse vector x </param>
+            <param name="incx"> increment </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Scal(System.Double,WMathCore.WVectorDi,System.Int64)">
+            <summary>
+computes the product of a vector by a scalar
+x = a*x
+</summary>
+            <param name="alpha"> scalar multiple </param>
+            <param name="xi"> compressed sparse vector x </param>
+            <param name="incx"> increment </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Nrm2(WMathCore.WVectorZi,System.Int64)">
+            <summary>
+computes the Euclidean norm of a vector
+res = || x ||
+</summary>
+            <param name="xi"> compressed sparse vector x </param>
+            <param name="incx"> increment </param>
+            <returns> Euclidean norm </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Nrm2(WMathCore.WVectorDi,System.Int64)">
+            <summary>
+computes the Euclidean norm of a vector
+res = || x ||
+</summary>
+            <param name="xi"> compressed sparse vector x </param>
+            <param name="incx"> increment </param>
+            <returns> Euclidean norm </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Copy(WMathCore.WVectorZi,WMathCore.WVectorZi,System.Int64,System.Int64)">
+            <summary>
+copies compressed sparse vector x to vector y
+y = x
+</summary>
+            <param name="xi"> compressed sparse vector xi </param>
+            <param name="yi"> compressed sparse vector yi </param>
+            <param name="incx"> increment in x </param>
+            <param name="incy"> increment in y </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Copy(WMathCore.WVectorDi,WMathCore.WVectorDi,System.Int64,System.Int64)">
+            <summary>
+copies compressed sparse vector x to vector y
+y = x
+</summary>
+            <param name="xi"> compressed sparse vector xi </param>
+            <param name="yi"> compressed sparse vector yi </param>
+            <param name="incx"> increment in x </param>
+            <param name="incy"> increment in y </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Asum(WMathCore.WVectorZi,System.Int64)">
+            <summary>
+computes the sum of magnitudes of all the elements
+of a compressed sparse vector 
+res = |Re(x1)| + |Im(x1)| + |Re(x2)| + |Im(x2)|+ 
+... + |Re(xn)| + |Im(xn)|
+</summary>
+            <param name="xi"> compressed sparse vector x </param>
+            <param name="incx"> increment </param>
+            <returns> absolute sum of all the vector elements </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Asum(WMathCore.WVectorDi,System.Int64)">
+            <summary>
+computes the sum of magnitudes of all the elements
+of a compressed sparse vector 
+res = |Re(x1)| + |Im(x1)| + |Re(x2)| + |Im(x2)|+ 
+... + |Re(xn)| + |Im(xn)|
+</summary>
+            <param name="xi"> compressed sparse vector x </param>
+            <param name="incx"> increment </param>
+            <returns> absolute sum of all the vector elements </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Sctr(WMathCore.WVectorZi,System.Void*)">
+            <summary>
+converts a compressed sparse vector x 
+into full-storage vector y
+y[indx[i]] = x[i], for i=0,1,... ,nz-1
+</summary>
+            <param name="xi"> input sparse vector x </param>
+            <param name="y"> result dense vector y </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Sctr(WMathCore.WVectorDi,System.Double*)">
+            <summary>
+converts a compressed sparse vector x 
+into full-storage vector y
+y[indx[i]] = x[i], for i=0,1,... ,nz-1
+</summary>
+            <param name="xi"> input sparse vector x </param>
+            <param name="y"> result dense vector y </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Roti(WMathCore.WVectorZi,System.Void*,System.Double,System.Double)">
+            <summary>
+performs rotation of point in the plane
+xi = c * xi + s * yi
+yi = c * yi - s * xi
+</summary>
+            <param name="xi"> compressed sparse vector x </param>
+            <param name="y"> dense vector y </param>
+            <param name="c"> scalar parameter </param>
+            <param name="s"> scalar parameter </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Roti(WMathCore.WVectorDi,System.Double*,System.Double,System.Double)">
+            <summary>
+performs rotation of point in the plane
+xi = c * xi + s * yi
+yi = c * yi - s * xi
+</summary>
+            <param name="xi"> compressed sparse vector x </param>
+            <param name="y"> dense vector y </param>
+            <param name="c"> scalar parameter </param>
+            <param name="s"> scalar parameter </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Gthr(System.Int64,System.Void*,System.Int64,System.Void*,System.Int64*)">
+            <summary>
+gathers a full-storage sparse vector's elements 
+into compressed form
+x[i] = y[indx[i]], for i=0,1,... ,nz-1
+</summary>
+            <param name="n"> totol elements in the dense vector y </param>
+            <param name="y"> input dense vector y </param>
+            <param name="nnz"> number of non-zero elements </param>
+            <param name="x"> output sparse vector x </param>
+            <param name="indx"> indices of non-zero elements in y </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Gthr(System.Int64,System.Void*,System.Int64,System.Int64*)">
+            <summary>
+gathers a full-storage sparse vector's elements 
+into compressed form
+x[i] = y[indx[i]], for i=0,1,... ,nz-1
+</summary>
+            <param name="n"> totol elements in the dense vector y </param>
+            <param name="y"> input dense vector y </param>
+            <param name="nnz"> number of non-zero elements </param>
+            <param name="indx"> indices of non-zero elements in y </param>
+            <returns> result sparse vector x </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Gthr(System.Int64,System.Double*,System.Int64,System.Double*,System.Int64*)">
+            <summary>
+gathers a full-storage sparse vector's elements 
+into compressed form
+x[i] = y[indx[i]], for i=0,1,... ,nz-1
+</summary>
+            <param name="n"> totol elements in the dense vector y </param>
+            <param name="y"> input dense vector y </param>
+            <param name="nnz"> number of non-zero elements </param>
+            <param name="x"> output sparse vector x </param>
+            <param name="indx"> indices of non-zero elements in y </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Gthr(System.Int64,System.Double*,System.Int64,System.Int64*)">
+            <summary>
+gathers a full-storage sparse vector's elements 
+into compressed form
+x[i] = y[indx[i]], for i=0,1,... ,nz-1
+</summary>
+            <param name="n"> totol elements in the dense vector y </param>
+            <param name="y"> input dense vector y </param>
+            <param name="nnz"> number of non-zero elements </param>
+            <param name="indx"> indices of non-zero elements in y </param>
+            <returns> result sparse vector x </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Dotci(WMathCore.WVectorZi,System.Void*)">
+            <summary>
+computes the dot product of a conjugated compressed 
+sparse vector x by a full-storage vector y
+</summary>
+            <param name="xi"> input sparse vector x (to be conjugated) </param>
+            <param name="y"> input dense vector y </param>
+            <returns> dot-product </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Doti(WMathCore.WVectorZi,System.Void*)">
+            <summary>
+computes the dot product of a compressed sparse vector x
+by a full-storage vector y
+res = x[0]*y[indx[0]] + x[1]*y[indx[1]] +...+ x[nz-1]*y[indx[nz-1]]
+</summary>
+            <param name="xi"> input sparse vector x </param>
+            <param name="y"> input dense vector y </param>
+            <returns> dot-product </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Doti(WMathCore.WVectorDi,System.Double*)">
+            <summary>
+computes the dot product of a compressed sparse vector x
+by a full-storage vector y
+res = x[0]*y[indx[0]] + x[1]*y[indx[1]] +...+ x[nz-1]*y[indx[nz-1]]
+</summary>
+            <param name="xi"> input sparse vector x </param>
+            <param name="y"> input dense vector y </param>
+            <returns> dot-product </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Axpyi(WMathCore.WVectorZi,System.Void*,WMathCore.WComplex)">
+            <summary>
+Adds a scalar multiple of compressed sparse vector
+to a full-storage vector
+y := a*x + y
+</summary>
+            <param name="x"> input sparse vector x </param>
+            <param name="y"> dense vector y (to be overwritten) </param>
+            <param name="alpha"> scalar constant alpha </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Axpyi(WMathCore.WVectorDi,System.Double*,System.Double)">
+            <summary>
+Adds a scalar multiple of compressed sparse vector
+to a full-storage vector
+y := a*x + y
+</summary>
+            <param name="x"> input sparse vector x </param>
+            <param name="y"> dense vector y (to be overwritten) </param>
+            <param name="alpha"> scalar constant alpha </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Dot(WMathCore.WMatrixD,WMathCore.WMatrixD)">
+            <summary>
+computes a matrix-matrix product
+m = a * b
+</summary>
+            <param name="a"> matrix a </param>
+            <param name="b"> matirx b </param>
+            <returns> result matrix m </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Dot(System.Double,WMathCore.WMatrixD,WMathCore.WMatrixD,System.Double,WMathCore.WMatrixD)">
+            <summary>
+computes a matrix-matrix product
+m := alpha * a * b + beta * c
+</summary>
+            <param name="alpha"> scalar parameter </param>
+            <param name="a"> matrix a </param>
+            <param name="b"> matrix b </param>
+            <param name="beta"> scalar parameter </param>
+            <param name="c"> matrix c [will be updated]</param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Dot(WMathCore.WMatrixD,WMathCore.WVectorD)">
+            <summary>
+computes the matrix - vector product
+y = a * x
+</summary>
+            <param name="a"> matrix a </param>
+            <param name="x"> vector x </param>
+            <returns> result vector y </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Dot(System.Double,WMathCore.WMatrixD,WMathCore.WVectorD,System.Double,WMathCore.WVectorD)">
+            <summary>
+computes the matrix - vector product
+y := alpha * a * x + beta * y		
+</summary>
+            <param name="alpha"> scalar parameter </param>
+            <param name="a"> matrix a </param>
+            <param name="x"> vector x </param>
+            <param name="beta"> scalar parameter </param>
+            <param name="y"> vector y [will be updated]</param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Rotate(WMathCore.WVectorZ,WMathCore.WVectorZ,System.Double,System.Double)">
+            <summary>
+performs rotation of point in the plane
+xi = c * xi + s * yi
+yi = c * yi - s * xi
+</summary>
+            <param name="x"> full-storage vector x </param>
+            <param name="y"> full-storage vector y </param>
+            <param name="c"> scalar parameter </param>
+            <param name="s"> scalar parameter </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Rotate(WMathCore.WVectorD,WMathCore.WVectorD,System.Double,System.Double)">
+            <summary>
+performs rotation of point in the plane
+xi = c * xi + s * yi
+yi = c * yi - s * xi
+</summary>
+            <param name="x"> full-storage vector x </param>
+            <param name="y"> full-storage vector y </param>
+            <param name="c"> scalar parameter </param>
+            <param name="s"> scalar parameter </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.IndexMinAbsolute(WMathCore.WVectorZ)">
+            <summary>
+finds the index of the element in the vector
+with minimum absolute value
+</summary>
+            <param name="x"> full-storage vector x </param>
+            <returns> index of the element </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.IndexMinAbsolute(WMathCore.WVectorD)">
+            <summary>
+finds the index of the element in the vector
+with minimum absolute value
+</summary>
+            <param name="x"> full-storage vector x </param>
+            <returns> index of the element </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.IndexMaxAbsolute(WMathCore.WVectorZ)">
+            <summary>
+finds the index of the element in the vector
+with maximum absolute value
+</summary>
+            <param name="x"> full-storage vector x </param>
+            <returns> index of the element </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.IndexMaxAbsolute(WMathCore.WVectorD)">
+            <summary>
+finds the index of the element in the vector
+with maximum absolute value
+</summary>
+            <param name="x"> full-storage vector x </param>
+            <returns> index of the element </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Scale(WMathCore.WComplex!System.Runtime.CompilerServices.IsByValue,WMathCore.WVectorZ)">
+            <summary>
+computes the product of a vector by a scalar
+</summary>
+            <param name="alpha"> scalar multiple </param>
+            <param name="x"> full-storage vector x </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Scale(System.Double,WMathCore.WVectorD)">
+            <summary>
+computes the product of a vector by a scalar
+</summary>
+            <param name="alpha"> scalar multiple </param>
+            <param name="x"> full-storage vector x </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Norm(WMathCore.WVectorZ)">
+            <summary>
+computes the Euclidean norm of a vector
+res = || x ||
+</summary>
+            <param name="x"> full-storage vector x </param>
+            <returns> Euclidean norm </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Norm(WMathCore.WVectorD)">
+            <summary>
+computes the Euclidean norm of a vector
+res = || x ||
+</summary>
+            <param name="x"> full-storage vector x </param>
+            <returns> Euclidean norm </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Dotc(WMathCore.WVectorZ,WMathCore.WVectorZ)">
+            <summary>
+computes the dot product of a conjugated vector x
+with another vector y
+</summary>
+            <param name="x"> vector x (to be conjugated) </param>
+            <param name="y"> vector y </param>
+            <returns> dot product </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Dot(WMathCore.WVectorZ,WMathCore.WVectorZ)">
+            <summary>
+computes the dot product between vector x and y
+</summary>
+            <param name="x"> vector x </param>
+            <param name="y"> vector y </param>
+            <returns> dot product </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Dot(WMathCore.WVectorD,WMathCore.WVectorD)">
+            <summary>
+computes the dot product between vector x and y
+</summary>
+            <param name="x"> vector x </param>
+            <param name="y"> vector y </param>
+            <returns> dot product </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Copy(WMathCore.WVectorZ,WMathCore.WVectorZ)">
+            <summary>
+copies full-storage vector x to vector y
+</summary>
+            <param name="x"> full-storage vector x </param>
+            <param name="y"> full-storage vector y </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.Copy(WMathCore.WVectorD,WMathCore.WVectorD)">
+            <summary>
+copies full-storage vector x to vector y
+</summary>
+            <param name="x"> full-storage vector x </param>
+            <param name="y"> full-storage vector y </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.AddTo(WMathCore.WComplex!System.Runtime.CompilerServices.IsByValue,WMathCore.WVectorZ,WMathCore.WVectorZ)">
+            <summary>
+adds a scalar multiple of a vector x
+into another vector y
+y := alpha * x + y
+</summary>
+            <param name="alpha"> scalar multiple </param>
+            <param name="x"> vector x </param>
+            <param name="y"> vector y [will be updated] </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.AddTo(System.Double,WMathCore.WVectorD,WMathCore.WVectorD)">
+            <summary>
+adds a scalar multiple of a vector x
+into another vector y
+y := alpha * x + y
+</summary>
+            <param name="alpha"> scalar multiple </param>
+            <param name="x"> vector x </param>
+            <param name="y"> vector y [will be updated] </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.AddTo(WMathCore.WVectorZ,WMathCore.WVectorZ)">
+            <summary>
+adds vector x into another vector y
+y := x + y
+</summary>
+            <param name="x"> vector x </param>
+            <param name="y"> vector y [will be updated] </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.AddTo(WMathCore.WVectorD,WMathCore.WVectorD)">
+            <summary>
+adds vector x into another vector y
+y := x + y
+</summary>
+            <param name="x"> vector x </param>
+            <param name="y"> vector y [will be updated] </param>
+        </member>
+        <member name="M:WMathCore.WLinAlg.AbsoluteSum(WMathCore.WVectorZ)">
+            <summary>
+computes the sum of magnitudes of all the elements
+of a full-storage vector
+</summary>
+            <param name="x"> full-storage vector x </param>
+            <returns> sum of magnitudes of all elements </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.AbsoluteSum(WMathCore.WVectorD)">
+            <summary>
+computes the sum of magnitudes of all the elements
+of a full-storage vector
+</summary>
+            <param name="x"> full-storage vector x </param>
+            <returns> sum of magnitudes of all elements </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.AreMatrixMatrixDottable(WMathCore.WMatrixZ,WMathCore.WMatrixZ)">
+            <summary>
+checks whether the sizes of the matrices 
+are valid for dot product
+</summary>
+            <param name="a"> full-storage matrix a </param>
+            <param name="b"> full-storage matrix b </param>
+            <returns> whether dot-product is possible </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.AreMatrixMatrixDottable(WMathCore.WMatrixD,WMathCore.WMatrixD)">
+            <summary>
+checks whether the sizes of the matrices 
+are valid for dot product
+</summary>
+            <param name="a"> full-storage matrix a </param>
+            <param name="b"> full-storage matrix b </param>
+            <returns> whether dot-product is possible </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.AreMatrixVectorDottable(WMathCore.WMatrixZ,WMathCore.WVectorZ)">
+            <summary>
+check whether the matrix size and vector length
+are valid for dot product
+</summary>
+            <param name="a"> full-storage matrix a </param>
+            <param name="x"> full-storage vector x </param>
+            <returns> whether dot-product is possible </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.AreMatrixVectorDottable(WMathCore.WMatrixD,WMathCore.WVectorD)">
+            <summary>
+check whether the matrix size and vector length
+are valid for dot product
+</summary>
+            <param name="a"> full-storage matrix a </param>
+            <param name="x"> full-storage vector x </param>
+            <returns> whether dot-product is possible </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.AreVectorLengthsEqual(WMathCore.WVectorDi,WMathCore.WVectorDi)">
+            <summary>
+checks whether the lengths of two vectors are equal
+</summary>
+            <param name="x"> compressed sparse vector x </param>
+            <param name="y"> compressed sparse vector y </param>
+            <returns> whether the lengths are equal </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.AreVectorLengthsEqual(WMathCore.WVectorDi,WMathCore.WVectorD)">
+            <summary>
+checks whether the lengths of two vectors are equal
+</summary>
+            <param name="x"> compressed sparse vector x </param>
+            <param name="y"> full-storage vector y </param>
+            <returns> whether the lengths are equal </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.AreVectorLengthsEqual(WMathCore.WVectorZ,WMathCore.WVectorZ)">
+            <summary>
+checks whether the lengths of two vectors are equal
+</summary>
+            <param name="x"> full-storage vector x </param>
+            <param name="y"> full-storage vector y </param>
+            <returns> whether the lengths are equal </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.AreVectorLengthsEqual(WMathCore.WVectorD,WMathCore.WVectorD)">
+            <summary>
+checks whether the lengths of two vectors are equal
+</summary>
+            <param name="x"> full-storage vector x </param>
+            <param name="y"> full-storage vector y </param>
+            <returns> whether the lengths are equal </returns>
+        </member>
+        <member name="M:WMathCore.WLinAlg.#ctor">
+            <summary>
+default constructor
+</summary>
+        </member>
+        <member name="T:WMathCore.WLinAlg">
+            <summary>
+linear algebra class
+</summary>
+        </member>
+        <member name="T:WMathCore.LinAlgFactory">
+            <summary>
+linear algebra factory
+</summary>
+        </member>
+        <member name="T:WMathCore.IntelMKL">
+            <summary>
+IntelMKL class
+</summary>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseQRRsolve(sparse_operation_t,sparse_matrix*,sparse_layout_t,System.Int64,System.Double*,System.Int64,System.Double*,System.Int64)">
+            <summary>
+second stage of the solving step of the SPARSE QR solver
+</summary>
+            <param name="operation"> operation on the sparse matrix a </param>
+            <param name="a"> sparse matrix a </param>
+            <param name="layout"> storage scheme for the dense matrix </param>
+            <param name="columns"> number of columns in matrix b </param>
+            <param name="x"> dense matrix x </param>
+            <param name="ldx"> leading dimension of matrix x </param>
+            <param name="b"> dense matrix b </param>
+            <param name="ldb"> leading dimension of matrix b </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseQRQmult(sparse_operation_t,sparse_matrix*,sparse_layout_t,System.Int64,System.Double*,System.Int64,System.Double*,System.Int64)">
+            <summary>
+first stage of the solving step of the SPARSE QR solver
+</summary>
+            <param name="operation"> operation on the sparse matrix a </param>
+            <param name="a"> sparse matrix a </param>
+            <param name="layout"> storage scheme for the dense matrix </param>
+            <param name="columns"> number of columns in matrix b </param>
+            <param name="x"> dense matrix x </param>
+            <param name="ldx"> leading dimension of matrix x </param>
+            <param name="b"> dense matrix b </param>
+            <param name="ldb"> leading dimension of matrix b </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseQRSolve(sparse_operation_t,sparse_matrix*,System.Double*,sparse_layout_t,System.Int64,System.Double*,System.Int64,System.Double*,System.Int64)">
+            <summary>
+solving step of the SPARSE QR solver
+</summary>
+            <param name="operation"> operation on the sparse matrix a </param>
+            <param name="a"> sparse matrix a </param>
+            <param name="alt_values"> alternative values </param>
+            <param name="layout"> storage scheme for the dense matrix </param>
+            <param name="columns"> number of columns in matrix b </param>
+            <param name="x"> dense matrix x </param>
+            <param name="ldx"> leading dimension of matrix x </param>
+            <param name="b"> dense matrix b </param>
+            <param name="ldb"> leading dimension of matrix b </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseQRFactorize(sparse_matrix*,System.Double*)">
+            <summary>
+factorization step of the SPARSE QR solver
+</summary>
+            <param name="a"> sparse matrix a </param>
+            <param name="alt_values"> alternative values </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseQRReorder(sparse_matrix*,matrix_descr)">
+            <summary>
+reordering step of SPARSE QR solver
+</summary>
+            <param name="a"> sparse matrix a </param>
+            <param name="descr"> structure specifying sparse matrix properties </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseQR(sparse_operation_t,sparse_matrix*,matrix_descr,sparse_layout_t,System.Int64,System.Double*,System.Int64,System.Double*,System.Int64)">
+            <summary>
+computes the QR decomposition for the matrix of a
+sparse linear system and calculates the solution
+A*x = b, so that A = Q*R
+</summary>
+            <param name="operation"> operation on the sparse matrix a </param>
+            <param name="a"> sparse matrix a </param>
+            <param name="descr"> structure specifying sparse matrix properties </param>
+            <param name="layout"> storage scheme for the dense matrix </param>
+            <param name="columns"> number of columns in matrix b </param>
+            <param name="x"> dense matrix x (to be overwritten) </param>
+            <param name="ldx"> leading dimension of matrix x </param>
+            <param name="b"> dense matrix b </param>
+            <param name="ldb"> leading dimension of matrix b </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseSetQRHint(sparse_matrix*,sparse_qr_hint_t)">
+            <summary>
+defines the pivot strategy for further calls
+</summary>
+            <param name="a"> handle containing a sparse matrix </param>
+            <param name="hint"> value specifying whether to use pivoting </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseSPMMD(sparse_operation_t,sparse_matrix*,sparse_matrix*,sparse_layout_t,System.Double*,System.Int64)">
+            <summary>
+computes the product of two sparse matrices and
+stores the result as a dense matrix
+C := op(A)*B
+</summary>
+            <param name="operation"> specifies operation on the input matrix a </param>
+            <param name="a"> input sparse matrix a </param>
+            <param name="b"> input sparse matrix b </param>
+            <param name="layout"> describes the storage scheme for the dense matrix </param>
+            <param name="c"> result dense matrix c </param>
+            <param name="ldc"> leading dimension of matrix c </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseSPMM(sparse_operation_t,sparse_matrix*,sparse_matrix*,sparse_matrix**)">
+            <summary>
+computes the product of two sparse matrices and store
+the result in a newly allocated sparse matrix
+C := op(A) *B
+</summary>
+            <param name="operation"> specifies operation on the input matrix a </param>
+            <param name="a"> input sparse matrix a </param>
+            <param name="b"> input sparse matrix b </param>
+            <param name="c"> result sparse matrix c </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseAdd(sparse_operation_t,sparse_matrix*,System.Double,sparse_matrix*,sparse_matrix**)">
+            <summary>
+computes the sum of two sparse matrices and store
+the result in a newly allocated sparse matrix
+C := alpha*op(A) + B
+</summary>
+            <param name="operation"> specifies operation on the input matrix a </param>
+            <param name="a"> input sparse matrix a </param>
+            <param name="alpha"> scalar constant alpha </param>
+            <param name="b"> input sparse matrix b </param>
+            <param name="c"> result sparse matrix c </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseTRSM(sparse_operation_t,System.Double,sparse_matrix*,matrix_descr,sparse_layout_t!System.Runtime.CompilerServices.IsConst,System.Double*,System.Int64,System.Int64,System.Double*,System.Int64)">
+            <summary>
+solves a system of linear equations with multiple 
+right-hand sides for a triangular sparse matrix
+Y := alpha*inv(op(A))*X
+op(A)*y = alpha * x
+</summary>
+            <param name="operation"> specifies operation on the input matrix a </param>
+            <param name="alpha"> scalar constant alpha </param>
+            <param name="a"> input sparse matrix a </param>
+            <param name="descr"> structure specifying sparse matrix properties </param>
+            <param name="layout"> describes the storage scheme for the dense matrix </param>
+            <param name="x"> dense matrix x </param>
+            <param name="columns"> number of columns in matrix y </param>
+            <param name="ldx"> leading dimension of matrix x </param>
+            <param name="y"> dense matrix y (to be overwritten) </param>
+            <param name="ldy"> leading dimension in matrix y </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseMM(sparse_operation_t,System.Double,sparse_matrix*,matrix_descr,sparse_layout_t,System.Double*,System.Int64,System.Int64,System.Double,System.Double*,System.Int64)">
+            <summary>
+computes the product of a sparse matrix and a dense
+matrix and stores the result as a dense matrix
+C := alpha*op(A)*B + beta*C
+</summary>
+            <param name="operation"> specifies operation on the input matrix a </param>
+            <param name="alpha"> scalar constant alpha </param>
+            <param name="a"> input sparse matrix a </param>
+            <param name="descr"> structure specifying sparse matrix properties </param>
+            <param name="layout"> describes the storage scheme for the dense matrix </param>
+            <param name="b"> dense matrix b </param>
+            <param name="columns"> number of colums in matrix c </param>
+            <param name="ldb"> leading dimension of matrix b. </param>
+            <param name="beta"> scalar constant beta </param>
+            <param name="c"> dense matrix c (to be overwrittem) </param>
+            <param name="ldc"> leading dimension of matrix c </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseTRSV(sparse_operation_t,System.Double,sparse_matrix*,matrix_descr,System.Double*,System.Double*)">
+            <summary>
+solves a system of linear equations for 
+a triangular sparse matrix
+op(A)*y = alpha * x
+</summary>
+            <param name="operation"> specifies operation on the input matrix a </param>
+            <param name="alpha"> scalar constant alpha </param>
+            <param name="a"> input sparse matrix a </param>
+            <param name="descr"> structure specifying sparse matrix properties </param>
+            <param name="x"> vector x </param>
+            <param name="y"> vector y (to be overwritten) </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseMV(sparse_operation_t,System.Double,sparse_matrix*,matrix_descr,System.Double*,System.Double,System.Double*)">
+            <summary>
+computes a sparse matrix- vector product
+y := alpha*op(A)*x + beta*y
+</summary>
+            <param name="operation"> specifies operation on the input matrix a </param>
+            <param name="alpha"> scalar constant alpha </param>
+            <param name="a"> input sparse matrix a </param>
+            <param name="descr"> structure specifying sparse matrix properties </param>
+            <param name="x"> vector x </param>
+            <param name="beta"> scalar constant beta </param>
+            <param name="y"> vector y (to be overwritten) </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseOptimize(sparse_matrix*)">
+            <summary>
+analyzes matrix structure and performs optimizations
+using the hints provided in the handle.
+</summary>
+            <param name="a"> handle containing the sparse matrix </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseSetMemoryHint(sparse_matrix*,sparse_memory_usage_t)">
+            <summary>
+provides memory requirements for performance
+optimization purposes
+</summary>
+            <param name="a"> handle containing the sparse matrix </param>
+            <param name="policy"> Specify memory utilization policy for 
+optimization routine using these types </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="T:matrix_descr">
+            <summary>
+provides estimate of number and type of upcoming
+triangular matrix solve with multiple right hand sides
+operations
+</summary>
+            <param name="a"> handle containing the sparse matrix </param>
+            <param name="operation"> specifies operation on the input matrix </param>
+            <param name="descr"> structure specifying sparse matrix properties </param>
+            <param name="layout"> specifies layout of elements </param>
+            <param name="dense_matrix_size"> number of columns in dense matrix </param>
+            <param name="expected_calls"> number of expected calls to execution routine </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseSetMMHint(sparse_matrix*,sparse_operation_t,matrix_descr,sparse_layout_t,System.Int64,System.Int64)">
+            <summary>
+provides estimate of number and type of upcoming
+matrix - matrix multiplication operations
+</summary>
+            <param name="a"> handle containing the sparse matrix </param>
+            <param name="operation"> specifies operation on the input matrix </param>
+            <param name="descr"> structure specifying sparse matrix properties </param>
+            <param name="layout"> specifies layout of elements </param>
+            <param name="dense_matrix_size"> number of columns in dense matrix </param>
+            <param name="expected_calls"> number of expected calls to execution routine </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseSetSVHint(sparse_matrix*,sparse_operation_t,matrix_descr,System.Int64)">
+            <summary>
+provides estimate of number and type of upcoming
+triangular system solver operations
+</summary>
+            <param name="a"> handle containing the sparse matrix </param>
+            <param name="operation"> specifies operation on the input matrix </param>
+            <param name="descr"> structure specifying sparse matrix properties </param>
+            <param name="expected_calls"> number of expected calls to execution routine </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseSetMVHint(sparse_matrix*,sparse_operation_t,matrix_descr,System.Int64)">
+            <summary>
+provides estimate of number and type of upcoming
+matrix - vector operations
+</summary>
+            <param name="a"> handle containing the sparse matrix </param>
+            <param name="operation"> specifies operation on the input matrix </param>
+            <param name="descr"> structure specifying sparse matrix properties </param>
+            <param name="expected_calls"> number of expected calls to execution routine </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseUpdateValues(sparse_matrix*,System.Int64,System.Int64*,System.Int64*,System.Void*)">
+            <summary>
+changes all or selected elements values in a sparse matrix [complex-valued]
+in its internal representation
+</summary>
+            <param name="a"> handle containing the sparse matrix </param>
+            <param name="nvalues"> number of values changed </param>
+            <param name="row_indx"> pointer to the row indices of the new values </param>
+            <param name="col_indx"> pointer to the column indices of the new values </param>
+            <param name="values"> pointer to the new values </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseUpdateValues(sparse_matrix*,System.Int64,System.Int64*,System.Int64*,System.Double*)">
+            <summary>
+changes all or selected elements values in a sparse matrix [real-valued]
+in its internal representation
+</summary>
+            <param name="a"> handle containing the sparse matrix </param>
+            <param name="nvalues"> number of values changed </param>
+            <param name="row_indx"> pointer to the row indices of the new values </param>
+            <param name="col_indx"> pointer to the column indices of the new values </param>
+            <param name="values"> pointer to the new values </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseSetValue(sparse_matrix*,System.Int64,System.Int64,WMathCore.WComplex)">
+            <summary>
+changes a single element value in a sparse matrix [complex-valued]
+in its internal representation.
+</summary>
+            <param name="a"> handle containing the sparse matrix </param>
+            <param name="row"> row index </param>
+            <param name="col"> column index </param>
+            <param name="value"> target value </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseSetValue(sparse_matrix*,System.Int64,System.Int64,System.Double)">
+            <summary>
+changes a single element value in a sparse matrix [real-valued]
+in its internal representation.
+</summary>
+            <param name="a"> handle containing the sparse matrix </param>
+            <param name="row"> row index </param>
+            <param name="col"> column index </param>
+            <param name="value"> target value </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseExportCSC(sparse_matrix*,sparse_index_base_t*,System.Int64*,System.Int64*,System.Int64**,System.Int64**,System.Int64**,System.Double**)">
+            <summary>
+exports CSC matrix from internal representation
+</summary>
+            <param name="source"> handle containing the sparse matrix </param>
+            <param name="indexing"> indicates how input arrays are indexed </param>
+            <param name="rows"> number of rows of the matrix </param>
+            <param name="cols"> number of columns of the matrix </param>
+            <param name="cols_start"> pointer to the starting indices of columns </param>
+            <param name="cols_end"> pointer to the ending indices of columns </param>
+            <param name="row_indx"> pointer to the non-zero row indices </param>
+            <param name="values"> pointer to the non-zero values </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseExportCSR(sparse_matrix*,sparse_index_base_t*,System.Int64*,System.Int64*,System.Int64**,System.Int64**,System.Int64**,System.Double**)">
+            <summary>
+exports CSR matrix from internal representation
+</summary>
+            <param name="source"> handle containing the sparse matrix </param>
+            <param name="indexing"> indicates how input arrays are indexed </param>
+            <param name="rows"> number of rows of the matrix </param>
+            <param name="cols"> number of columns of the matrix </param>
+            <param name="rows_start"> pointer to the starting indices of rows </param>
+            <param name="rows_end"> pointer to the ending indices of rows </param>
+            <param name="col_indx"> pointer to the non-zero column indices </param>
+            <param name="values"> pointer to the non-zero values </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseConvert2CSR(sparse_matrix*,sparse_operation_t,sparse_matrix**)">
+            <summary>
+converts internal matrix representation to CSR format
+</summary>
+            <param name="source"> source sparse matrix to convert </param>
+            <param name="operation"> specifies operation on source matrix </param>
+            <param name="dest"> handle containing the converted sparse matrix </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseDestroy(sparse_matrix*)">
+            <summary>
+frees memory allocated for matrix handle
+</summary>
+            <param name="a"> handle containing the sparse matrix </param>
+            <returns />
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseCopy(sparse_matrix*,matrix_descr,sparse_matrix**)">
+            <summary>
+creates a copy of a matrix handle
+</summary>
+            <param name="source"> source sparse matrix to copy </param>
+            <param name="descr"> structure specifying sparse matrix properties </param>
+            <param name="dest"> handle containing the copied sparse matrix </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseCreateCOO(sparse_matrix**,sparse_index_base_t,System.Int64,System.Int64,System.Int64,System.Int64*,System.Int64*,System.Void*)">
+            <summary>
+creates a handle for a COO-format matrix [complex-valued]
+</summary>
+            <param name="handle"> handle containing internal data for subsequent 
+Inspector-executor Sparse BLAS operations </param>
+/// <param name="indexing"> indicates how input arrays are indexed </param><param name="rows"> number of rows of the matrix </param><param name="cols"> number of columns of the matrix </param><param name="nnz"> number of non-zero elements </param><param name="row_indx"> pointer to the non-zero row indices </param><param name="col_indx"> pointer to the non-zero column indices </param><param name="values"> pointer to the non-zero values </param><returns> value indicating whether the operation was successful or not </returns></member>
+        <member name="M:WMathCore.IBLAS.SparseCreateCOO(sparse_matrix**,sparse_index_base_t,System.Int64,System.Int64,System.Int64,System.Int64*,System.Int64*,System.Double*)">
+            <summary>
+creates a handle for a COO-format matrix [real-valued]
+</summary>
+            <param name="handle"> handle containing internal data for subsequent 
+Inspector-executor Sparse BLAS operations </param>
+/// <param name="indexing"> indicates how input arrays are indexed </param><param name="rows"> number of rows of the matrix </param><param name="cols"> number of columns of the matrix </param><param name="nnz"> number of non-zero elements </param><param name="row_indx"> pointer to the non-zero row indices </param><param name="col_indx"> pointer to the non-zero column indices </param><param name="values"> pointer to the non-zero values </param><returns> value indicating whether the operation was successful or not </returns></member>
+        <member name="M:WMathCore.IBLAS.SparseCreateCSC(sparse_matrix**,sparse_index_base_t,System.Int64,System.Int64,System.Int64*,System.Int64*,System.Int64*,System.Void*)">
+            <summary>
+creates a handle for a CSC-format matrix [complex-valued]
+</summary>
+            <param name="handle"> handle containing internal data for subsequent 
+Inspector-executor Sparse BLAS operations </param>
+/// <param name="indexing"> indicates how input arrays are indexed </param><param name="rows"> number of rows of the matrix </param><param name="cols"> number of columns of the matrix </param><param name="cols_start"> pointer to the starting indices of columns </param><param name="cols_end"> pointer to the ending indices of columns </param><param name="row_indx"> pointer to the non-zero row indices </param><param name="values"> pointer to the non-zero values </param><returns> value indicating whether the operation was successful or not </returns></member>
+        <member name="M:WMathCore.IBLAS.SparseCreateCSC(sparse_matrix**,sparse_index_base_t,System.Int64,System.Int64,System.Int64*,System.Int64*,System.Int64*,System.Double*)">
+            <summary>
+creates a handle for a CSC-format matrix [real-valued]
+</summary>
+            <param name="handle"> handle containing internal data for subsequent 
+Inspector-executor Sparse BLAS operations </param>
+/// <param name="indexing"> indicates how input arrays are indexed </param><param name="rows"> number of rows of the matrix </param><param name="cols"> number of columns of the matrix </param><param name="cols_start"> pointer to the starting indices of columns </param><param name="cols_end"> pointer to the ending indices of columns </param><param name="row_indx"> pointer to the non-zero row indices </param><param name="values"> pointer to the non-zero values </param><returns> value indicating whether the operation was successful or not </returns></member>
+        <member name="M:WMathCore.IBLAS.SparseCreateCSR(sparse_matrix**,sparse_index_base_t,System.Int64,System.Int64,System.Int64*,System.Int64*,System.Int64*,System.Void*)">
+            <summary>
+creates a handle for a CSR-format matrix [complex-valued]
+</summary>
+            <param name="handle"> handle containing internal data for subsequent 
+Inspector-executor Sparse BLAS operations </param>
+            <param name="indexing"> indicates how input arrays are indexed </param>
+            <param name="rows"> number of rows of the matrix </param>
+            <param name="cols"> number of columns of the matrix </param>
+            <param name="rows_start"> pointer to the starting indices of rows </param>
+            <param name="rows_end"> pointer to the ending indices of rows </param>
+            <param name="col_indx"> pointer to the non-zero column indices </param>
+            <param name="values"> pointer to the non-zero values </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.SparseCreateCSR(sparse_matrix**,sparse_index_base_t,System.Int64,System.Int64,System.Int64*,System.Int64*,System.Int64*,System.Double*)">
+            <summary>
+creates a handle for a CSR-format matrix [real-valued]
+</summary>
+            <param name="handle"> handle containing internal data for subsequent 
+Inspector-executor Sparse BLAS operations </param>
+            <param name="indexing"> indicates how input arrays are indexed </param>
+            <param name="rows"> number of rows of the matrix </param>
+            <param name="cols"> number of columns of the matrix </param>
+            <param name="rows_start"> pointer to the starting indices of rows </param>
+            <param name="rows_end"> pointer to the ending indices of rows </param>
+            <param name="col_indx"> pointer to the non-zero column indices </param>
+            <param name="values"> pointer to the non-zero values </param>
+            <returns> value indicating whether the operation was successful or not </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.Sctr(System.Int64,System.Void*,System.Int64*,System.Void*)">
+            <summary>
+converts a compressed sparse vector x 
+into full-storage vector y
+</summary>
+            <param name="nz"> the number of non-zero elemente </param>
+            <param name="x"> compressed sparse vector x </param>
+            <param name="indx"> the indices of non-zero elements </param>
+            <param name="y"> full-storage vector y </param>
+        </member>
+        <member name="M:WMathCore.IBLAS.Sctr(System.Int64,System.Double*,System.Int64*,System.Double*)">
+            <summary>
+converts a compressed sparse vector x 
+into full-storage vector y
+</summary>
+            <param name="nz"> the number of non-zero elemente </param>
+            <param name="x"> compressed sparse vector x </param>
+            <param name="indx"> the indices of non-zero elements </param>
+            <param name="y"> full-storage vector y </param>
+        </member>
+        <member name="M:WMathCore.IBLAS.Roti(System.Int64,System.Void*,System.Int64*,System.Void*,System.Double,System.Double)">
+            <summary>
+applies Givens rotation to sparse vectors 
+one of which is in compressed form
+</summary>
+            <param name="nz"> number of non-zero element in sparse vector x </param>
+            <param name="x"> non-zero values in sparse vector x </param>
+            <param name="indx"> non-zero indices in sparse vector x </param>
+            <param name="y"> dense vector y </param>
+            <param name="c"> scalar constant c </param>
+            <param name="s"> scalar constant s </param>
+        </member>
+        <member name="M:WMathCore.IBLAS.Roti(System.Int64,System.Double*,System.Int64*,System.Double*,System.Double,System.Double)">
+            <summary>
+applies Givens rotation to sparse vectors 
+one of which is in compressed form
+</summary>
+            <param name="nz"> number of non-zero element in sparse vector x </param>
+            <param name="x"> non-zero values in sparse vector x </param>
+            <param name="indx"> non-zero indices in sparse vector x </param>
+            <param name="y"> dense vector y </param>
+            <param name="c"> scalar constant c </param>
+            <param name="s"> scalar constant s </param>
+        </member>
+        <member name="M:WMathCore.IBLAS.Gthr(System.Int64,System.Void*,System.Void*,System.Int64*)">
+            <summary>
+gathers a full-storage sparse vector's elements 
+into compressed form
+</summary>
+            <param name="nz"> the number of elements in y to be gathered </param>
+            <param name="y"> the full-storage vector y </param>
+            <param name="x"> the compressed sparse vector x </param>
+            <param name="indx"> the indices of elements in y to be gathered </param>
+        </member>
+        <member name="M:WMathCore.IBLAS.Gthr(System.Int64,System.Double*,System.Double*,System.Int64*)">
+            <summary>
+gathers a full-storage sparse vector's elements 
+into compressed form
+</summary>
+            <param name="nz"> the number of elements in y to be gathered </param>
+            <param name="y"> the full-storage vector y </param>
+            <param name="x"> the compressed sparse vector x </param>
+            <param name="indx"> the indices of elements in y to be gathered </param>
+        </member>
+        <member name="M:WMathCore.IBLAS.Dotci(System.Int64,System.Void*,System.Int64*,System.Void*,System.Void*)">
+            <summary>
+computes the conjugated dot product of a compressed 
+sparse complex vector with a full-storage complex vector
+</summary>
+            <param name="nz"> the number of non-zero elements </param>
+            <param name="x"> array containing the non-zero elements (to be conjugated) </param>
+            <param name="indx"> array specifuing the indices of non-zero elements </param>
+            <param name="y"> the full-storage vector </param>
+            <param name="dotc"> dot product </param>
+        </member>
+        <member name="M:WMathCore.IBLAS.Dotui(System.Int64,System.Void*,System.Int64*,System.Void*,System.Void*)">
+            <summary>
+computes the dot product of a compressed sparse vector x
+by a full-storage vector y
+</summary>
+            <param name="nz"> the number of non-zero elements </param>
+            <param name="x"> array containing the non-zero elements </param>
+            <param name="indx"> array specifuing the indices of non-zero elements </param>
+            <param name="y"> the full-storage vector </param>
+            <param name="dotu"> dot product </param>
+        </member>
+        <member name="M:WMathCore.IBLAS.Doti(System.Int64,System.Double*,System.Int64*,System.Double*)">
+            <summary>
+computes the dot product of a compressed sparse vector x
+by a full-storage vector y
+</summary>
+            <param name="nz"> the number of non-zero elements </param>
+            <param name="x"> array containing the non-zero elements </param>
+            <param name="indx"> array specifuing the indices of non-zero elements </param>
+            <param name="y"> the full-storage vector </param>
+            <returns> dot product </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.Axpyi(System.Int64,System.Void*,System.Void*,System.Int64*,System.Void*)">
+            <summary>
+Adds a scalar multiple of compressed sparse vector
+to a full-storage vector
+</summary>
+            <param name="nz"> the number of non-zero elements </param>
+            <param name="alpha"> scalar alpha </param>
+            <param name="x"> array containing the non-zero elements </param>
+            <param name="indx"> array specifuing the indices of non-zero elements </param>
+            <param name="y"> the full-storage vector [will be updated] </param>
+        </member>
+        <member name="M:WMathCore.IBLAS.Axpyi(System.Int64,System.Double,System.Double*,System.Int64*,System.Double*)">
+            <summary>
+Adds a scalar multiple of compressed sparse vector
+to a full-storage vector
+</summary>
+            <param name="nz"> the number of non-zero elements </param>
+            <param name="alpha"> scalar alpha </param>
+            <param name="x"> array containing the non-zero elements </param>
+            <param name="indx"> array specifuing the indices of non-zero elements </param>
+            <param name="y"> the full-storage vector [will be updated] </param>
+        </member>
+        <member name="M:WMathCore.IBLAS.Gemm(CBLAS_LAYOUT,CBLAS_TRANSPOSE,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)">
+            <summary>
+computes a matrix-matrix product with general
+c := alpha * op(a) * op(b) + beta * c
+op(x) can be 1) identical; 2) transpose
+</summary>
+            <param name="layout"> matrix storage </param>
+            <param name="transa"> matrix a operation </param>
+            <param name="transb"> matrix b operation </param>
+            <param name="m"> number of rows of op(a) </param>
+            <param name="n"> number of columns of op(b) </param>
+            <param name="k"> number of columns of op(a) </param>
+            <param name="alpha"> scalar parameter </param>
+            <param name="a"> matrix a </param>
+            <param name="lda"> leading dimension of matrix a </param>
+            <param name="b"> matrix b </param>
+            <param name="ldb"> leading dimension of matrix b </param>
+            <param name="beta"> scalar parameter </param>
+            <param name="c"> matrix c </param>
+            <param name="ldc"> leading dimension of matrix c </param>
+        </member>
+        <member name="M:WMathCore.IBLAS.Gemv(CBLAS_LAYOUT,CBLAS_TRANSPOSE,System.Int64,System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double*,System.Int64)">
+            <summary>
+computes a matrix-vector product using a general matrix
+y := alpha * a * x + beta * y, or
+y := alpha * a' * y + beta * y
+y := alpha * conj(a') * x + beta * y            
+</summary>
+            <param name="layout"> matrix storage </param>
+            <param name="operation"> matrix operation </param>
+            <param name="m"> number of rows </param>
+            <param name="n"> number of columns </param>
+            <param name="alpha"> scalar parameter </param>
+            <param name="a"> matrix a </param>
+            <param name="lda"> leading dimension of matrix a </param>
+            <param name="x"> vector x </param>
+            <param name="incx"> increment in x </param>
+            <param name="beta"> scalar parameter </param>
+            <param name="y"> vector y </param>
+            <param name="incy"> increment in y </param>
+        </member>
+        <member name="M:WMathCore.IBLAS.Iamin(System.Int64,System.Void*,System.Int64)">
+            <summary>
+finds the index of the element in the vector
+with minimum absolute value
+[also works with sparse vectors]
+</summary>
+            <param name="n"> the number of vector elements </param>
+            <param name="x"> vector x </param>
+            <param name="incx"> increment in x </param>
+            <returns> index of the element </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.Iamin(System.Int64,System.Double*,System.Int64)">
+            <summary>
+finds the index of the element in the vector
+with minimum absolute value
+[also works with sparse vectors]
+</summary>
+            <param name="n"> the number of vector elements </param>
+            <param name="x"> vector x </param>
+            <param name="incx"> increment in x </param>
+            <returns> index of the element </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.Iamax(System.Int64,System.Void*,System.Int64)">
+            <summary>
+finds the index of the element in the vector
+with maximum absolute value
+[also works with sparse vectors]
+</summary>
+            <param name="n"> the number of vector elements </param>
+            <param name="x"> vector x </param>
+            <param name="incx"> increment in x </param>
+            <returns> index of the element </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.Iamax(System.Int64,System.Double*,System.Int64)">
+            <summary>
+finds the index of the element in the vector
+with maximum absolute value
+[also works with sparse vectors]
+</summary>
+            <param name="n"> the number of vector elements </param>
+            <param name="x"> vector x </param>
+            <param name="incx"> increment in x </param>
+            <returns> index of the element </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.Scal(System.Int64,System.Void*,System.Void*,System.Int64)">
+            <summary>
+computes the product of a vector by a scalar
+[also works with sparse vectors]
+</summary>
+            <param name="n"> the number of vector elements </param>
+            <param name="alpha"> scalar multiple </param>
+            <param name="x"> vector x </param>
+            <param name="incx"> increment in x </param>
+        </member>
+        <member name="M:WMathCore.IBLAS.Scal(System.Int64,System.Double,System.Double*,System.Int64)">
+            <summary>
+computes the product of a vector by a scalar
+[also works with sparse vectors]
+</summary>
+            <param name="n"> the number of vector elements </param>
+            <param name="alpha"> scalar multiple </param>
+            <param name="x"> vector x </param>
+            <param name="incx"> increment in x </param>
+        </member>
+        <member name="M:WMathCore.IBLAS.Rot(System.Int64,System.Void*,System.Int64,System.Void*,System.Int64,System.Double,System.Double)">
+            <summary>
+performs rotation of point in the plane
+xi = c * xi + s * yi
+yi = c * yi - s * xi
+</summary>
+            <param name="n"> the number of elements in vectors </param>
+            <param name="x"> vector x </param>
+            <param name="incx"> increment in x </param>
+            <param name="y"> vector y </param>
+            <param name="incy"> increment in y </param>
+            <param name="c"> a scalar </param>
+            <param name="s"> a scalar </param>
+        </member>
+        <member name="M:WMathCore.IBLAS.Rot(System.Int64,System.Double*,System.Int64,System.Double*,System.Int64,System.Double,System.Double)">
+            <summary>
+performs rotation of point in the plane
+xi = c * xi + s * yi
+yi = c * yi - s * xi
+</summary>
+            <param name="n"> the number of elements in vectors </param>
+            <param name="x"> vector x </param>
+            <param name="incx"> increment in x </param>
+            <param name="y"> vector y </param>
+            <param name="incy"> increment in y </param>
+            <param name="c"> a scalar </param>
+            <param name="s"> a scalar </param>
+        </member>
+        <member name="M:WMathCore.IBLAS.Nrm2(System.Int64,System.Void*,System.Int64)">
+            <summary>
+computes the Euclidean norm of a vector
+res = || x ||
+[also works with sparse vectors]
+</summary>
+            <param name="n"> the number of vector elements </param>
+            <param name="x"> vector x </param>
+            <param name="incx"> increment in x </param>
+            <returns> Euclidean norm </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.Nrm2(System.Int64,System.Double*,System.Int64)">
+            <summary>
+computes the Euclidean norm of a vector
+res = || x ||
+[also works with sparse vectors]
+</summary>
+            <param name="n"> the number of vector elements </param>
+            <param name="x"> vector x </param>
+            <param name="incx"> increment in x </param>
+            <returns> Euclidean norm </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.Dotc(System.Int64,System.Void*,System.Int64,System.Void*,System.Int64,System.Void*)">
+            <summary>
+computes the dot product of a conjugated vector
+with another vector
+</summary>
+            <param name="n"> number of vector elements </param>
+            <param name="x"> vector x (to be conjugated) </param>
+            <param name="incx"> increment in x </param>
+            <param name="y"> vector y </param>
+            <param name="incy"> increment in y</param>
+            <param name="dotc"> dot product </param>
+        </member>
+        <member name="M:WMathCore.IBLAS.Dotu(System.Int64,System.Void*,System.Int64,System.Void*,System.Int64,System.Void*)">
+            <summary>
+computes a vector-vector dot product
+</summary>
+            <param name="n"> number of vector elements </param>
+            <param name="x"> vector x </param>
+            <param name="incx"> increment in x </param>
+            <param name="y"> vector y </param>
+            <param name="incy"> increment in y </param>
+            <param name="dotu"> dot product </param>
+        </member>
+        <member name="M:WMathCore.IBLAS.Dot(System.Int64,System.Double*,System.Int64,System.Double*,System.Int64)">
+            <summary>
+computes a vector-vector dot product
+</summary>
+            <param name="n"> number of vector elements </param>
+            <param name="x"> vector x </param>
+            <param name="incx"> increment in x </param>
+            <param name="y"> vector y </param>
+            <param name="incy"> increment in y</param>
+            <returns> dot product </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.Copy(System.Int64,System.Void*,System.Int64,System.Void*,System.Int64)">
+            <summary>
+copies vector x to vector y
+[also works with sparse vectors]
+</summary>
+            <param name="n"> the number of vector elements </param>
+            <param name="x"> vector x </param>
+            <param name="incx"> increment in x </param>
+            <param name="y"> vector y </param>
+            <param name="incy"> increment in y</param>
+        </member>
+        <member name="M:WMathCore.IBLAS.Copy(System.Int64,System.Double*,System.Int64,System.Double*,System.Int64)">
+            <summary>
+copies vector x to vector y
+[also works with sparse vectors]
+</summary>
+            <param name="n"> the number of vector elements </param>
+            <param name="x"> vector x </param>
+            <param name="incx"> increment in x </param>
+            <param name="y"> vector y </param>
+            <param name="incy"> increment in y</param>
+        </member>
+        <member name="M:WMathCore.IBLAS.Axpy(System.Int64,System.Void*,System.Void*,System.Int64,System.Void*,System.Int64)">
+            <summary>
+computes a scalar-array product and 
+adds the result to another array
+y := alpha * x + y
+</summary>
+            <param name="n"> number of array elements </param>
+            <param name="alpha"> scalar alpha </param>
+            <param name="x"> array x </param>
+            <param name="incx"> increment in x </param>
+            <param name="y"> array y </param>
+            <param name="incy"> increment in y </param>
+        </member>
+        <member name="M:WMathCore.IBLAS.Axpy(System.Int64,System.Double,System.Double*,System.Int64,System.Double*,System.Int64)">
+            <summary>
+computes a scalar-array product and 
+adds the result to another array
+y := alpha * x + y
+</summary>
+            <param name="n"> number of array elements </param>
+            <param name="alpha"> scalar alpha </param>
+            <param name="x"> array x </param>
+            <param name="incx"> increment in x </param>
+            <param name="y"> array y </param>
+            <param name="incy"> increment in y </param>
+        </member>
+        <member name="M:WMathCore.IBLAS.Asum(System.Int64,System.Void*,System.Int64)">
+            <summary>
+computes the sum of magnitudes of the vector elements
+[also works with sparse vectors]
+</summary>
+            <param name="n"> the number of vector element </param>
+            <param name="x"> vector x </param>
+            <param name="incx"> increment in x </param>
+            <returns> sum of magnitude of all elements </returns>
+        </member>
+        <member name="M:WMathCore.IBLAS.Asum(System.Int64,System.Double*,System.Int64)">
+            <summary>
+computes the sum of magnitudes of the vector elements
+[also works with sparse vectors]
+</summary>
+            <param name="n"> the number of vector element </param>
+            <param name="x"> vector x </param>
+            <param name="incx"> increment in x </param>
+            <returns> sum of magnitude of all elements </returns>
+        </member>
+        <member name="T:WMathCore.IBLAS">
+            <summary>
+BLAS interface
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixZi.set_Status(sparse_status_t)">
+            <summary>
+sets the sparse status
+</summary>
+            <param name="value"> status value </param>
+        </member>
+        <member name="M:WMathCore.WMatrixZi.get_Status">
+            <summary>
+gets the sparse status
+</summary>
+            <returns> sparse status </returns>
+        </member>
+        <member name="M:WMathCore.WMatrixZi.get_NonZeroCount">
+            <summary>
+gets the number of non-zero elements
+</summary>
+            <returns> number of non-zero elements </returns>
+        </member>
+        <member name="P:WMathCore.WMatrixZi.NonZeroCount">
+            <summary>
+number of non-zero elements
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixZi.get_Cols">
+            <summary>
+gets the number of colums
+</summary>
+            <returns> number of colums </returns>
+        </member>
+        <member name="P:WMathCore.WMatrixZi.Cols">
+            <summary>
+number of columns
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixZi.get_Rows">
+            <summary>
+gets the number of rows
+</summary>
+            <returns> number of rows </returns>
+        </member>
+        <member name="P:WMathCore.WMatrixZi.Rows">
+            <summary>
+number of rows
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixZi.set_Handle(sparse_matrix**)">
+            <summary>
+sets the handle value
+</summary>
+            <param name="value"> handle value </param>
+        </member>
+        <member name="M:WMathCore.WMatrixZi.get_Handle">
+            <summary>
+gets the handle of the sparse matrix 
+</summary>
+            <returns> handle of the sparse matrix </returns>
+        </member>
+        <member name="P:WMathCore.WMatrixZi.Handle">
+            <summary>
+handle containing the internal data of the sparse matrix 
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixZi.set_Indexing(sparse_index_base_t)">
+            <summary>
+sets the indexing value
+</summary>
+            <param name="value"> indexing value </param>
+        </member>
+        <member name="M:WMathCore.WMatrixZi.get_Indexing">
+            <summary>
+gets the indexing
+</summary>
+            <returns> indexing </returns>
+        </member>
+        <member name="P:WMathCore.WMatrixZi.Indexing">
+            <summary>
+indicates the indexing (zero- or one-based)
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixZi.Dispose">
+            <summary>
+destructor
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixZi.#ctor(WMathCore.WMatrixZi)">
+            <summary>
+copy constructor (deep copy)
+</summary>
+            <param name="other"> another sparse matrix as the source </param>
+        </member>
+        <member name="M:WMathCore.WMatrixZi.#ctor(System.Int64,System.Int64,System.Int64)">
+            <summary>
+constructs a WMatrixZi with given parameters
+</summary>
+            <param name="rows"> number of rows </param>
+            <param name="cols"> number of columns </param>
+            <param name="nnz"> number of non-zero elements </param>
+        </member>
+        <member name="M:WMathCore.WMatrixZi.#ctor">
+            <summary>
+default constructor
+</summary>
+        </member>
+        <member name="T:WMathCore.WMatrixZi">
+            <summary>
+complex-valued sparse matrix class
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixZ.FillPart(WMathCore.WMatrixD,System.Boolean,System.Int32)">
+            <summary>
+fills the selected part of the matrix
+either real- or imaginary-part
+</summary>
+            <param name="part"> values of the selected part </param>
+            <param name="isRealPart"> is real- or imaginary part </param>
+            <param name="mode"> #0: seq. for; else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WMatrixZ.Shift(WMathCore.WComplex,System.Int32)">
+            <summary>
+shifts the values by a constant number
+</summary>
+            <param name="s"> shift value </param>
+            <param name="mode"> #0: seq. for; else: vectorized </param>
+            <returns> a new vector after constant shift </returns>
+        </member>
+        <member name="M:WMathCore.WMatrixZ.CopyFrom(WMathCore.WMatrixZ,System.Int32)">
+            <summary>
+copies values from another vector
+</summary>
+            <param name="source"> another vector as the source </param>
+            <param name="mode"> #0: seq. for; else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WMatrixZ.set_Item(System.Int64,System.Int64,WMathCore.WComplex)">
+            <summary>
+sets the element value at [iRow, iCol]
+</summary>
+            <param name="iRow"> row index </param>
+            <param name="iCol"> column index </param>
+            <param name="val"> desired value </param>
+        </member>
+        <member name="M:WMathCore.WMatrixZ.get_Item(System.Int64,System.Int64)">
+            <summary>
+gets the element value at [iRow, iCol]
+</summary>
+            <param name="iRow"> row index </param>
+            <param name="iCol"> column index </param>
+            <returns> element value </returns>
+        </member>
+        <member name="P:WMathCore.WMatrixZ.default(System.Int64,System.Int64)">
+            <summary>
+gets / sets element value at given index pair
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixZ.get_Values">
+            <summary>
+gets the vector element values
+</summary>
+            <returns> vector element values </returns>
+        </member>
+        <member name="P:WMathCore.WMatrixZ.Values">
+            <summary>
+vector elements values
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixZ.set_Cols(System.Int64)">
+            <summary>
+sets the number of columns
+</summary>
+            <param name="n"> desired value </param>
+        </member>
+        <member name="M:WMathCore.WMatrixZ.get_Cols">
+            <summary>
+gets the number of columns
+</summary>
+            <returns> number of columns </returns>
+        </member>
+        <member name="P:WMathCore.WMatrixZ.Cols">
+            <summary>
+number of columns
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixZ.set_Rows(System.Int64)">
+            <summary>
+sets the number of rows
+</summary>
+            <param name="n"> desired value </param>
+        </member>
+        <member name="M:WMathCore.WMatrixZ.get_Rows">
+            <summary>
+gets the number of rows
+</summary>
+            <returns> number of rows </returns>
+        </member>
+        <member name="P:WMathCore.WMatrixZ.Rows">
+            <summary>
+number of rows
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixZ.Dispose">
+            <summary>
+destructor
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixZ.#ctor(WMathCore.WMatrixZ,System.Int32)">
+            <summary>
+copy constructor (deep copy)
+</summary>
+            <param name="source"> another vector as the source </param>
+            <param name="mode"> #0: sequential; else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WMatrixZ.#ctor(WMathCore.WMatrixD,System.Boolean,System.Int32)">
+            <summary>
+constructs a complex matrix with its
+real- or imaginary part only
+</summary>
+            <param name="part"> part of the complex vector </param>
+            <param name="isRealPart"> is real- or imaginary-part </param>
+            <param name="mode"> #0: seq. for; else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WMatrixZ.#ctor(System.Int64,System.Int64,WMathCore.WComplex,System.Int32)">
+            <summary>
+constructs a matrix with given rows and columns
+with all the elements set to a given initial value
+</summary>
+            <param name="nRows"> number of rows </param>
+            <param name="nCols"> number of columns </param>
+            <param name="initVal"> initial value </param>
+            <param name="mode"> #0: sequential; else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WMatrixZ.#ctor(System.Int64,System.Int64)">
+            <summary>
+constructs a matrix with given rows and columns
+with all the elements set to zero
+</summary>
+            <param name="nRows"> number of rows </param>
+            <param name="nCols"> number of columns </param>
+        </member>
+        <member name="M:WMathCore.WMatrixZ.#ctor">
+            <summary>
+default constructor
+</summary>
+        </member>
+        <member name="F:WMathCore.WMatrixZ.values">
+            <summary>
+pointer to the values of matrix elements
+</summary>
+        </member>
+        <member name="F:WMathCore.WMatrixZ.cols">
+            <summary>
+number of columns
+</summary>
+        </member>
+        <member name="F:WMathCore.WMatrixZ.rows">
+            <summary>
+number of rows
+</summary>
+        </member>
+        <member name="T:WMathCore.WMatrixZ">
+            <summary>
+complex-valued matrix class
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixDi.MV(WMathCore.WVectorD,WMathCore.WVectorD)">
+            <summary>
+computes the matrix-vector product
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixDi.Create">
+            <summary>
+creates the sparse matrix
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixDi.set_Status(sparse_status_t)">
+            <summary>
+sets the sparse status
+</summary>
+            <param name="value"> status value </param>
+        </member>
+        <member name="M:WMathCore.WMatrixDi.get_Status">
+            <summary>
+gets the sparse status
+</summary>
+            <returns> sparse status </returns>
+        </member>
+        <member name="P:WMathCore.WMatrixDi.Status">
+            <summary>
+row indices
+</summary>
+            <summary>
+column indices
+</summary>
+            <summary>
+non-zero values
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixDi.get_NonZeroCount">
+            <summary>
+gets the number of non-zero elements
+</summary>
+            <returns> number of non-zero elements </returns>
+        </member>
+        <member name="P:WMathCore.WMatrixDi.NonZeroCount">
+            <summary>
+number of non-zero elements
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixDi.get_Cols">
+            <summary>
+gets the number of colums
+</summary>
+            <returns> number of colums </returns>
+        </member>
+        <member name="P:WMathCore.WMatrixDi.Cols">
+            <summary>
+number of columns
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixDi.get_Rows">
+            <summary>
+gets the number of rows
+</summary>
+            <returns> number of rows </returns>
+        </member>
+        <member name="P:WMathCore.WMatrixDi.Rows">
+            <summary>
+number of rows
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixDi.set_Handle(sparse_matrix**)">
+            <summary>
+sets the handle value
+</summary>
+            <param name="value"> handle value </param>
+        </member>
+        <member name="M:WMathCore.WMatrixDi.get_Handle">
+            <summary>
+gets the handle of the sparse matrix 
+</summary>
+            <returns> handle of the sparse matrix </returns>
+        </member>
+        <member name="P:WMathCore.WMatrixDi.Handle">
+            <summary>
+handle containing the internal data of the sparse matrix 
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixDi.set_Indexing(sparse_index_base_t)">
+            <summary>
+sets the indexing value
+</summary>
+            <param name="value"> indexing value </param>
+        </member>
+        <member name="M:WMathCore.WMatrixDi.get_Indexing">
+            <summary>
+gets the indexing
+</summary>
+            <returns> indexing </returns>
+        </member>
+        <member name="P:WMathCore.WMatrixDi.Indexing">
+            <summary>
+indicates the indexing (zero- or one-based)
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixDi.Dispose">
+            <summary>
+destructor
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixDi.#ctor(WMathCore.WMatrixDi)">
+            <summary>
+copy constructor (deep copy)
+</summary>
+            <param name="other"> another sparse matrix as the source </param>
+        </member>
+        <member name="M:WMathCore.WMatrixDi.#ctor(System.Int64,System.Int64,System.Int64)">
+            <summary>
+constructs a WMatrixDi with given parameters
+</summary>
+            <param name="rows"> number of rows </param>
+            <param name="cols"> number of columns </param>
+            <param name="nnz"> number of non-zero elements </param>
+        </member>
+        <member name="M:WMathCore.WMatrixDi.#ctor">
+            <summary>
+default constructor
+</summary>
+        </member>
+        <member name="T:WMathCore.WMatrixDi">
+            <summary>
+real-valued sparse matrix class
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixD.Shift(System.Double,System.Int32)">
+            <summary>
+shifts the values by a constant number
+</summary>
+            <param name="s"> shift value </param>
+            <param name="mode"> #0: seq. for; else: vectorized </param>
+            <returns> a new vector after constant shift </returns>
+        </member>
+        <member name="M:WMathCore.WMatrixD.CopyFrom(WMathCore.WMatrixD,System.Int32)">
+            <summary>
+copies values from another vector
+</summary>
+            <param name="source"> another vector as the source </param>
+            <param name="mode"> #0: seq. for; else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WMatrixD.set_Item(System.Int64,System.Int64,System.Double)">
+            <summary>
+sets the element value at [iRow, iCol]
+</summary>
+            <param name="iRow"> row index </param>
+            <param name="iCol"> column index </param>
+            <param name="val"> desired value </param>
+        </member>
+        <member name="M:WMathCore.WMatrixD.get_Item(System.Int64,System.Int64)">
+            <summary>
+gets the element value at [iRow, iCol]
+</summary>
+            <param name="iRow"> row index </param>
+            <param name="iCol"> column index </param>
+            <returns> element value </returns>
+        </member>
+        <member name="P:WMathCore.WMatrixD.default(System.Int64,System.Int64)">
+            <summary>
+gets / sets element value at given index pair
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixD.get_Values">
+            <summary>
+gets the vector element values
+</summary>
+            <returns> vector element values </returns>
+        </member>
+        <member name="P:WMathCore.WMatrixD.Values">
+            <summary>
+vector elements values
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixD.set_Cols(System.Int64)">
+            <summary>
+sets the number of columns
+</summary>
+            <param name="n"> desired value </param>
+        </member>
+        <member name="M:WMathCore.WMatrixD.get_Cols">
+            <summary>
+gets the number of columns
+</summary>
+            <returns> number of columns </returns>
+        </member>
+        <member name="P:WMathCore.WMatrixD.Cols">
+            <summary>
+number of columns
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixD.set_Rows(System.Int64)">
+            <summary>
+sets the number of rows
+</summary>
+            <param name="n"> desired value </param>
+        </member>
+        <member name="M:WMathCore.WMatrixD.get_Rows">
+            <summary>
+gets the number of rows
+</summary>
+            <returns> number of rows </returns>
+        </member>
+        <member name="P:WMathCore.WMatrixD.Rows">
+            <summary>
+number of rows
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixD.Dispose">
+            <summary>
+destructor
+</summary>
+        </member>
+        <member name="M:WMathCore.WMatrixD.#ctor(WMathCore.WMatrixD,System.Int32)">
+            <summary>
+copy constructor (deep copy)
+</summary>
+            <param name="source"> another vector as the source </param>
+            <param name="mode"> #0: sequential; else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WMatrixD.#ctor(System.Int64,System.Int64,System.Double,System.Int32)">
+            <summary>
+constructs a matrix with given rows and columns
+with all the elements set to a given initial value
+</summary>
+            <param name="nRows"> number of rows </param>
+            <param name="nCols"> number of columns </param>
+            <param name="initVal"> initial value </param>
+            <param name="mode"> #0: sequential; else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WMatrixD.#ctor(System.Int64,System.Int64)">
+            <summary>
+constructs a matrix with given rows and columns
+with all the elements set to zero
+</summary>
+            <param name="nRows"> number of rows </param>
+            <param name="nCols"> number of columns </param>
+        </member>
+        <member name="M:WMathCore.WMatrixD.#ctor">
+            <summary>
+default constructor
+</summary>
+        </member>
+        <member name="F:WMathCore.WMatrixD.values">
+            <summary>
+pointer to the values of matrix elements
+</summary>
+        </member>
+        <member name="F:WMathCore.WMatrixD.cols">
+            <summary>
+number of columns
+</summary>
+        </member>
+        <member name="F:WMathCore.WMatrixD.rows">
+            <summary>
+number of rows
+</summary>
+        </member>
+        <member name="T:WMathCore.WMatrixD">
+            <summary>
+real-valued matrix class
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorZi.SetANonZeroValue(System.Int64,System.Int64,WMathCore.WComplex)">
+            <summary>
+sets the i-th non-zero element with
+its index in the vector and its value 
+</summary>
+            <param name="i"> index in all the non-zero elements </param>
+            <param name="index"> index in the full vector </param>
+            <param name="value"> value of the element </param>
+        </member>
+        <member name="M:WMathCore.WVectorZi.SetNonZeroInfo(System.Int64*,System.Void*,System.Int32)">
+            <summary>
+sets the non-zero indices and values
+</summary>
+            <param name="nzIndices"> pointer to the non-zero indices </param>
+            <param name="nzValues"> pointer to the non-zero values </param>
+            <param name="mode"> #0: sequential; else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WVectorZi.SetNonZeroValues(System.Void*,System.Int32)">
+            <summary>
+sets the values of non-zero elements
+</summary>
+            <param name="nzValues"> pointer to the non-zero values </param>
+            <param name="mode"> #0: sequential; else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WVectorZi.SetNonZeroIndices(System.Int64*)">
+            <summary>
+sets the indices of non-zero elements
+</summary>
+            <param name="nzIndices"> pointer to the non-zero indices </param>
+        </member>
+        <member name="M:WMathCore.WVectorZi.get_NonZeroValues">
+            <summary>
+gets the values of non-zero elements
+</summary>
+            <returns> values of non-zero elements </returns>
+        </member>
+        <member name="P:WMathCore.WVectorZi.NonZeroValues">
+            <summary>
+values of the non-zero elements
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorZi.get_NonZeroIndices">
+            <summary>
+gets the indices of non-zero elements
+</summary>
+            <returns> indices of non-zero elements </returns>
+        </member>
+        <member name="P:WMathCore.WVectorZi.NonZeroIndices">
+            <summary>
+pointer to the indices of non-zero elements
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorZi.get_NonZeroCount">
+            <summary>
+gets the number of non-zero elements
+</summary>
+            <returns> number of non-zero elements </returns>
+        </member>
+        <member name="P:WMathCore.WVectorZi.NonZeroCount">
+            <summary>
+number of non-zero elements
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorZi.get_Count">
+            <summary>
+gets the number of vector elements
+</summary>
+            <returns> total number of elements </returns>
+        </member>
+        <member name="P:WMathCore.WVectorZi.Count">
+            <summary>
+number of vector elements
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorZi.Dispose">
+            <summary>
+desctructor
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorZi.#ctor(WMathCore.WVectorZi,System.Int32)">
+            <summary>
+copy constructor (deep copy)
+</summary>
+            <param name="other"> another vector as the source </param>
+            <param name="mode"> #0: sequential; else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WVectorZi.#ctor(System.Int64,System.Int64,WMathCore.WVectorI,WMathCore.WVectorZ,System.Int32)">
+            <summary>
+constructs a sparse vector with
+its all information directly
+</summary>
+            <param name="n"> total number of vector elements </param>
+            <param name="nnz"> number of non-zero elements </param>
+            <param name="nzIdx"> vector containing the non-zero indices </param>
+            <param name="nzVal"> vector containing the non-zero values </param>
+            <param name="mode"> #0: sequential; else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WVectorZi.#ctor(System.Int64,System.Int64,System.Int64*,System.Void*,System.Int32)">
+            <summary>
+constructs a sparse vector with
+its all information directly
+</summary>
+            <param name="n"> total number of vector elements </param>
+            <param name="nnz"> number of non-zero elements </param>
+            <param name="nzIdx"> pointer to the non-zero indices </param>
+            <param name="nzVal"> pointer to the non-zero values </param>
+            <param name="mode"> #0: sequential; else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WVectorZi.#ctor(System.Int64,System.Int64)">
+            <summary>
+constructs a sparse vector with
+totol number of elements and 
+non-zero element number
+</summary>
+            <param name="n"> total number of vector elements </param>
+            <param name="nnz"> number of non-zero elements </param>
+        </member>
+        <member name="M:WMathCore.WVectorZi.#ctor">
+            <summary>
+default constructor
+</summary>
+        </member>
+        <member name="F:WMathCore.WVectorZi.nzVal">
+            <summary>
+values of the non-zero elements
+</summary>
+        </member>
+        <member name="F:WMathCore.WVectorZi.nzIdx">
+            <summary>
+indices of non-zero elements
+</summary>
+        </member>
+        <member name="F:WMathCore.WVectorZi.nnz">
+            <summary>
+number of non-zero elements
+</summary>
+        </member>
+        <member name="F:WMathCore.WVectorZi.n">
+            <summary>
+total count of vector elements
+</summary>
+        </member>
+        <member name="T:WMathCore.WVectorZi">
+            <summary>
+complex-valued sparse vector class
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorZ.SetRange(System.Int64,System.Int64,WMathCore.WVectorZ,System.Int32)">
+            <summary>
+sets values within a selected range
+</summary>
+            <param name="start"> inclusive start index </param>
+            <param name="end"> exclusive end index </param>
+            <param name="val"> values to fill in the selected range </param>
+            <param name="mode"> #0: seq. for; else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WVectorZ.GetRange(System.Int64,System.Int64,System.Int32)">
+            <summary>
+gets values within a selected range
+</summary>
+            <param name="start"> inclusive start index </param>
+            <param name="end"> exclusive end index </param>
+            <param name="mode"> #0: seq. for; else: vectorized </param>
+            <returns> values within the selected range </returns>
+        </member>
+        <member name="M:WMathCore.WVectorZ.FillPart(WMathCore.WVectorD,System.Boolean,System.Int32)">
+            <summary>
+fills the selected part of the vector
+either real- or imaginary-part
+</summary>
+            <param name="part"> values of the selected part </param>
+            <param name="isRealPart"> is real- or imaginary part </param>
+            <param name="mode"> #0: seq. for; else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WVectorZ.Shift(WMathCore.WComplex,System.Int32)">
+            <summary>
+shifts the values by a constant number
+</summary>
+            <param name="s"> shift value </param>
+            <param name="mode"> #0: seq. for; else: vectorized </param>
+            <returns> a new vector after constant shift </returns>
+        </member>
+        <member name="M:WMathCore.WVectorZ.CopyFrom(WMathCore.WVectorZ,System.Int32)">
+            <summary>
+copies values from another vector
+</summary>
+            <param name="source"> another vector as the source </param>
+            <param name="mode"> #0: seq. for; else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WVectorZ.set_Item(System.Int64,WMathCore.WComplex)">
+            <summary>
+sets the element value at index i
+</summary>
+            <param name="i"> index i </param>
+            <param name="val"> desired value </param>
+        </member>
+        <member name="M:WMathCore.WVectorZ.get_Item(System.Int64)">
+            <summary>
+gets the element value at index i
+</summary>
+            <param name="i"> index i </param>
+            <returns> element value </returns>
+        </member>
+        <member name="P:WMathCore.WVectorZ.default(System.Int64)">
+            <summary>
+gets / sets element value at given index 
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorZ.get_Values">
+            <summary>
+gets the vector element values
+</summary>
+            <returns> vector element values </returns>
+        </member>
+        <member name="P:WMathCore.WVectorZ.Values">
+            <summary>
+vector elements values
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorZ.set_Count(System.Int64)">
+            <summary>
+sets the total number of elements
+</summary>
+            <param name="n"> desired value </param>
+        </member>
+        <member name="M:WMathCore.WVectorZ.get_Count">
+            <summary>
+gets the total number of elements
+</summary>
+            <returns> total number of elements </returns>
+        </member>
+        <member name="P:WMathCore.WVectorZ.Count">
+            <summary>
+total number of elements
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorZ.Dispose">
+            <summary>
+destructor
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorZ.#ctor(WMathCore.WVectorD,System.Boolean,System.Int32)">
+            <summary>
+constructs a complex vector with its
+real- or imaginary part only
+</summary>
+            <param name="part"> part of the complex vector </param>
+            <param name="isRealPart"> is real- or imaginary-part </param>
+            <param name="mode"> #0: seq. for; else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WVectorZ.#ctor(WMathCore.WVectorZ,System.Int32)">
+            <summary>
+copy constructor (deep copy)
+</summary>
+            <param name="other"> another vector as the source </param>
+            <param name="mode"> #0: sequential; (#1: parallel;) else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WVectorZ.#ctor(System.Int64,WMathCore.WComplex,System.Int32)">
+            <summary>
+constructs a vector with given length
+and sets all element to a specific value 
+</summary>
+            <param name="n"> total number of elements </param>
+            <param name="initVal"> initial value of all the elements </param>
+            <param name="mode"> #0: sequential; (#1: parallel;) else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WVectorZ.#ctor(System.Int64)">
+            <summary>
+constructs a vector with given length
+and initialize all elements to zero
+</summary>
+            <param name="n"> total number of elements </param>
+        </member>
+        <member name="M:WMathCore.WVectorZ.#ctor">
+            <summary>
+default constructor
+</summary>
+        </member>
+        <member name="F:WMathCore.WVectorZ.values">
+            <summary>
+pointer to the values of the vector elements
+</summary>
+        </member>
+        <member name="F:WMathCore.WVectorZ.count">
+            <summary>
+number of vector elements
+</summary>
+        </member>
+        <member name="T:WMathCore.WVectorZ">
+            <summary>
+complex-valued vector class
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorDi.SetANonZeroValue(System.Int64,System.Int64,System.Double)">
+            <summary>
+sets the i-th non-zero element with
+its index in the vector and its value 
+</summary>
+            <param name="i"> index in all the non-zero elements </param>
+            <param name="index"> index in the full vector </param>
+            <param name="value"> value of the element </param>
+        </member>
+        <member name="M:WMathCore.WVectorDi.SetNonZeroInfo(System.Int64*,System.Double*,System.Int32)">
+            <summary>
+sets the non-zero indices and values
+</summary>
+            <param name="nzIndices"> pointer to the non-zero indices </param>
+            <param name="nzValues"> pointer to the non-zero values </param>
+            <param name="mode"> #0: sequential; else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WVectorDi.SetNonZeroValues(System.Double*,System.Int32)">
+            <summary>
+sets the values of non-zero elements
+</summary>
+            <param name="nzValues"> pointer to the non-zero values </param>
+            <param name="mode"> #0: sequential; else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WVectorDi.SetNonZeroValues(std.vector&lt;System.Double,std.allocator&lt;System.Double&gt;&gt;*)">
+            <summary>
+sets the values of non-zero elements 
+</summary>
+            <param name="nzValues"> values of non-zero elements </param>
+        </member>
+        <member name="M:WMathCore.WVectorDi.SetNonZeroIndices(System.Int64*)">
+            <summary>
+sets the indices of non-zero elements
+</summary>
+            <param name="nzIndices"> pointer to the non-zero indices </param>
+        </member>
+        <member name="M:WMathCore.WVectorDi.SetNonZeroIndices(std.vector&lt;System.Int64,std.allocator&lt;System.Int64&gt;&gt;*)">
+            <summary>
+sets the indices of non-zero elements
+</summary>
+            <param name="nzIndices"> indices of non-zero elements </param>
+        </member>
+        <member name="M:WMathCore.WVectorDi.get_NonZeroValues">
+            <summary>
+gets the values of non-zero elements
+</summary>
+            <returns> values of non-zero elements </returns>
+        </member>
+        <member name="P:WMathCore.WVectorDi.NonZeroValues">
+            <summary>
+values of the non-zero elements
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorDi.get_NonZeroIndices">
+            <summary>
+gets the indices of non-zero elements
+</summary>
+            <returns> indices of non-zero elements </returns>
+        </member>
+        <member name="P:WMathCore.WVectorDi.NonZeroIndices">
+            <summary>
+pointer to the indices of non-zero elements
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorDi.get_NonZeroCount">
+            <summary>
+gets the number of non-zero elements
+</summary>
+            <returns> number of non-zero elements </returns>
+        </member>
+        <member name="P:WMathCore.WVectorDi.NonZeroCount">
+            <summary>
+number of non-zero elements
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorDi.get_Count">
+            <summary>
+gets the number of vector elements
+</summary>
+            <returns> total number of elements </returns>
+        </member>
+        <member name="P:WMathCore.WVectorDi.Count">
+            <summary>
+number of vector elements
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorDi.Dispose">
+            <summary>
+desctructor
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorDi.#ctor(WMathCore.WVectorDi,System.Int32)">
+            <summary>
+copy constructor (deep copy)
+</summary>
+            <param name="other"> another vector as the source </param>
+            <param name="mode"> #0: sequential; else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WVectorDi.#ctor(System.Int64,System.Int64,WMathCore.WVectorI,WMathCore.WVectorD,System.Int32)">
+            <summary>
+constructs a sparse vector with
+its all information directly
+</summary>
+            <param name="n"> total number of vector elements </param>
+            <param name="nnz"> number of non-zero elements </param>
+            <param name="nzIdx"> vector containing the non-zero indices </param>
+            <param name="nzVal"> vector containing the non-zero values </param>
+            <param name="mode"> #0: sequential; else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WVectorDi.#ctor(System.Int64,System.Int64,System.Int64*,System.Double*,System.Int32)">
+            <summary>
+constructs a sparse vector with
+its all information directly
+</summary>
+            <param name="n"> total number of vector elements </param>
+            <param name="nnz"> number of non-zero elements </param>
+            <param name="nzIdx"> pointer to the non-zero indices </param>
+            <param name="nzVal"> pointer to the non-zero values </param>
+            <param name="mode"> #0: sequential; else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WVectorDi.#ctor(System.Int64,System.Int64)">
+            <summary>
+constructs a sparse vector with
+totol number of elements and 
+non-zero element number
+</summary>
+            <param name="n"> total number of vector elements </param>
+            <param name="nnz"> number of non-zero elements </param>
+        </member>
+        <member name="M:WMathCore.WVectorDi.#ctor">
+            <summary>
+default constructor
+</summary>
+        </member>
+        <member name="F:WMathCore.WVectorDi.nzVal">
+            <summary>
+values of the non-zero elements
+</summary>
+        </member>
+        <member name="F:WMathCore.WVectorDi.nzIdx">
+            <summary>
+indices of non-zero elements
+</summary>
+        </member>
+        <member name="F:WMathCore.WVectorDi.nnz">
+            <summary>
+number of non-zero elements
+</summary>
+        </member>
+        <member name="F:WMathCore.WVectorDi.n">
+            <summary>
+total count of vector elements
+</summary>
+        </member>
+        <member name="T:WMathCore.WVectorDi">
+            <summary>
+real-valued sparse vector class
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorD.SetRange(System.Int64,System.Int64,WMathCore.WVectorD,System.Int32)">
+            <summary>
+sets values within a selected range
+</summary>
+            <param name="start"> inclusive start index </param>
+            <param name="end"> exclusive end index </param>
+            <param name="val"> values to fill in the selected range </param>
+            <param name="mode"> #0: seq. for; else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WVectorD.GetRange(System.Int64,System.Int64,System.Int32)">
+            <summary>
+gets values within a selected range
+</summary>
+            <param name="start"> inclusive start index </param>
+            <param name="end"> exclusive end index </param>
+            <param name="mode"> #0: seq. for; else: vectorized </param>
+            <returns> values within the selected range </returns>
+        </member>
+        <member name="M:WMathCore.WVectorD.Shift(System.Double,System.Int32)">
+            <summary>
+shifts the values by a constant number
+</summary>
+            <param name="s"> shift value </param>
+            <param name="mode"> #0: seq. for; else: vectorized </param>
+            <returns> a new vector after constant shift </returns>
+        </member>
+        <member name="M:WMathCore.WVectorD.CopyFrom(WMathCore.WVectorD,System.Int32)">
+            <summary>
+copies values from another vector
+</summary>
+            <param name="source"> another vector as the source </param>
+            <param name="mode"> #0: seq. for; else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WVectorD.set_Item(System.Int64,System.Double)">
+            <summary>
+sets the element value at index i
+</summary>
+            <param name="i"> index i </param>
+            <param name="val"> desired value </param>
+        </member>
+        <member name="M:WMathCore.WVectorD.get_Item(System.Int64)">
+            <summary>
+gets the element value at index i
+</summary>
+            <param name="i"> index i </param>
+            <returns> element value </returns>
+        </member>
+        <member name="P:WMathCore.WVectorD.default(System.Int64)">
+            <summary>
+gets / sets element value at given index 
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorD.get_Values">
+            <summary>
+gets the vector element values
+</summary>
+            <returns> vector element values </returns>
+        </member>
+        <member name="P:WMathCore.WVectorD.Values">
+            <summary>
+vector elements values
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorD.set_Count(System.Int64)">
+            <summary>
+sets the total number of elements
+</summary>
+            <param name="n"> desired value </param>
+        </member>
+        <member name="M:WMathCore.WVectorD.get_Count">
+            <summary>
+gets the total number of elements
+</summary>
+            <returns> total number of elements </returns>
+        </member>
+        <member name="P:WMathCore.WVectorD.Count">
+            <summary>
+total number of elements
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorD.Dispose">
+            <summary>
+destructor
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorD.#ctor(WMathCore.WVectorD,System.Int32)">
+            <summary>
+copy constructor (deep copy)
+</summary>
+            <param name="other"> another vector as the source </param>
+            <param name="mode"> #0: sequential; else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WVectorD.#ctor(System.Int64,System.Double,System.Int32)">
+            <summary>
+constructs a vector with given length
+and sets all element to a specific value 
+</summary>
+            <param name="n"> total number of elements </param>
+            <param name="initVal"> initial value of all the elements </param>
+            <param name="mode"> #0: sequential; else: vectorized </param>
+        </member>
+        <member name="M:WMathCore.WVectorD.#ctor(System.Int64)">
+            <summary>
+constructs a vector with given length
+and initialize all elements to zero
+</summary>
+            <param name="n"> total number of elements </param>
+        </member>
+        <member name="M:WMathCore.WVectorD.#ctor">
+            <summary>
+default constructor
+</summary>
+        </member>
+        <member name="F:WMathCore.WVectorD.values">
+            <summary>
+pointer to the values of vector elements
+</summary>
+        </member>
+        <member name="F:WMathCore.WVectorD.count">
+            <summary>
+number of vector elements
+</summary>
+        </member>
+        <member name="T:WMathCore.WVectorD">
+            <summary>
+real-valued vector class
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorI.SetRange(System.Int64,System.Int64,WMathCore.WVectorI)">
+            <summary>
+sets values within a selected range
+</summary>
+            <param name="start"> inclusive start index </param>
+            <param name="end"> exclusive end index </param>
+            <param name="val"> values to fill in the selected range </param>
+        </member>
+        <member name="M:WMathCore.WVectorI.GetRange(System.Int64,System.Int64)">
+            <summary>
+gets values within a selected range
+</summary>
+            <param name="start"> inclusive start index </param>
+            <param name="end"> exclusive end index </param>
+            <returns> values within the selected range </returns>
+        </member>
+        <member name="M:WMathCore.WVectorI.Shift(System.Int64)">
+            <summary>
+shifts the values by a constant number
+</summary>
+            <param name="s"> shift value </param>
+            <returns> a new vector after constant shift </returns>
+        </member>
+        <member name="M:WMathCore.WVectorI.CopyFrom(WMathCore.WVectorI)">
+            <summary>
+copies values from another vector
+</summary>
+            <param name="source"> another vector as the source </param>
+        </member>
+        <member name="M:WMathCore.WVectorI.set_Item(System.Int64,System.Int64)">
+            <summary>
+sets the element value at index i
+</summary>
+            <param name="i"> index i </param>
+            <param name="val"> desired value </param>
+        </member>
+        <member name="M:WMathCore.WVectorI.get_Item(System.Int64)">
+            <summary>
+gets the element value at index i
+</summary>
+            <param name="i"> index i </param>
+            <returns> element value </returns>
+        </member>
+        <member name="P:WMathCore.WVectorI.default(System.Int64)">
+            <summary>
+gets / sets element value at given index 
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorI.get_Values">
+            <summary>
+gets the vector element values
+</summary>
+            <returns> vector element values </returns>
+        </member>
+        <member name="P:WMathCore.WVectorI.Values">
+            <summary>
+vector elements values
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorI.set_Count(System.Int64)">
+            <summary>
+sets the total number of elements
+</summary>
+            <param name="n"> desired value </param>
+        </member>
+        <member name="M:WMathCore.WVectorI.get_Count">
+            <summary>
+gets the total number of elements
+</summary>
+            <returns> total number of elements </returns>
+        </member>
+        <member name="P:WMathCore.WVectorI.Count">
+            <summary>
+total number of elements
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorI.Dispose">
+            <summary>
+destructor
+</summary>
+        </member>
+        <member name="M:WMathCore.WVectorI.#ctor(WMathCore.WVectorI)">
+            <summary>
+copy constructor (deep copy)
+</summary>
+            <param name="other"> another vector as the source </param>
+        </member>
+        <member name="M:WMathCore.WVectorI.#ctor(System.Int64,System.Int64)">
+            <summary>
+constructs a vector with given length
+and sets all element to a specific value 
+</summary>
+            <param name="n"> total number of elements </param>
+            <param name="initVal"> initial value of all the elements </param>
+        </member>
+        <member name="M:WMathCore.WVectorI.#ctor(System.Int64)">
+            <summary>
+constructs a vector with given length
+and initialize all elements to zero
+</summary>
+            <param name="n"> total number of elements </param>
+        </member>
+        <member name="M:WMathCore.WVectorI.#ctor">
+            <summary>
+default constructor
+</summary>
+        </member>
+        <member name="F:WMathCore.WVectorI.values">
+            <summary>
+pointer to the values of vector elements
+</summary>
+        </member>
+        <member name="F:WMathCore.WVectorI.count">
+            <summary>
+number of vector elements
+</summary>
+        </member>
+        <member name="T:WMathCore.WVectorI">
+            <summary>
+integer-valued vector class
+</summary>
+        </member>
+        <member name="M:WMathCore.WComplex.set_Imag(System.Double)">
+            <summary>
+sets the imag-part of the complex number
+</summary>
+            <param name="val"> desired value </param>
+        </member>
+        <member name="M:WMathCore.WComplex.get_Imag">
+            <summary>
+gets the imaginary-part of the complex number
+</summary>
+            <returns> imaginary-part </returns>
+        </member>
+        <member name="P:WMathCore.WComplex.Imag">
+            <summary>
+imaginary-part of the complex number
+</summary>
+        </member>
+        <member name="M:WMathCore.WComplex.set_Real(System.Double)">
+            <summary>
+sets the real-part of the complex number
+</summary>
+            <param name="val"> desired value </param>
+        </member>
+        <member name="M:WMathCore.WComplex.get_Real">
+            <summary>
+gets the real-part of the complex number
+</summary>
+            <returns> real-part </returns>
+        </member>
+        <member name="P:WMathCore.WComplex.Real">
+            <summary>
+real-part of the complex number
+</summary>
+        </member>
+        <member name="M:WMathCore.WComplex.#ctor(WMathCore.WComplex!System.Runtime.CompilerServices.IsConst)">
+            <summary>
+constructs a complex number by copying from another
+</summary>
+            <param name="other"> another complex number </param>
+        </member>
+        <member name="M:WMathCore.WComplex.#ctor(System.Double,System.Double)">
+            <summary>
+constructs a complex number
+</summary>
+            <param name="re"> real-part </param>
+            <param name="im"> imaginary-part </param>
+        </member>
+        <member name="M:WMathCore.WComplex.#ctor">
+            <summary>
+default complex number constructor
+real- and imag-parts both set to 0.0
+</summary>
+        </member>
+        <member name="T:WMathCore.WComplex">
+            <summary>
+double-precision complex-number structure
+</summary>
+        </member>
+        <member name="M:d_init_helmholtz_2d(System.Double!System.Runtime.CompilerServices.IsConst*,System.Double!System.Runtime.CompilerServices.IsConst*,System.Double!System.Runtime.CompilerServices.IsConst*,System.Double!System.Runtime.CompilerServices.IsConst*,System.Int64!System.Runtime.CompilerServices.IsConst*,System.Int64!System.Runtime.CompilerServices.IsConst*,System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte!System.Runtime.CompilerServices.IsConst*,System.Double!System.Runtime.CompilerServices.IsConst*,System.Int64*,System.Double*,System.Int64*)">
+#if defined( _WIN32 ) || defined( _WIN64 )
+
+#define   d_init_Helmholtz_2D   D_INIT_HELMHOLTZ_2D
+#define d_commit_Helmholtz_2D D_COMMIT_HELMHOLTZ_2D
+#define        d_Helmholtz_2D        D_HELMHOLTZ_2D
+#define     free_Helmholtz_2D     FREE_HELMHOLTZ_2D
+
+#define   d_init_Helmholtz_3D   D_INIT_HELMHOLTZ_3D
+#define d_commit_Helmholtz_3D D_COMMIT_HELMHOLTZ_3D
+#define        d_Helmholtz_3D        D_HELMHOLTZ_3D
+#define     free_Helmholtz_3D     FREE_HELMHOLTZ_3D
+
+#define   s_init_Helmholtz_2D   S_INIT_HELMHOLTZ_2D
+#define s_commit_Helmholtz_2D S_COMMIT_HELMHOLTZ_2D
+#define        s_Helmholtz_2D        S_HELMHOLTZ_2D
+
+#define   s_init_Helmholtz_3D   S_INIT_HELMHOLTZ_3D
+#define s_commit_Helmholtz_3D S_COMMIT_HELMHOLTZ_3D
+#define        s_Helmholtz_3D        S_HELMHOLTZ_3D
+
+#define   d_init_sph_p      D_INIT_SPH_P
+#define d_commit_sph_p    D_COMMIT_SPH_P
+#define        d_sph_p           D_SPH_P
+#define     free_sph_p        FREE_SPH_P
+
+#define   d_init_sph_np     D_INIT_SPH_NP
+#define d_commit_sph_np   D_COMMIT_SPH_NP
+#define        d_sph_np          D_SPH_NP
+#define     free_sph_np       FREE_SPH_NP
+
+#define   s_init_sph_p      S_INIT_SPH_P
+#define s_commit_sph_p    S_COMMIT_SPH_P
+#define        s_sph_p           S_SPH_P
+
+#define   s_init_sph_np     S_INIT_SPH_NP
+#define s_commit_sph_np   S_COMMIT_SPH_NP
+#define        s_sph_np          S_SPH_NP
+
+#else
+
+#define   d_init_Helmholtz_2D    d_init_helmholtz_2d_
+#define d_commit_Helmholtz_2D  d_commit_helmholtz_2d_
+#define        d_Helmholtz_2D         d_helmholtz_2d_
+#define     free_Helmholtz_2D      free_helmholtz_2d_
+
+#define   d_init_Helmholtz_3D    d_init_helmholtz_3d_
+#define d_commit_Helmholtz_3D  d_commit_helmholtz_3d_
+#define        d_Helmholtz_3D         d_helmholtz_3d_
+#define     free_Helmholtz_3D      free_helmholtz_3d_
+
+#define   s_init_Helmholtz_2D    s_init_helmholtz_2d_
+#define s_commit_Helmholtz_2D  s_commit_helmholtz_2d_
+#define        s_Helmholtz_2D         s_helmholtz_2d_
+
+#define   s_init_Helmholtz_3D    s_init_helmholtz_3d_
+#define s_commit_Helmholtz_3D  s_commit_helmholtz_3d_
+#define        s_Helmholtz_3D         s_helmholtz_3d_
+
+#define   d_init_sph_p      d_init_sph_p_
+#define d_commit_sph_p    d_commit_sph_p_
+#define        d_sph_p           d_sph_p_
+#define     free_sph_p        free_sph_p_
+
+#define   d_init_sph_np   d_init_sph_np_
+#define d_commit_sph_np d_commit_sph_np_
+#define        d_sph_np        d_sph_np_
+#define     free_sph_np     free_sph_np_
+
+#define   s_init_sph_p      s_init_sph_p_
+#define s_commit_sph_p    s_commit_sph_p_
+#define        s_sph_p           s_sph_p_
+
+#define   s_init_sph_np   s_init_sph_np_
+#define s_commit_sph_np s_commit_sph_np_
+#define        s_sph_np        s_sph_np_
+
+#endif
+*
+</member>
+        <!-- 丢弃成员“M:WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”的格式错误的 XML 文档注释。-->
+        <!-- 丢弃成员“M:WMathCore.WMatrixDi.SetNonZeroValue(System.Int64,System.Int64,System.Int64,System.Double)”的格式错误的 XML 文档注释。-->
+    </members>
+</doc>

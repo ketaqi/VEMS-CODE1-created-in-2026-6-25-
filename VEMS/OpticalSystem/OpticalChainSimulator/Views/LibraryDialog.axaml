@@ -1,0 +1,76 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:OpticalChainSimulator.ViewModels"
+        mc:Ignorable="d"
+        x:Class="OpticalChainSimulator.Views.LibraryDialog"
+        x:DataType="vm:MainWindowViewModel"
+        x:Name="RootWindow"
+        Width="760" Height="420"
+        CanResize="False"
+        Title="元件库">
+	<!-- 注释保留：DataContext配置说明（已通过构造函数设置，此处仅作备注） -->
+	<!--为了修复OnAddElementCommand添加Window.DataContext  x:DataType="vm:MainWindowViewModel"-->
+	<!--<Window.DataContext>
+        <vm:MainWindowViewModel />
+    </Window.DataContext>-->
+
+	<!-- 根容器：带内边距和样式的Border，统一对话框外观 -->
+	<Border Padding="12" Classes="Panel">
+		<!-- 核心布局Grid：5行1列，按功能分区（标题→提示→空行→关闭按钮→元件库列表） -->
+		<Grid RowDefinitions="Auto,Auto,*,Auto" ColumnDefinitions="*">
+
+			<!-- 第0行：对话框主标题 -->
+			<TextBlock Classes="PanelTitle" Text="元件库 / 快速添加" />
+
+			<!-- 第1行：提示文本，说明使用方式（支持换行） -->
+			<TextBlock Grid.Row="1" Classes="Hint" Margin="0,6,0,10"
+                       Text="选择常用元件快速添加，或从下拉选择库模板。"
+                       TextWrapping="Wrap"/>
+
+			<!-- 第3行：操作按钮区 - 靠右排列的关闭按钮 -->
+			<StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8" Margin="0,12,0,0">
+				<Button x:Name="BtnCancel" Content="关闭" Width="100" Click="OnCancelClicked"/>
+			</StackPanel>
+
+			<!-- 第4行：元件库列表区域 - 带样式的Border容器 -->
+			<Border Grid.Row="2" Classes="PanelAlt" Padding="12">
+				<!-- 元件库列表控件：绑定ViewModel的ElementLibraryA集合 -->
+				<ItemsControl ItemsSource="{Binding ElementLibraryA}" >
+					<!-- 1. 项布局面板：使用WrapPanel实现元件按钮的自动换行排列
+                         - ItemWidth/ItemHeight：统一按钮尺寸（140x40）
+                         - HorizontalAlignment="Left"：左对齐排列
+                    -->
+					<ItemsControl.ItemsPanel>
+						<ItemsPanelTemplate>
+							<WrapPanel ItemWidth="140" ItemHeight="40" HorizontalAlignment="Left" />
+						</ItemsPanelTemplate>
+					</ItemsControl.ItemsPanel>
+
+					<!-- 2. 项模板：定义每个元件的按钮外观 -->
+					<ItemsControl.ItemTemplate>
+						<DataTemplate>
+							<Button
+                                Width="140"
+                                Margin="0,0,8,8"
+								Command="{Binding DataContext.AddElementCommand, ElementName=RootWindow}"
+								CommandParameter="{Binding}">
+
+								<!-- 按钮内容：水平排列的图标+名称（更清晰的布局方式） -->
+								<Button.Content>
+									<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+										<!-- 元件图标 -->
+										<TextBlock Text="{Binding Icon}" Margin="0,0,4,0"/>
+										<!-- 元件名称 -->
+										<TextBlock Text="{Binding Name}"/>
+									</StackPanel>
+								</Button.Content>
+							</Button>
+						</DataTemplate>
+					</ItemsControl.ItemTemplate>
+				</ItemsControl>
+			</Border>
+		</Grid>
+	</Border>
+</Window>

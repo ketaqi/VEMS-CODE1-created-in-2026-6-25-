@@ -1,0 +1,61 @@
+﻿<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:OpticalChainSimulator"
+    x:Class="OpticalChainSimulator.MainView">
+	<!-- 
+        光轴反射演示主视图
+        核心功能：承载3D视口（SkiaViewport）展示光学反射仿真效果，包含顶部标题栏、3D渲染区、底部操作提示栏
+        布局结构：Grid三行布局，整体遵循Avalonia MVVM设计模式
+    -->
+	<Grid>
+		<!-- 定义Grid行布局：
+             Row0：Auto高度（自适应内容）- 顶部标题栏
+             Row1：*高度（占满剩余空间）- 核心3D视口区
+             Row2：Auto高度（自适应内容）- 底部操作提示栏
+        -->
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+
+		<!-- 顶部标题栏：深色背景+白色标题文字 -->
+		<Border
+            Grid.Row="0"
+			
+			Background="#20232a"       
+			Padding="10">              
+			<TextBlock
+                Text="光轴反射演示"    
+			Foreground="White"      
+			FontSize="16"           
+			FontWeight="Bold"/>    
+		</Border>
+
+		<!-- 中间核心内容区：承载3D视口 -->
+		<Grid Grid.Row="1">
+			<!-- 定义Grid列布局：仅1列（占满整行），原右侧参数面板已移除 -->
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+
+			<!-- 3D渲染视口（核心控件）：基于Skia的3D视图容器，用于展示光学反射仿真效果 -->
+			<local:SkiaViewport
+                x:Name="Viewport"       
+			Grid.Column="0"         
+			Focusable="True"/>      <!-- 可聚焦，支持键盘操作（如R键复位相机） -->
+		</Grid>
+
+		<!-- 底部操作提示栏：默认隐藏，显示相机操作说明 -->
+		<Border
+            Grid.Row="2"
+			
+			Background="#f2f2f2"       
+			Padding="8"                
+			IsVisible="False">         <!-- 默认隐藏，可通过后台代码控制显示 -->
+			<TextBlock
+                Text="操作：左键拖动 = 旋转相机；右键拖动 = 平移；滚轮 = 缩放；R 键 = 复位相机"/>
+		</Border>
+	</Grid>
+</UserControl>

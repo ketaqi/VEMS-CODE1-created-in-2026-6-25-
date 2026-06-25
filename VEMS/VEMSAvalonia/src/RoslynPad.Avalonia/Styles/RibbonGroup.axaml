@@ -1,0 +1,44 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:RoslynPad.Controls;assembly=RoslynPad">
+
+    <Style Selector="local|RibbonGroup">
+        <Setter Property="MinWidth" Value="120"/>
+        <Setter Property="Background" Value="White"/>
+
+        <Setter Property="Template">
+            <ControlTemplate>
+                <DockPanel Margin="0,0,0,0">
+                    <!-- group 底部标题 -->
+                    <TextBlock Text="{TemplateBinding Header}"
+                               DockPanel.Dock="Bottom"
+                               HorizontalAlignment="Center"
+                               FontSize="11"
+                               Foreground="Gray"
+                               Margin="0,3,0,0"/>
+
+                    <!-- 内容区 + 分隔竖线 -->
+                    <Border BorderBrush="#DDDDDD"
+                            BorderThickness="0,0,1,0"
+                            Margin="0,0,0,0"
+                            Padding="5,3,5,3">
+                        <ItemsPresenter>
+                            <ItemsPresenter.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel Orientation="Horizontal"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Top"/>
+                                </ItemsPanelTemplate>
+                            </ItemsPresenter.ItemsPanel>
+                        </ItemsPresenter>
+                    </Border>
+                </DockPanel>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <!-- 最后一个 group 去掉右边的竖线 -->
+    <Style Selector="local|RibbonGroup:last-child /template/ Border">
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+</Styles>

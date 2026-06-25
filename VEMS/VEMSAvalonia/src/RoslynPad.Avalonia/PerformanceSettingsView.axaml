@@ -1,0 +1,137 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:roslynPad="using:RoslynPad"
+             xmlns:roslyn="clr-namespace:Microsoft.CodeAnalysis;assembly=Microsoft.CodeAnalysis"
+             xmlns:ui="using:RoslynPad.UI"
+             x:Class="RoslynPad.PerformanceSettingsView"
+             x:DataType="roslynPad:MainViewModelAvalonia">
+    <UserControl.Styles>
+        <!-- 搜索按钮样式 -->
+        <Style Selector="Button.SearchButtonStyle">
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Width" Value="22" />
+            <Setter Property="Padding" Value="2" />
+        </Style>
+    </UserControl.Styles>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <!-- 空白分隔行 -->
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="0">
+            <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem31]}" VerticalAlignment="Center" Width="150" HorizontalAlignment="Center" FontSize="20"/>
+        </StackPanel>
+        <Border Grid.Row="1" Height="1" Background="#DDDDDD" Margin="8,0,8,0"/>
+        <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="2">
+            <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem32]}" VerticalAlignment="Center" Width="150" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+        </StackPanel>
+        <!-- CPU核心 -->
+        <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="3">
+            <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem321]}" VerticalAlignment="Center" Width="150" HorizontalAlignment="Right"/>
+            <TextBox Watermark="请按下快捷键" KeyDown="PathInputBox_KeyDown"  IsReadOnly="False" Width="150" HorizontalAlignment="Right"
+                                Text="{Binding InitialFolderPath, Mode=TwoWay}"/>
+        </StackPanel>
+        <!-- BLAS库 -->
+        <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="4">
+            <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem322]}" VerticalAlignment="Center" Width="150" HorizontalAlignment="Right"/>
+            <TextBlock Text="{Binding BlasLibraryInfo}" VerticalAlignment="Center" Width="180" HorizontalAlignment="Right"/>
+
+        </StackPanel>
+        <!-- LAPACK库 -->
+        <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="5">
+            <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem323]}" VerticalAlignment="Center" Width="150" HorizontalAlignment="Right"/>
+            <TextBlock Text="{Binding FftLibraryInfo}" VerticalAlignment="Center" Width="180" HorizontalAlignment="Right"/>
+
+        </StackPanel>
+        <!-- FFT库 -->
+        <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="6">
+            <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem324]}" VerticalAlignment="Center" Width="150" HorizontalAlignment="Right"/>
+            <TextBlock Text="{Binding LapackLibraryInfo}" VerticalAlignment="Center" Width="180" HorizontalAlignment="Right"/>
+
+        </StackPanel>
+        
+
+
+        <!-- 分割线 -->
+        <Border Grid.Row="8" Height="1" Background="#DDDDDD" Margin="8,0,8,0"/>
+        <!-- 2级标题 -->
+        <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="9">
+            <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem33]}" VerticalAlignment="Center" Width="150" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+        </StackPanel>
+        <!-- 测试次数 -->
+        <StackPanel Orientation="Horizontal" Margin="4" Grid.Row="10">
+            <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem331]}" VerticalAlignment="Center" Width="180" HorizontalAlignment="Right"/>
+            <TextBox Watermark="测试次数" KeyDown="PathInputBox_KeyDown" IsReadOnly="False" Width="100" HorizontalAlignment="Right"
+                    Text="{Binding TestRunCount, Mode=TwoWay}" />
+        </StackPanel>
+        <!-- 矩阵乘法性能测试 -->
+        <StackPanel Orientation="Horizontal" Margin="4" Grid.Row="11">
+            <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem332]}" VerticalAlignment="Center" Width="180" HorizontalAlignment="Right"/>
+            <CheckBox Content="{Binding Localized[MainWindow.leftMenuItem337]}"
+                      VerticalAlignment="Center" Width="100" HorizontalAlignment="Center"
+                      IsChecked="{Binding IsComplexMatrixMultiplyEnabled, Mode=TwoWay}"/>
+            <Button Content="{Binding Localized[MainWindow.leftMenuItem338]}" Command="{Binding TestMatrixMultiplyCommand}" VerticalAlignment="Center" Width="50" HorizontalAlignment="Right"/>
+
+        </StackPanel>
+        <!-- 线性方程组求解性能测试 -->
+        <StackPanel Orientation="Horizontal" Margin="4" Grid.Row="12">
+            <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem333]}" VerticalAlignment="Center" Width="180" HorizontalAlignment="Right"/>
+            <CheckBox Content="{Binding Localized[MainWindow.leftMenuItem337]}"
+                      VerticalAlignment="Center" Width="100" HorizontalAlignment="Center"
+                      IsChecked="{Binding IsComplexLinearSolveEnabled, Mode=TwoWay}"/>
+            <Button Content="{Binding Localized[MainWindow.leftMenuItem338]}" Command="{Binding TestMatrixMultiplyCommand1}" Width="50" HorizontalAlignment="Right"/>
+
+        </StackPanel>
+        
+        <!--SVD（奇异值分解）性能测试 -->
+        <StackPanel Orientation="Horizontal" Margin="4" Grid.Row="13">
+            <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem334]}" VerticalAlignment="Center" Width="180" HorizontalAlignment="Right"/>
+            <CheckBox Content="{Binding Localized[MainWindow.leftMenuItem337]}"
+                      VerticalAlignment="Center" Width="100" HorizontalAlignment="Center"
+                      IsChecked="{Binding IsComplexSvdEnabled, Mode=TwoWay}"/>
+            <Button Content="{Binding Localized[MainWindow.leftMenuItem338]}" Command="{Binding TestMatrixMultiplyCommand2}" Width="50" HorizontalAlignment="Right"/>
+
+        </StackPanel>
+        <!--特征值分解（Eigen）性能测试 -->
+        <StackPanel Orientation="Horizontal" Margin="4" Grid.Row="14">
+            <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem335]}" VerticalAlignment="Center" Width="180" HorizontalAlignment="Right"/>
+            <CheckBox Content="{Binding Localized[MainWindow.leftMenuItem337]}"
+                      VerticalAlignment="Center" Width="100" HorizontalAlignment="Center"
+                      IsChecked="{Binding IsComplexEigenEnabled, Mode=TwoWay}"/>
+            <Button Content="{Binding Localized[MainWindow.leftMenuItem338]}" Command="{Binding TestMatrixMultiplyCommand3}" VerticalAlignment="Center" Width="50" HorizontalAlignment="Right"/>
+
+        </StackPanel>
+        <!--FFT（快速傅里叶变换）性能测试 -->
+        <StackPanel Orientation="Horizontal" Margin="4" Grid.Row="15">
+            <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem336]}" VerticalAlignment="Center" Width="180" HorizontalAlignment="Right"/>
+            <CheckBox Content="{Binding Localized[MainWindow.leftMenuItem337]}"
+                      VerticalAlignment="Center" Width="100" HorizontalAlignment="Center"
+                      IsChecked="{Binding IsComplexFftEnabled, Mode=TwoWay}"/>
+            <Button Content="{Binding Localized[MainWindow.leftMenuItem338]}" Command="{Binding TestMatrixMultiplyCommand4}" Width="50" HorizontalAlignment="Right"/>
+
+        </StackPanel>
+        <!-- 分割线 -->
+        <Border Grid.Row="16" Height="1" Background="#DDDDDD" Margin="8,0,8,0"/>
+
+ 
+    </Grid>
+</UserControl>

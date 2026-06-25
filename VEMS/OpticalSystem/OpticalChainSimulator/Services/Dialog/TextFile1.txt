@@ -1,0 +1,4 @@
+﻿
+实现把显示对话框的逻辑从代码后置（Code-behind）移至 ViewModel 是一个非常典型的 MVVM 场景。
+将 IDialogService 接口和它的实现 DialogService 注册到一个依赖注入（DI）容器中
+安装了 Microsoft.Extensions.DependencyInjection NuGet 包。

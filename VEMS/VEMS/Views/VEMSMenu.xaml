@@ -1,0 +1,125 @@
+﻿<Window x:Class="VEMS.VEMSMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VEMS"
+        mc:Ignorable="d"
+        Title="VEMSMenu" Height="450" Width="800">
+
+    <Window.Resources>
+        <SolidColorBrush Color="#E5E5E5" x:Key="MenuColor"/>
+        <SolidColorBrush Color="WhiteSmoke" x:Key="TreeColor"/>
+        <SolidColorBrush Color="White" x:Key="EditorColor"/>
+        <SolidColorBrush Color="White" x:Key="ConsoleColor"/>
+        <SolidColorBrush Color="Transparent" x:Key="SplitterColor"/>
+        <SolidColorBrush Color="Gray" x:Key="SiderColor" />
+        <SolidColorBrush Color="WhiteSmoke" x:Key="ButtonColor" />
+        <SolidColorBrush Color="#ECECEC" x:Key="TabColor"/>
+        <SolidColorBrush Color="LightSteelBlue" x:Key="BottomColor"/>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="16" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="240" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Grid.Row="1" 
+                Background="{StaticResource SiderColor}" />
+        <Border Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" 
+                Background="{StaticResource BottomColor}" />
+
+        <StackPanel Grid.Row="1" Grid.Column="1" 
+                    Background="{StaticResource TreeColor}">
+
+            <Button Height="48" BorderThickness="0.5" BorderBrush="WhiteSmoke"
+                    Content="Code Editor (WPF)" FontSize="18"
+                    FontFamily="SourceHanSansSC" FontWeight="SemiBold"
+                    Command="{Binding NewVEditorWPFCommand}" >
+            </Button>
+            <Button Height="48" BorderThickness="0.5" BorderBrush="WhiteSmoke"
+                    Content="Code Editor (ALT)" FontSize="18"
+                    FontFamily="SourceHanSansSC" FontWeight="SemiBold" 
+                    Command="{Binding NewVEditorALTCommand}"
+                    Visibility="Visible">
+            </Button>
+            <Button Height="48" BorderThickness="0.5" BorderBrush="WhiteSmoke"
+                    Content="Imaging Analyzer" FontSize="18"
+                    FontFamily="SourceHanSansSC" FontWeight="SemiBold" 
+                    Command="{Binding NewImagerCommand}">
+            </Button>
+            <Button Height="48" BorderThickness="0.5" BorderBrush="WhiteSmoke"
+                    Content="Coating Analyzer" FontSize="18"
+                    FontFamily="SourceHanSansSC" FontWeight="SemiBold" 
+                    Command="{Binding NewCoatingAnalyzerCommand}" >
+            </Button>
+            <Button Height="48" BorderThickness="0.5" BorderBrush="WhiteSmoke"
+                    Content="Upcomings ..." FontSize="18"
+                    FontFamily="SourceHanSansSC" FontWeight="SemiBold" 
+                    Command="{Binding}" >
+            </Button>
+
+        </StackPanel>
+
+        <Grid Grid.Row="1" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Content="VEMS" 
+                   HorizontalAlignment="Right" 
+                   FontFamily="SourceHanSansSC" FontSize="108"
+                   FontWeight="Bold" Margin="0,-12,4,-32"
+                   Foreground="LightSteelBlue">
+            </Label>
+            <Label Grid.Row="1" 
+                   Content="Virtual Electromagnetic Solutions" 
+                   HorizontalAlignment="Right"
+                   FontFamily="SourceHanSansSC" FontSize="22"
+                   FontWeight="SemiBold" Margin="0,0,8,0"
+                   Foreground="DimGray">
+            </Label>
+            <StackPanel Grid.Row="2" Orientation="Horizontal"
+                        VerticalAlignment="Bottom">
+                <Button Content="Doc" Margin="24,0,12,0" 
+                        Height="64" Width="64" Background="Transparent"
+                        FontSize="18" FontWeight="SemiBold"
+                        BorderBrush="LightSteelBlue" BorderThickness="2">
+                </Button>
+                <Button Content="Web" Margin="12,0,12,0"
+                        Height="64" Width="64" Background="Transparent"
+                        FontSize="18" FontWeight="SemiBold"
+                        BorderBrush="LightSteelBlue" BorderThickness="2">
+                </Button>
+                <Button Content="Mail" Margin="12,0,12,0"
+                        Height="64" Width="64" Background="Transparent"
+                        FontSize="18" FontWeight="SemiBold"
+                        BorderBrush="LightSteelBlue" BorderThickness="2">
+                </Button>
+                <Button Content="Chat" Margin="12,0,12,0"
+                        Height="64" Width="64" Background="Transparent"
+                        FontSize="18" FontWeight="SemiBold"
+                        BorderBrush="LightSteelBlue" BorderThickness="2">
+                </Button>
+                <Button Content="Share" Margin="12,0,12,0"
+                        Height="64" Width="64" Background="Transparent"
+                        FontSize="18" FontWeight="SemiBold"
+                        BorderBrush="LightSteelBlue" BorderThickness="2">
+                </Button>
+            </StackPanel>
+            <Label Grid.Row="3" Content="Version: X.XX.XXX"
+                   Foreground="DimGray" Margin="18,6,0,0">
+            </Label>
+        </Grid>
+                
+    </Grid>
+
+</Window>

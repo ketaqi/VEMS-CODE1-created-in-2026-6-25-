@@ -1,0 +1,64 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:RoslynPad.Controls;assembly=RoslynPad">
+
+    <Style Selector="local|RibbonButton">
+        <!-- 默认尺寸 -->
+        <Setter Property="Width" Value="64"/>
+        <Setter Property="Height" Value="80"/>
+
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border x:Name="PART_Border"
+                        Background="{DynamicResource top.toolbar}"
+                        BorderBrush="Transparent"
+                        BorderThickness="1"
+                        Padding="5"
+                        Margin="2"
+                        Width="{TemplateBinding Width}"
+                        Height="{TemplateBinding Height}">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                        <!-- 图标 -->
+                        <ContentPresenter Content="{TemplateBinding Icon}"
+                                          HorizontalAlignment="Center"
+                                          Margin="0,0,0,3"/>
+
+                        <!-- 文字 -->
+                        <ContentPresenter Content="{TemplateBinding Content}"
+                                          HorizontalAlignment="Center"
+                                          TextBlock.TextAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+
+        <!-- 专门作用于文字的样式 -->
+        <Style Selector="^ /template/ ContentPresenter TextBlock">
+            <Setter Property="FontSize" Value="12"/>
+            <!-- 文字字体设置已删除-->
+            
+        </Style>
+
+        <!-- hover 效果 -->
+        <Style Selector="^:pointerover /template/ Border#PART_Border">
+            <!--<Setter Property="Background" Value="#E6F0FA"/>-->
+            <Setter Property="Background" Value="#007acc"/>
+            <Setter Property="BorderBrush" Value="#3399FF"/>
+        </Style>
+
+        <!-- pressed 效果 -->
+        <Style Selector="^:pressed /template/ Border#PART_Border">
+            <!--<Setter Property="Background" Value="#CCE4F7"/>-->
+            <Setter Property="Background" Value="#007acc"/>
+            <Setter Property="BorderBrush" Value="#1A73E8"/>
+        </Style>
+
+        <!-- disabled 效果 -->
+        <Style Selector="^:disabled /template/ Border#PART_Border">
+            <Setter Property="Background" Value="{DynamicResource top.toolbar}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource top.toolbar}"/>
+            <!--<Setter Property="Foreground" Value="#696969"/>-->
+            <Setter Property="Opacity" Value="0.4"/>
+        </Style>
+    </Style>
+</Styles>

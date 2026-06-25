@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>$(LtsTargetFramework)</TargetFramework>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Themes\*.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Themes\*.json" />
+    <Content Include="Themes\*.json" Exclude="Themes\vs2019*.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Themes\Abyss_modern.json" />
+    <EmbeddedResource Remove="Themes\KimbieDark_modern.json" />
+    <EmbeddedResource Remove="Themes\Quiet_modern.json" />
+    <EmbeddedResource Remove="Themes\Red_modern.json" />
+    <EmbeddedResource Remove="Themes\Solarized_modern.json" />
+    <EmbeddedResource Remove="Themes\VEMS_modern.json" />
+  </ItemGroup>
+</Project>

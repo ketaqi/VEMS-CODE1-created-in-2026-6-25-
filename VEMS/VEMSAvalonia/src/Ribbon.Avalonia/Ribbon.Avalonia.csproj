@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Version>0.9.0</Version>
+    <Authors>Dmitry Zarubin, Splitwirez, Alban Mazerolles, Rubal Walia</Authors>
+    <PackageId>Ribbon.Avalonia</PackageId>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/dmitryzarubin/Ribbon.Avalonia</PackageProjectUrl>
+    <Description>The Ribbon.Avalonia library provides a customizable Ribbon UI component for Avalonia applications, similar to the one found in popular software like Microsoft Word and Excel. This component allows developers to create flexible and user-friendly interfaces that include tabs, groups, and buttons, organized in a streamlined ribbon layout.</Description>
+    <RepositoryType>Git</RepositoryType>
+    <RepositoryUrl>https://github.com/dmitryzarubin/Ribbon.Avalonia.git</RepositoryUrl>
+    <LangVersion>default</LangVersion>
+	<PackageTags>ribbon;avalonia;avaloniaui;avalonia ui;ribbon;ribbonui;ribbon ui;crossplat;crossplatform;cross platform;xplat;xplatform</PackageTags>
+	<Nullable>disable</Nullable>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsNotAsErrors>nullable;CS8618;CS8602;CS8625;CS8766;CS8767</WarningsNotAsErrors>
+    <AvaloniaUseCompiledBindingsByDefault>false</AvaloniaUseCompiledBindingsByDefault>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="**\*.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <AvaloniaResource Include="**\*.xaml">
+      <SubType>Designer</SubType>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" />
+    <PackageReference Include="Avalonia.Desktop" />
+    <PackageReference Include="Avalonia.ReactiveUI" />
+  </ItemGroup>
+</Project>

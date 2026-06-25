@@ -1,0 +1,113 @@
+﻿<!-- MainModule.en-US.xml -->
+<Localization language="English" description="English" cultureName="en-US">
+  <MainWindow>
+      <!-- 上侧菜单栏 -->
+      <ButtonContent>Action Button</ButtonContent>
+      <ButtonContent1>Action Button1</ButtonContent1>
+      <ButtonContent2>Action Button2</ButtonContent2>
+      <Explorer>Explorer</Explorer>
+      <MenuItem0>Ctrl+N</MenuItem0>
+      <MenuItem1>File</MenuItem1>
+      <MenuItem11>file</MenuItem11>
+      <MenuItem111>New&#x000A;file</MenuItem111>
+      <MenuItem112>Open&#x000A;file</MenuItem112>
+      <MenuItem12>folder</MenuItem12>
+      <MenuItem121>Open&#x000A;Folder</MenuItem121>
+      <MenuItem122>Default&#x000A;Folder</MenuItem122>
+      <MenuItem13>Save</MenuItem13>
+      <MenuItem131>Save&#x000A;file</MenuItem131>
+      <MenuItem132>Save&#x000A;as</MenuItem132>
+      <MenuItem133>Save&#x000A;all</MenuItem133>
+      <MenuItem14>close</MenuItem14>
+      <MenuItem141>Close&#x000A;tab</MenuItem141>
+      <MenuItem142>Close&#x000A;all</MenuItem142>
+      <MenuItem143>Exit&#x000A;app</MenuItem143>
+      <MenuItem2>Code</MenuItem2>
+      <MenuItem21>search</MenuItem21>
+      <MenuItem211>Search&#x000A;text</MenuItem211>
+      <MenuItem212>Replace&#x000A;text</MenuItem212>
+      <MenuItem22>format</MenuItem22>
+      <MenuItem221>Format&#x000A;code</MenuItem221>
+      <MenuItem23>comment</MenuItem23>
+      <MenuItem231>comment&#x000A;selection</MenuItem231>
+      <MenuItem232>Uncomment&#x000A;selection</MenuItem232>
+      <MenuItem24>compile</MenuItem24>
+      <MenuItem241>Debug&#x000A;code</MenuItem241>
+      <MenuItem242>Run&#x000A;code</MenuItem242>
+      <MenuItem25>coding</MenuItem25>
+      <MenuItem251>Add&#x000A;class</MenuItem251>
+      <MenuItem252>Add&#x000A;method</MenuItem252>
+      <MenuItem3>Output</MenuItem3>
+      <MenuItem31>message</MenuItem31>
+      <MenuItem311>Copy&#x000A;message</MenuItem311>
+      <MenuItem312>Clear&#x000A;message</MenuItem312>
+      <MenuItem32>figures</MenuItem32>
+      <MenuItem321>All figures&#x000A;minimized</MenuItem321>
+      <MenuItem322>Close all&#x000A;figures</MenuItem322>
+      <MenuItem4>Help</MenuItem4>
+      <MenuItem41>help</MenuItem41>
+      <MenuItem411>Get&#x000A;started</MenuItem411>
+      <MenuItem412>VEMS&#x000A;Docs</MenuItem412>
+      <MenuItem413>Links&#x000A;</MenuItem413>
+      <MenuItem414>Help&#x000A;</MenuItem414>
+      <MenuItem42>license</MenuItem42>
+      <MenuItem421>License&#x000A;info</MenuItem421>
+      <MenuItem422>Update&#x000A;app</MenuItem422>
+      <MenuItem43>about</MenuItem43>
+      <MenuItem431>About&#x000A;VEMS</MenuItem431>
+      <MenuItem432>Contact&#x000A;US</MenuItem432>
+      <MenuItem433>Join&#x000A;</MenuItem433>
+      <!-- 左侧活动栏 -->
+      <leftMenuItem1>Files</leftMenuItem1>
+      <leftMenuItem2>User Preference</leftMenuItem2>
+      <leftMenuItem3>Performance Settings</leftMenuItem3>
+      <leftMenuItem4>Default Parameters</leftMenuItem4>
+      <leftMenuItem5>Expand</leftMenuItem5>
+      <leftMenuItem7>Operation and Debugging</leftMenuItem7>
+      
+      
+      <!-- 输出功能区 -->
+      <OutputMenuItem1>Output(T)</OutputMenuItem1>
+      <OutputMenuItem2>Output(C)</OutputMenuItem2>
+      
+      <HomeItem0>Home</HomeItem0>
+      
+      <!-- 设置功能区 -->
+      <SettingItem>Setting</SettingItem>
+      <SettingItem1>language</SettingItem1>
+      <SettingItem2>Chinese</SettingItem2>
+      <SettingItem3>English</SettingItem3>
+      <SettingItem4>Theme</SettingItem4>
+      <SettingItem5>Light</SettingItem5>
+      <SettingItem6>Dark</SettingItem6>
+      <SettingItem7>OldVEMS</SettingItem7>
+      <SettingItem8>Quiet</SettingItem8>
+      <SettingItem9>Solarized</SettingItem9>
+      <SettingItem10>Red</SettingItem10>
+      <SettingItem11>Abyss</SettingItem11>
+      <SettingItem12>KimbieDark</SettingItem12>
+      
+      <!-- 主页功能区 -->
+      <HomeItem>Current system</HomeItem>
+      <HomeItem1>Current theme</HomeItem1>
+      <HomeItem2>Current language</HomeItem2>
+      <HomeItem3>Editor font size</HomeItem3>
+      <HomeItem4>Output font size</HomeItem4>
+      <HomeItem5>Output font</HomeItem5>
+      <HomeItem6>Editor font</HomeItem6>
+      <!-- 文件树右键菜单区 -->
+      <RightMenuItem0>NewFile</RightMenuItem0>
+      <RightMenuItem1>NewFolder</RightMenuItem1>
+      <RightMenuItem2>Open</RightMenuItem2>
+      <RightMenuItem3>Open Containing Folder</RightMenuItem3>
+      <RightMenuItem4>Copy File Path</RightMenuItem4>
+      <RightMenuItem5>Copy Folder Path</RightMenuItem5>
+      <RightMenuItem6>Rename</RightMenuItem6>
+      <RightMenuItem7>Delete</RightMenuItem7>
+      <!-- 编辑器右键菜单区 -->
+      <RightMenuItem8>All</RightMenuItem8>
+      <RightMenuItem9>Copy</RightMenuItem9>
+      <RightMenuItem10>Cut</RightMenuItem10>
+      <RightMenuItem11>Paste</RightMenuItem11>
+</MainWindow>
+</Localization>

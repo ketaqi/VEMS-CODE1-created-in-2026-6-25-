@@ -1,0 +1,81 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:OpticalChainSimulator.ViewModels"
+        xmlns:ScottPlot="clr-namespace:ScottPlot.Avalonia;assembly=ScottPlot.Avalonia"
+        x:Class="OpticalChainSimulator.Views.DetectorResultsWindow"
+        x:DataType="vm:OpticalElementViewModel"
+        Title="探测器结果"
+        Width="1100" Height="760">
+
+	<!-- 根布局Grid：分为两行（顶部操作栏 + 主体内容区） -->
+	<Grid RowDefinitions="Auto,*" Margin="10" RowSpacing="10">
+
+		<!-- 顶部操作栏：Grid分为三列（元件名称 + 复制按钮 + 关闭按钮） -->
+		<Grid ColumnDefinitions="*,Auto,Auto" VerticalAlignment="Center">
+			<!-- 探测器元件名称展示：绑定ViewModel的Name属性 -->
+			<TextBlock Text="{Binding Name}" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+			<!-- 复制报告按钮：点击触发OnCopyClicked方法，复制结果文本到剪贴板 -->
+			<Button Grid.Column="1" Margin="10,0,0,0" Padding="10,6" Content="复制报告" Click="OnCopyClicked"/>
+			<!-- 关闭窗口按钮：点击触发OnCloseClicked方法，关闭当前窗口 -->
+			<Button Grid.Column="2" Margin="10,0,0,0" Padding="10,6" Content="关闭" Click="OnCloseClicked"/>
+		</Grid>
+
+		<!-- 主体内容区容器：带边框和背景的Border，包裹TabControl -->
+		<Border Grid.Row="1"
+                BorderBrush="#2CFFFFFF"
+		
+			BorderThickness="1"
+			CornerRadius="8"          
+			Background="#0B0F14"      
+			Padding="10">
+
+			<!-- 标签页控件：切换“结果图”和“报告文本”视图 -->
+			<TabControl>
+				<!-- 第一个标签页：探测器强度分布热力图 -->
+				<TabItem Header="结果图">
+					<Grid RowDefinitions="Auto,*" RowSpacing="8">
+						<!-- 占位文本（预留标题位，当前为空） -->
+						<TextBlock Text=""
+                                   Opacity="0.85"/>
+						<!-- 绘图控件容器：带边框和深色背景的Border -->
+						<Border Grid.Row="1"
+                                BorderBrush="#2CFFFFFF"
+                                BorderThickness="1"
+                                CornerRadius="6"
+                                Background="#121A24"
+                                Padding="6">
+							<!-- ScottPlot绘图控件：命名为DetectorPlot，用于绘制探测器热力图 -->
+							<ScottPlot:AvaPlot x:Name="DetectorPlot"/>
+						</Border>
+					</Grid>
+				</TabItem>
+
+				<!-- 第二个标签页：探测器结果文本报告 -->
+				<TabItem Header="报告文本">
+					<!-- 文本容器：带边框和深色背景的Border -->
+					<Border BorderBrush="#2CFFFFFF"
+                            BorderThickness="1"
+                            CornerRadius="6"
+                            Background="#121A24"
+                            Padding="6">
+						<!-- 滚动容器：文本超出时显示滚动条 -->
+						<ScrollViewer>
+							<!-- 结果文本显示框：
+                                 - 绑定DetectorResultText属性展示结果
+                                 - Consolas等宽字体，适合展示数据
+                                 - 只读不可编辑，支持换行和文本换行
+                            -->
+							<TextBox Text="{Binding DetectorResultText}"
+                                     FontFamily="Consolas"
+                                     IsReadOnly="True"
+                                     AcceptsReturn="True"
+                                     TextWrapping="Wrap"
+                                     MinHeight="200"/>
+						</ScrollViewer>
+					</Border>
+				</TabItem>
+			</TabControl>
+
+		</Border>
+	</Grid>
+</Window>

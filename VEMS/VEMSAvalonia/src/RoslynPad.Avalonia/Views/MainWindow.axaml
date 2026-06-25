@@ -1,0 +1,754 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="RoslynPad.MainWindow"
+        xmlns:AvalonEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
+        xmlns:local="clr-namespace:RoslynPad;assembly=RoslynPad"
+        xmlns:local1="clr-namespace:RoslynPad.FeatureDemos.Views;assembly=RoslynPad"
+        xmlns:local2="clr-namespace:RoslynPad.CustomConverter;assembly=RoslynPad"
+        xmlns:ui="clr-namespace:RoslynPad.UI;assembly=RoslynPad.Common.UI"
+        xmlns:ribbon="clr-namespace:Ribbon.Avalonia;assembly=Ribbon.Avalonia"
+        xmlns:controls="clr-namespace:RoslynPad.Controls;assembly=RoslynPad"
+        xmlns:dialogHost="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
+        xmlns:icon="RoslynPad.IconsFront"
+        x:DataType="local:MainViewModelAvalonia"
+        Height="893"
+        Width="1586"
+        Title="{Binding WindowTitle, Mode=OneTime}"
+        Icon="avares://RoslynPad/Resources/VEMS.ico"
+        Name="This"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaChromeHints="NoChrome"
+        TransparencyLevelHint="AcrylicBlur,Transparent"
+        Background="{DynamicResource editing.block}" WindowState="Maximized">
+
+    <Window.Resources>
+        <!--<local2:RibbonTabKeyToIsSelectedConverter x:Key="RibbonTabKeyToIsSelectedConverter"/>-->
+        <!--<local:InverseBooleanConverter x:Key="InverseBooleanConverter"/>-->
+        <!--<local:MultiBooleanAndConverter x:Key="MultiBooleanAndConverter"/>-->
+        <SolidColorBrush x:Key="tool.title.foreground" Color="#FFAA00"/>
+
+        <SolidColorBrush x:Key="left.selectedMarker" Color="{DynamicResource SystemAccentColor}"/>
+        <SolidColorBrush x:Key="left.selectedBackground" Color="#1FFFFFFF"/>
+    </Window.Resources>
+
+    <Window.Styles>
+        <Style Selector="Image.icon">
+            <Setter Property="Grid.Column" Value="1" />
+            <Setter Property="Width" Value="24" />
+            <Setter Property="Height" Value="24" />
+        </Style>
+        <Style Selector="Button#test:disabled">
+            <Setter Property="Background" Value="#FFFFFF"/>
+            <Setter Property="Foreground" Value="#828282"/>
+        </Style>
+        <!-- ★ 修复 Dock 标签条透明（适用于主窗与浮窗） -->
+        <!-- 给 Dock 容器本身一个不透明背景，模板会继承 -->
+        <Style Selector="DockControl">
+            <Setter Property="Background" Value="#FF2A2D33"/>
+        </Style>
+
+        <!-- 给所有 TabStrip（含 Dock 内部用的 TabStrip）统一背景兜底 -->
+        <Style Selector="TabStrip">
+            <Setter Property="Background" Value="#FF2A2D33"/>
+        </Style>
+    </Window.Styles>
+
+    <Window.KeyBindings>
+    
+    </Window.KeyBindings>
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="92*" />
+            <RowDefinition Height="25" />
+        </Grid.RowDefinitions>
+        <!-- Ribbon 界面 -->
+        <DockPanel>
+            <controls:Ribbon DockPanel.Dock="Top" SelectedIndex="{Binding SelectedRibbonTabIndex}">
+
+                <controls:RibbonTab Header="{Binding Localized[MainWindow.MenuItem1]}"
+                                    ToolTip.Tip="{Binding FileMenuTip}"
+
+                                    
+                                    >
+                    <StackPanel Orientation="Horizontal" >
+
+                        <controls:RibbonGroup Header="{Binding Localized[MainWindow.MenuItem11]}"  >
+
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem111]}"
+                                                   Command="{Binding NewDocumentCommand}"
+                                                   ToolTip.Tip="{Binding NewFileTip}"
+
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-plus" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem112]}"
+                                                   Command="{Binding OpenFileCommand}"
+                                                   ToolTip.Tip="{Binding OpenFileTip}"
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-file" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                        </controls:RibbonGroup>
+
+                        <controls:RibbonGroup Header="{Binding Localized[MainWindow.MenuItem12]}">
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem121]}"
+                                                   Command="{Binding OpenFolderCommand1}"
+                                                   ToolTip.Tip="{Binding OpenFolderTip}"
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-folder-open" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem122]}"
+                                                   Command="{Binding OpenInitialFolderCommand}"
+                                                   ToolTip.Tip="{Binding DefaultFolderTip}"
+
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-folder" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                        </controls:RibbonGroup>
+
+                        <controls:RibbonGroup Header="{Binding Localized[MainWindow.MenuItem13]}">
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem131]}"
+                                                   Command="{Binding SaveCurrentDocumentCommand}"
+                                                   ToolTip.Tip="{Binding SaveFileTip}"
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-download" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem132]}"
+                                                   Command="{Binding SaveAsCommand1}"
+                                                   ToolTip.Tip="{Binding SaveAsTip}"
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-pen-to-square" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem133]}"
+                                                   Command="{Binding SaveAllDocumentsCommand}"
+                                                   ToolTip.Tip="{Binding SaveAllTip}"
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-layer-group" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                        </controls:RibbonGroup>
+
+                        <controls:RibbonGroup Header="{Binding Localized[MainWindow.MenuItem14]}">
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem141]}"
+                                                   Command="{Binding CloseCurrentDocumentCommand}"
+                                                   ToolTip.Tip="{Binding CloseTabTip}"
+
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-xmark" FontSize="28"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem142]}"
+                                                   Command="{Binding CloseAllDocumentsCommand}"
+                                                   ToolTip.Tip="{Binding CloseAllTip}"
+
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-circle-xmark" FontSize="28"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem143]}"
+                                                   Command="{Binding ExitApplicationCommand}"
+                                                   ToolTip.Tip="{Binding ExitAppTip}"
+
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-power-off" FontSize="28"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                        </controls:RibbonGroup>
+                    </StackPanel>
+                </controls:RibbonTab>
+
+                <!-- Tab 2 -->
+                <controls:RibbonTab Header="{Binding Localized[MainWindow.MenuItem2]}" ToolTip.Tip="{Binding CodeMenuTip}">
+                    <StackPanel Orientation="Horizontal">
+                        <!--<controls:RibbonGroup Header="{Binding Localized[MainWindow.MenuItem21]}">
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem211]}"
+                                                   Command="{Binding OpenSearchPanelCommand}"
+                                                   ToolTip.Tip="{Binding SearchTextTip}"
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-ellipsis" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem212]}"
+                                                   Command="{Binding OpenReplacePanelCommand}"
+                                                   ToolTip.Tip="{Binding ReplaceTextTip}"
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-indent" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                        </controls:RibbonGroup>-->
+
+                        <controls:RibbonGroup Header="{Binding Localized[MainWindow.MenuItem22]}">
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem221]}"
+                                                   Command="{Binding FormatCurrentDocumentCommand}"
+                                                   ToolTip.Tip="{Binding FormatCodeTip}"
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-qrcode" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                        </controls:RibbonGroup>
+
+                        <controls:RibbonGroup Header="{Binding Localized[MainWindow.MenuItem23]}">
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem231]}"
+                                                   Command="{Binding CommentSelectionCommand}"
+                                                   ToolTip.Tip="{Binding CommentSelectionTip}"
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-angles-right" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem232]}"
+                                                   Command="{Binding UncommentSelectionCommand}"
+                                                   ToolTip.Tip="{Binding UncommentSelectionTip}"
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-angles-left" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                        </controls:RibbonGroup>
+
+                        <controls:RibbonGroup Header="{Binding Localized[MainWindow.MenuItem24]}">
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem241]}"
+                                                   Command="{Binding DebugCurrentDocumentCommand}"
+                                                   ToolTip.Tip="{Binding DebugCodeTip}"
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-bug" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem242]}"
+                                                   Command="{Binding RunCommand}"
+                                                   ToolTip.Tip="{Binding RunCodeTip}"
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-terminal" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                        </controls:RibbonGroup>
+
+                        <controls:RibbonGroup Header="{Binding Localized[MainWindow.MenuItem25]}">
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem251]}"
+                                                   Command="{Binding NewDocumentCommand}"
+                                                   ToolTip.Tip="{Binding ExitAppTip}"
+                                                   IsEnabled="False"
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-code" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem252]}"
+                                                   Command="{Binding OpenFileCommand}"
+                                                   ToolTip.Tip="{Binding ExitAppTip}"
+                                                   IsEnabled="False"
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-code" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                        </controls:RibbonGroup>
+                    </StackPanel>
+                </controls:RibbonTab>
+
+                <!-- Tab 3 -->
+                <controls:RibbonTab Header="{Binding Localized[MainWindow.MenuItem3]}" ToolTip.Tip="{Binding OutputMenuTip}">
+                    <StackPanel Orientation="Horizontal">
+                        <controls:RibbonGroup Header="{Binding Localized[MainWindow.MenuItem31]}">
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem311]}"
+                                                   Command="{Binding CopyAllResultsCommand}"
+                                                   ToolTip.Tip="{Binding CopyMessageTip}"
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-clipboard-check" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem312]}"
+                                                   Command="{Binding ClearResultsCommand}"
+                                                   ToolTip.Tip="{Binding ClearMessageTip}"
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-rotate-right" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                        </controls:RibbonGroup>
+
+                        <controls:RibbonGroup Header="{Binding Localized[MainWindow.MenuItem32]}">
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem321]}"
+                                                   Command="{Binding NewDocumentCommand}"
+                                                   IsEnabled="False"
+                                                   ToolTip.Tip="{Binding AllFiguresMinimizedTip}"
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-arrows-to-circle" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem322]}"
+                                                   Command="{Binding NewDocumentCommand}"
+                                                   IsEnabled="False"
+                                                   ToolTip.Tip="{Binding CloseAllFiguresTip}"
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-circle-xmark" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                        </controls:RibbonGroup>
+                    </StackPanel>
+                </controls:RibbonTab>
+
+                <!-- Tab 4 -->
+                <controls:RibbonTab Header="{Binding Localized[MainWindow.MenuItem4]}" ToolTip.Tip="{Binding HelpMenuTip}">
+                    <StackPanel Orientation="Horizontal">
+                        <controls:RibbonGroup Header="{Binding Localized[MainWindow.MenuItem41]}">
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem411]}"
+                                                   Command="{Binding NewDocumentCommand}"
+                                                   IsEnabled="False"
+                                                   ToolTip.Tip="{Binding GetStartedTip}"
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-location-dot" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem412]}"
+                                                   Command="{Binding OpenFileCommand}"
+                                                   IsEnabled="False"
+                                                   ToolTip.Tip="{Binding VEMSDocsTip}"
+
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-paperclip" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem413]}"
+                                                   Command="{Binding NewDocumentCommand}"
+                                                   IsEnabled="False"
+                                                   ToolTip.Tip="{Binding LinksTip}"
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-paper-plane" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem414]}"
+                                                   Command="{Binding OpenhelpCommand}"
+                                                   ToolTip.Tip="{Binding HelpTip}"
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-circle-question" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                        </controls:RibbonGroup>
+
+                        <controls:RibbonGroup Header="{Binding Localized[MainWindow.MenuItem42]}">
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem421]}"
+                                                   Command="{Binding OpenLicenseCommand}"
+                                                   ToolTip.Tip="{Binding LicenseInfoTip}"
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-unlock" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem422]}"
+                                                   Command="{Binding OpenBaiduCommand}"
+                                                   ToolTip.Tip="{Binding UpdateAppTip}"
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-upload" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                        </controls:RibbonGroup>
+
+                        <controls:RibbonGroup Header="{Binding Localized[MainWindow.MenuItem43]}">
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem431]}"
+                                                   Command="{Binding OpenAboutVEMSCommand}"
+                                                   ToolTip.Tip="{Binding AboutVEMSTip}"
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-paper-plane" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem432]}"
+                                                   Command="{Binding OpenContactCommand}"
+
+                                                   ToolTip.Tip="{Binding ContactUSTip}"
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-phone-volume" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                            <controls:RibbonButton Content="{Binding Localized[MainWindow.MenuItem433]}"
+                                                   Command="{Binding OpenFileCommand}"
+                                                   IsEnabled="False"
+                                                   ToolTip.Tip="{Binding JoinShortcutTip}"
+
+                                                   >
+                                <controls:RibbonButton.Icon>
+                                    <icon:Icon Value="fa-solid fa-circle-user" FontSize="32"/>
+                                </controls:RibbonButton.Icon>
+                            </controls:RibbonButton>
+                        </controls:RibbonGroup>
+                    </StackPanel>
+                </controls:RibbonTab>
+            </controls:Ribbon>
+        </DockPanel>
+
+        <!-- 中间内容 -->
+        <DockPanel Grid.Row="1">
+            <Grid>
+                <dialogHost:DialogHost x:Name="DiaglogHost" Identifier="Main" CloseOnClickAway="True" DisableOpeningAnimation="True" Grid.Row="3">
+                    <DockPanel>
+
+                        <!-- 错误提示栏 --><!--
+                        <Border Padding="3" Margin="1" DockPanel.Dock="Bottom" IsVisible="{Binding HasError}">
+                            <DockPanel LastChildFill="False">
+                                <TextBlock VerticalAlignment="Center" Text="{Binding LastError.Message}" />
+                            </DockPanel>
+                        </Border>-->
+
+                        <!-- === 活动栏 + 功能区 + 分隔条 + 主内容 === -->
+                        <Grid x:Name="MainAreaGrid">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="48"/>
+                                <ColumnDefinition Width="350"/>
+                                <!-- 功能区 -->
+                                <ColumnDefinition Width="4"/>
+                                <!-- 分隔条 -->
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- 活动栏（48px） -->
+                            <Grid Grid.Column="0" Width="48">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <StackPanel x:Name="ActivityBar" Orientation="Vertical" Background="{DynamicResource left.toolbar}">
+
+                                    <!-- ① 资源管理（与 IsDocumentTreeViewVisible 绑定） -->
+                                    <Grid Width="48" Height="48">
+                                        <!-- 选中提亮背景 -->
+                                        <Rectangle Fill="{DynamicResource left.selectedBackground}"
+                                                   IsHitTestVisible="False"
+                                                   IsVisible="{Binding IsDocumentTreeViewVisible}"/>
+                                        <!-- 左侧竖线 -->
+                                        <Border Background="{DynamicResource left.selectedMarker}"
+                                                Width="3" CornerRadius="2"
+                                                HorizontalAlignment="Left"
+                                                IsHitTestVisible="False"
+                                                IsVisible="{Binding IsDocumentTreeViewVisible}"/>
+                                        <!-- 原按钮：命令/图标/提示保持不变 -->
+                                        <Button icon:Attached.Icon="fa-solid fa-folder"
+                                                Width="48" Height="48"
+                                                Background="Transparent"
+                                                Foreground="{DynamicResource left.foreground}"
+                                                Command="{Binding ShowDocumentTreeViewCommand}"
+                                                ToolTip.Tip="{Binding Localized[MainWindow.leftMenuItem1]}"
+                                                FontSize="24"/>
+                                    </Grid>
+
+                                    <!-- ② … -->
+                                    <Grid Width="48" Height="48">
+                                        <Rectangle Fill="{DynamicResource left.selectedBackground}"
+                                                   IsHitTestVisible="False"
+                                                   IsVisible="{Binding IsUserPreferencesViewVisible}"/>
+                                        <Border Background="{DynamicResource left.selectedMarker}"
+                                                Width="3" CornerRadius="2"
+                                                HorizontalAlignment="Left"
+                                                IsHitTestVisible="False"
+                                                IsVisible="{Binding IsUserPreferencesViewVisible}"/>
+                                        <Button icon:Attached.Icon="fa-solid fa-pen-to-square"
+                                                Width="48" Height="48"
+                                                Background="Transparent"
+                                                Foreground="{DynamicResource left.foreground}"
+                                                Command="{Binding ShowUserPreferencesViewCommand}"
+                                                ToolTip.Tip="{Binding Localized[MainWindow.leftMenuItem2]}"
+                                                FontSize="24"/>
+                                    </Grid>
+
+                                    <!-- ③ … -->
+                                    <Grid Width="48" Height="48">
+                                        <Rectangle Fill="{DynamicResource left.selectedBackground}"
+                                                   IsHitTestVisible="False"
+                                                   IsVisible="{Binding IsPerformanceSettingsViewVisible}"/>
+                                        <Border Background="{DynamicResource left.selectedMarker}"
+                                                Width="3" CornerRadius="2"
+                                                HorizontalAlignment="Left"
+                                                IsHitTestVisible="False"
+                                                IsVisible="{Binding IsPerformanceSettingsViewVisible}"/>
+                                        <Button icon:Attached.Icon="fa-solid fa-laptop"
+                                                Width="48" Height="48"
+                                                Background="Transparent"
+                                                Foreground="{DynamicResource left.foreground}"
+                                                Command="{Binding ShowPerformanceSettingsViewCommand}"
+                                                ToolTip.Tip="{Binding Localized[MainWindow.leftMenuItem3]}"
+                                                FontSize="24"/>
+                                    </Grid>
+
+                                    <!-- ④ … -->
+                                    <Grid Width="48" Height="48">
+                                        <Rectangle Fill="{DynamicResource left.selectedBackground}"
+                                                   IsHitTestVisible="False"
+                                                   IsVisible="{Binding IsDLLExpandViewVisible}"/>
+                                        <Border Background="{DynamicResource left.selectedMarker}"
+                                                Width="3" CornerRadius="2"
+                                                HorizontalAlignment="Left"
+                                                IsHitTestVisible="False"
+                                                IsVisible="{Binding IsDLLExpandViewVisible}"/>
+                                        <Button icon:Attached.Icon="fa-solid fa-n"
+                                                Width="48" Height="48"
+                                                Background="Transparent"
+                                                Foreground="{DynamicResource left.foreground}"
+                                                Command="{Binding ShowDLLExpandViewCommand}"
+                                                ToolTip.Tip="{Binding Localized[MainWindow.leftMenuItem5]}"
+                                                FontSize="24"/>
+                                    </Grid>
+
+                                    
+
+                                    <!-- ⑥ … -->
+                                    <Grid Width="48" Height="48">
+                                        <Rectangle Fill="{DynamicResource left.selectedBackground}"
+                                                   IsHitTestVisible="False"
+                                                   IsVisible="{Binding IsRunAndDebugViewVisible}"/>
+                                        <Border Background="{DynamicResource left.selectedMarker}"
+                                                Width="3" CornerRadius="2"
+                                                HorizontalAlignment="Left"
+                                                IsHitTestVisible="False"
+                                                IsVisible="{Binding IsRunAndDebugViewVisible}"/>
+                                        <Button icon:Attached.Icon="fa-solid fa-play"
+                                                Width="48" Height="48"
+                                                Background="Transparent"
+                                                Foreground="{DynamicResource left.foreground}"
+                                                Command="{Binding ShowRunAndDebugViewCommand}"
+                                                ToolTip.Tip="{Binding Localized[MainWindow.leftMenuItem7]}"
+                                                FontSize="24"/>
+                                    </Grid>
+
+                                </StackPanel>
+
+                                <!-- 设置按钮（保留原先的菜单结构） -->
+                                <Button Background="Transparent"
+                                        Foreground="{DynamicResource left.foreground}"
+                                        ToolTip.Tip="{Binding Localized[MainWindow.SettingItem]}"
+                                        VerticalAlignment="Bottom"
+                                        FontSize="24"
+                                        Name="SettingsButton"
+                            >
+
+                                    <!-- 按钮图标（保留原有图标设置） -->
+                                    <icon:Icon Value="fa-solid fa-gear" />
+                                    <Button.Flyout>
+                                        <MenuFlyout Placement="Right">
+                                            <MenuItem Header="开发者工具" Command="{Binding OpenConsoleCommand}"
+                                                      ToolTip.Tip="{Binding Localized[MainWindow.SettingItem]}"
+                                                      >
+                                                <MenuItem.Icon>
+                                                    <icon:Icon Value="fa-solid fa-gear" />
+                                                </MenuItem.Icon>
+                                            </MenuItem>
+                                            <!-- 菜单项2：语言 -->
+                                            <MenuItem Header="{Binding Localized[MainWindow.SettingItem1]}"
+                                                      Name="CLanguage"
+                                                      ToolTip.Tip="{Binding OpenLanguageTip}"
+                                          >
+                                                <MenuItem.Icon>
+                                                    <icon:Icon Value="fa-solid fa-gear" />
+                                                </MenuItem.Icon>
+                                                <MenuItem Header="{Binding Localized[MainWindow.SettingItem3]}" Command="{Binding SwitchLanguageCommand}" CommandParameter="en-US">
+                                                    <MenuItem.Icon>
+                                                        <icon:Icon Value="fa-solid fa-gear" />
+                                                    </MenuItem.Icon>
+                                                </MenuItem>
+                                                <MenuItem Header="-" />
+                                                <MenuItem Header="{Binding Localized[MainWindow.SettingItem2]}" Command="{Binding SwitchLanguageCommand}" CommandParameter="zh-CN">
+                                                    <MenuItem.Icon>
+                                                        <icon:Icon Value="fa-solid fa-gear" />
+                                                    </MenuItem.Icon>
+                                                </MenuItem>
+                                            </MenuItem>
+                                            <!-- 菜单项1：主题 -->
+                                            <MenuItem Header="{Binding Localized[MainWindow.SettingItem4]}"
+                                                      Name="CThemeMenu"
+                                                      ToolTip.Tip="{Binding OpenThemeTip}"
+                                                      >
+                                                <MenuItem.Icon>
+                                                    <icon:Icon Value="fa-solid fa-sun" />
+                                                </MenuItem.Icon>
+
+                                                <!-- 菜单项：Light主题 -->
+                                                <MenuItem Header="{Binding Localized[MainWindow.SettingItem5]}"
+                                                          Command="{Binding ApplyThemeCommand}" CommandParameter="Light">
+                                                    <MenuItem.Icon>
+                                                        <icon:Icon Value="fa-solid fa-sun" />
+                                                    </MenuItem.Icon>
+                                                </MenuItem>
+                                                <MenuItem Header="-" />
+                                                <!-- 菜单项：Dark主题 -->
+                                                <MenuItem Header="{Binding Localized[MainWindow.SettingItem6]}"
+                                                          Command="{Binding ApplyThemeCommand}" CommandParameter="Dark">
+                                                    <MenuItem.Icon>
+                                                        <icon:Icon Value="fa-solid fa-moon" />
+                                                    </MenuItem.Icon>
+                                                </MenuItem>
+                                                <MenuItem Header="-" />
+                                                <!-- 菜单项：OldVEMS主题 -->
+                                                <MenuItem Header="{Binding Localized[MainWindow.SettingItem7]}"
+                                                          Command="{Binding ApplyThemeCommand}" CommandParameter="VEMS">
+                                                    <MenuItem.Icon>
+                                                        <icon:Icon Value="fa-solid fa-sun" />
+                                                    </MenuItem.Icon>
+                                                </MenuItem>
+                                                <MenuItem Header="-" />
+                                                <!-- 菜单项：Quiet主题 -->
+                                                <MenuItem Header="{Binding Localized[MainWindow.SettingItem8]}"
+                                                          Command="{Binding ApplyThemeCommand}" CommandParameter="Quiet">
+                                                    <MenuItem.Icon>
+                                                        <icon:Icon Value="fa-solid fa-sun" />
+                                                    </MenuItem.Icon>
+                                                </MenuItem>
+                                                <MenuItem Header="-" />
+                                                <!-- 菜单项：Solarized主题 -->
+                                                <MenuItem Header="{Binding Localized[MainWindow.SettingItem9]}"
+                                                          Command="{Binding ApplyThemeCommand}" CommandParameter="Solarized">
+                                                    <MenuItem.Icon>
+                                                        <icon:Icon Value="fa-solid fa-sun" />
+                                                    </MenuItem.Icon>
+                                                </MenuItem>
+                                                <MenuItem Header="-" />
+                                                <!-- 菜单项：Red主题 -->
+                                                <MenuItem Header="{Binding Localized[MainWindow.SettingItem10]}"
+                                                          Command="{Binding ApplyThemeCommand}" CommandParameter="Red">
+                                                    <MenuItem.Icon>
+                                                        <icon:Icon Value="fa-solid fa-moon" />
+                                                    </MenuItem.Icon>
+                                                </MenuItem>
+                                                <MenuItem Header="-" />
+                                                <!-- 菜单项：Abyss主题 -->
+                                                <MenuItem Header="{Binding Localized[MainWindow.SettingItem11]}"
+                                                          Command="{Binding ApplyThemeCommand}" CommandParameter="Abyss">
+                                                    <MenuItem.Icon>
+                                                        <icon:Icon Value="fa-solid fa-moon" />
+                                                    </MenuItem.Icon>
+                                                </MenuItem>
+                                                <MenuItem Header="-" />
+                                                <!-- 菜单项：KimbieDark主题 -->
+                                                <MenuItem Header="{Binding Localized[MainWindow.SettingItem12]}"
+                                                          Command="{Binding ApplyThemeCommand}" CommandParameter="KimbieDark">
+                                                    <MenuItem.Icon>
+                                                        <icon:Icon Value="fa-solid fa-moon" />
+                                                    </MenuItem.Icon>
+                                                </MenuItem>
+                                            </MenuItem>
+                                        </MenuFlyout>
+                                    </Button.Flyout>
+                                </Button>
+                            </Grid>
+
+                            <!-- 功能区（多个面板放入同一 Grid，以 IsVisible 控制互斥/显示） -->
+                            <Border x:Name="SidePaneHost" Grid.Column="1" Background="{DynamicResource document.tree}">
+                                <Grid>
+                                    <local:DocumentTreeView  IsVisible="{Binding IsDocumentTreeViewVisible}"  />
+                                    <!--<local:UserPreferencesView IsVisible="{Binding IsUserPreferencesViewVisible}" />-->
+                                    <!--<local1:FeatureDemoView IsVisible="{Binding IsPerformanceSettingsViewVisible}" />
+                                    <local1:FeatureDemoView IsVisible="{Binding IsUserPreferencesViewVisible}" />-->
+                                    <local1:FeatureDemoView2
+                                     IsVisible="{Binding DataContext.IsPerformanceSettingsViewVisible, ElementName=Root}" />
+                                    <local1:FeatureDemoView1
+                                      IsVisible="{Binding DataContext.IsUserPreferencesViewVisible, ElementName=Root}" />
+                                    <local1:FeatureDemoView3
+                                      IsVisible="{Binding DataContext.IsDLLExpandViewVisible, ElementName=Root}" />
+                                    <local1:FeatureDemoView4
+                                      IsVisible="{Binding DataContext.IsRunAndDebugViewVisible, ElementName=Root}" />
+                                    <!--<local:DLLExpandView
+                                        IsVisible="{Binding DataContext.IsDLLExpandViewVisible, ElementName=This}"
+                                        DataContext="{Binding CurrentOpenDocument}" />
+                                    --><!--<local:DocumentTreeView4 IsVisible="{Binding IsDocumentTreeView4Visible}" />--><!--
+                                    <local:RunAndDebugView
+                                        IsVisible="{Binding DataContext.IsRunAndDebugViewVisible, ElementName=This}"
+                                        DataContext="{Binding CurrentOpenDocument}" />-->
+                                </Grid>
+                            </Border>
+
+                            <!-- 分隔条（拖动改变功能区宽度） -->
+                            <GridSplitter Grid.Column="2"
+                                          ResizeDirection="Columns"
+                                          ShowsPreview="False"
+                                          Background="Transparent"
+                                          Cursor="SizeWestEast"
+                                          HorizontalAlignment="Stretch"
+                                          VerticalAlignment="Stretch"/>
+
+                            <!-- 主内容区（DockControl 原样） -->
+                            <DockControl Grid.Column="3" x:Name="Dock" InitializeLayout="True" InitializeFactory="True">
+                                <DockControl.Factory>
+                                    <Factory ActiveDockableChanged="OnActiveDockableChanged"
+                                             DockableClosed="OnDockableClosedAsync" />
+                                </DockControl.Factory>
+
+                                <RootDock x:Name="Root" Id="Root" IsCollapsable="False" DefaultDockable="{Binding ElementName=MainLayout}">
+                                    <ProportionalDock x:Name="MainLayout" Id="MainLayout" Orientation="Horizontal">
+                                        <ProportionalDockSplitter x:Name="LeftSplitter" Id="LeftSplitter" />
+                                        <ProportionalDock x:Name="MainPane" Id="MainPane" Orientation="Vertical">
+                                            <DocumentDock x:Name="DocumentsPane" Id="DocumentsPane">
+                                                <DocumentDock.DocumentTemplate>
+                                                    <DocumentTemplate x:CompileBindings="false">
+                                                        <local:DocumentView DataContext="{Binding DataContext}" Background="{DynamicResource output.block}"/>
+                                                    </DocumentTemplate>
+                                                </DocumentDock.DocumentTemplate>
+
+                                                <Document x:Name="NewDoc" Id="NewDoc" Title="{Binding DataContext.Localized[MainWindow.HomeItem0], ElementName=This}" x:DataType="Document" CanClose="False" CanFloat="False">
+                                                    <local:NewDocumentView DataContext="{Binding #This.DataContext}" />
+                                                </Document>
+                                            </DocumentDock>
+
+                                            <ProportionalDockSplitter x:Name="ResultSplitter" Id="ResultSplitter" />
+
+                                            <ToolDock x:Name="ResultPane" Id="ResultPane" Proportion="0.35" Alignment="Bottom">
+                                                <Tool x:Name="Results1" Id="Results" Title="{Binding DataContext.Localized[MainWindow.OutputMenuItem2], ElementName=This}" x:DataType="Tool" CanFloat="False" CanPin="True" CanClose="False">
+                                                    <local:ResultsView x:Name="ResultsView" DataContext="{Binding DataContext.ActiveResultsViewModel, ElementName=This}" BorderThickness="0" Background="{DynamicResource editing.block}"/>
+                                                </Tool>
+                                            </ToolDock>
+                                        </ProportionalDock>
+                                    </ProportionalDock>
+                                </RootDock>
+                            </DockControl>
+                        </Grid>
+                        <!-- === 主区域结束 === -->
+
+                    </DockPanel>
+                </dialogHost:DialogHost>
+                
+            </Grid>
+        </DockPanel>
+
+        <!-- 底部状态栏 -->
+        <Border DockPanel.Dock="Bottom" Background="{DynamicResource bottom.statusbar}" Padding="0 0 10 0" Grid.Row="2">
+            <StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Right" Height="25"  VerticalAlignment="Center">
+                <TextBlock Text="RAM:"/>
+                <TextBlock x:Name="MemText" Text="N/A" Foreground="{DynamicResource ThemeForegroundBrush1}"/>
+                <TextBlock Text="CPU:" Foreground="{DynamicResource ThemeForegroundBrush1}"/>
+                <TextBlock x:Name="CpuText" Text="N/A" Foreground="{DynamicResource ThemeForegroundBrush1}"/>
+                <!-- 在 Window 节点确保有名称，例如： x:Name="This" 或 Name="This" -->
+                
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,183 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:roslynPad="using:RoslynPad"
+             xmlns:roslyn="clr-namespace:Microsoft.CodeAnalysis;assembly=Microsoft.CodeAnalysis"
+             xmlns:ui="using:RoslynPad.UI"
+             x:Class="RoslynPad.DocumentTreeView"
+             x:DataType="roslynPad:MainViewModelAvalonia"
+             xmlns:icon="RoslynPad.IconsFront"
+             xmlns:local="clr-namespace:RoslynPad;assembly=RoslynPad"
+             xmlns:local1="clr-namespace:RoslynPad.CustomConverter;assembly=RoslynPad">
+
+    <UserControl.Resources>
+        <local1:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <local1:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibilityConverter"/>
+        <local1:FileTypeToIconValueConverter x:Key="FileTypeToIconValueConverter"/>
+        <local1:FileTypeToColorConverter x:Key="FileTypeToColorConverter"/>
+
+    </UserControl.Resources>
+
+    <UserControl.Styles>
+        <!-- 搜索按钮样式 -->
+        <Style Selector="Button.SearchButtonStyle">
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Width" Value="22" />
+            <Setter Property="Padding" Value="2" />
+        </Style>
+    </UserControl.Styles>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <!-- 空白分隔行 -->
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="0">
+            <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem1]}" VerticalAlignment="Center" Width="150" HorizontalAlignment="Center" FontSize="20"/>
+        </StackPanel>
+        <Border Grid.Row="1" Height="1" Background="#DDDDDD" Margin="8,0,8,0"/>
+        <!--<Label Content="{Binding Localized[MainWindow.leftMenuItem1]}" Grid.Row="0" />-->
+        <!-- 空白分隔 -->
+        <Border Grid.Row="2"
+                Background="Transparent" />
+        <!-- 搜索条 -->
+        <Border Grid.Row="3"
+                BorderThickness="1,1,1,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="22" />
+                    <ColumnDefinition Width="22" />
+                </Grid.ColumnDefinitions>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition MaxWidth="22" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBox Name="SearchText"
+           BorderThickness="1"
+           Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}">
+                        <TextBox.KeyBindings>
+                            <KeyBinding Gesture="Enter" Command="{Binding SearchCommand}"/>
+                            <KeyBinding Gesture="Escape"   Command="{Binding ClearSearchCommand}"/>
+                        </TextBox.KeyBindings>
+                    </TextBox>
+                    <TextBlock Text="Search documents (press Enter)"
+                               IsHitTestVisible="False"
+                               IsVisible="{Binding !CanClearSearch}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+
+                               >
+                    </TextBlock>
+
+                    <Button Grid.Column="1"
+                            Classes="SearchButtonStyle"
+                            Command="{Binding ClearSearchCommand}"
+                            ToolTip.Tip="Clear search (Esc)"
+                            IsVisible="{Binding CanClearSearch}">
+                        <Image Source="{StaticResource Close}"
+                               Width="16"
+                               Height="16"/>
+                    </Button>
+                </Grid>
+
+                <ToggleButton Grid.Column="1"
+                              Classes="SearchButtonStyle"
+                              IsChecked="{Binding SearchFileContents}"
+                              ToolTip.Tip="Search File Contents">
+                    <Image Source="{StaticResource FileCollection}"
+                           Width="16"
+                           Height="16" />
+                </ToggleButton>
+
+                <ToggleButton Grid.Column="2"
+                              Classes="SearchButtonStyle"
+                              IsChecked="{Binding SearchUsingRegex}"
+                              ToolTip.Tip="Use Regular Expressions">
+                    <Image Source="{StaticResource RegularExpression}"
+                           Width="16"
+                           Height="16" />
+                </ToggleButton>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="4"
+        Background="Transparent" />
+        <!-- 文件树：绑定 VisibleChildren，实现“只显示命中项及其祖先” -->
+        <TreeView Grid.Row="5"
+                  Name="Tree"
+                  ItemsSource="{Binding DocumentRoot.VisibleChildren}">
+            <TreeView.ItemTemplate>
+
+                <!-- 子层同样绑定 VisibleChildren -->
+                <TreeDataTemplate ItemsSource="{Binding VisibleChildren}">
+                    <DockPanel Margin="0 2 0 2"
+                               VerticalAlignment="Center"
+                               Background="Transparent">
+
+                        <!-- 右键菜单 -->
+                        <DockPanel.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="{Binding Localized[MainWindow.RightMenuItem0]}"
+                                  Command="{Binding CreateFileCommand}"
+                                  IsVisible="{Binding IsFolder}" />
+                                <!-- 仅在“文件夹”节点上显示 NewFolder（保持语义一致） -->
+                                <MenuItem Header="{Binding Localized[MainWindow.RightMenuItem1]}"
+                                          Command="{Binding CreateFolderCommand}"
+                                          IsVisible="{Binding IsFolder}" />
+
+                                <MenuItem Header="{Binding Localized[MainWindow.RightMenuItem2]}" Click="MenuItem_Open_Click"/>
+                                <MenuItem Header="{Binding Localized[MainWindow.RightMenuItem3]}" Command="{Binding OpenContainingFolderCommand}"/>
+
+                                <MenuItem Header="{Binding Localized[MainWindow.RightMenuItem4]}"   Command="{Binding CopyFilePathCommand}"/>
+                                <MenuItem Header="{Binding Localized[MainWindow.RightMenuItem5]}" Command="{Binding CopyFolderPathCommand}"/>
+
+                                <MenuItem Header="{Binding Localized[MainWindow.RightMenuItem6]}" Click="OnInlineRenameMenuClick"/>
+                                <!--
+                                <MenuItem Header="Save"   Command="{Binding SaveFileCommand}" />
+                                <MenuItem Header="SaveAs" Command="{Binding SaveFileAsCommand}" />
+                                -->
+                                <MenuItem Header="{Binding Localized[MainWindow.RightMenuItem7]}" Command="{Binding DeleteFileCommand}"/>
+                                <!-- <MenuItem Header="Refresh" Click="ContextMenuItem_Refresh" IsEnabled="False"/> -->
+                            </ContextMenu>
+
+                        </DockPanel.ContextMenu>
+
+                        <!-- 图标 -->
+                        <icon:Icon Height="16" Margin="0 0 6 0"
+                                   Value="{Binding ., Converter={StaticResource FileTypeToIconValueConverter}}"
+                                   Foreground="{Binding ., Converter={StaticResource FileTypeToColorConverter}}" />
+
+                        <TextBox x:Name="InlineRenameBox"
+                                 Text="{Binding Name, Mode=TwoWay}"
+                                 IsVisible="{Binding IsEditing, Converter={StaticResource BoolToVisibilityConverter}}"
+                                 ui:FocusOnEditing.Enable="{Binding IsEditing}"
+                                 LostFocus="OnInlineRenameLostFocus"
+                                 KeyDown="OnInlineRenameKeyDown"
+                                 MinWidth="120" />
+
+                        <!-- 普通显示名称 -->
+                        <TextBlock Text="{Binding Name}"
+                                   IsVisible="{Binding IsEditing, Converter={StaticResource InverseBoolToVisibilityConverter}}"/>
+                    </DockPanel>
+                </TreeDataTemplate>
+
+            </TreeView.ItemTemplate>
+        </TreeView>
+        
+
+
+        
+    </Grid>
+</UserControl>

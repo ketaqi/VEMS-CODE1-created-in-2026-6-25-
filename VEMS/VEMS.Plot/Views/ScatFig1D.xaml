@@ -1,0 +1,15 @@
+﻿<Window x:Class="VEMS.Plot.Views.ScatFig1D"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VEMS.Plot.Views"
+        mc:Ignorable="d"
+        Title="ScatFig1D" Height="450" Width="800">
+
+    <WpfPlot BorderThickness="0.5" BorderBrush="LightGray"
+             HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+             Focusable="False" AllowDrop="True" Name="PlotFrame">
+    </WpfPlot>
+    
+</Window>

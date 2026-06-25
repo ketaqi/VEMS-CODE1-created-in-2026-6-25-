@@ -1,0 +1,464 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:roslynPad="using:RoslynPad"
+             xmlns:roslyn="clr-namespace:Microsoft.CodeAnalysis;assembly=Microsoft.CodeAnalysis"
+             xmlns:ui="using:RoslynPad.UI"
+             x:Class="RoslynPad.UserPreferencesView"
+             x:DataType="roslynPad:MainViewModelAvalonia">
+    <Grid>
+        
+         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+
+                </Grid.RowDefinitions>
+                <!-- 1级标题/导出/导入 -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="0">
+                    <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem21]}" VerticalAlignment="Center" Width="150" HorizontalAlignment="Center" FontSize="20"/>
+                    <Button Content="{Binding Localized[MainWindow.leftMenuItem212]}" Command="{Binding ExportShortcutsCommand}" VerticalAlignment="Center" Width="75" HorizontalAlignment="Right"/>
+                    <Button Content="{Binding Localized[MainWindow.leftMenuItem211]}" Command="{Binding ImportShortcutsCommand}" Width="75" HorizontalAlignment="Right"/>
+                </StackPanel>
+                <!-- 分割线 -->
+                <Border Grid.Row="1" Height="1" Background="#DDDDDD" Margin="8,0,8,0"/>
+                <!-- 2级标题-路径 -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="2">
+                    <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem22]}" VerticalAlignment="Center" Width="150" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+                </StackPanel>
+                <!-- 工作路径 -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="3">
+                    <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem221]}" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="PathInputBox_KeyDown"  IsReadOnly="False" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding InitialFolderPath, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- 分割线 -->
+                <Border Grid.Row="4" Height="1" Background="#DDDDDD" Margin="8,0,8,0"/>
+                <!-- 2级标题-字体 -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="5">
+                <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem23]}" VerticalAlignment="Center" Width="150" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+                </StackPanel>
+                <!-- 编辑器字体 -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="6">
+                    <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem231]}" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <ComboBox ItemsSource="{Binding SystemFontFamilies}"
+                                SelectedItem="{Binding SelectedFontFamilyObject, Mode=TwoWay}"
+                                Width="100">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <!-- DataContext 就是一个 FontFamily 对象 -->
+                                <TextBlock Text="{Binding Name}" FontFamily="{Binding}" FontSize="18"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <ComboBox
+                        Width="100"
+                        ItemsSource="{Binding EditorFontSizes}"
+                        SelectedItem="{Binding EditorFontSize, Mode=TwoWay}" />
+                </StackPanel>
+                <!-- 输出器字体 -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="7">
+                    <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem232]}" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <ComboBox ItemsSource="{Binding SystemFontFamilies}"
+                                SelectedItem="{Binding SelectedFontFamilyObject1, Mode=TwoWay}"
+                                Width="100">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <!-- DataContext 就是一个 FontFamily 对象 -->
+                                <TextBlock Text="{Binding Name}" FontFamily="{Binding}" FontSize="18"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <ComboBox
+                            Width="100"
+                            ItemsSource="{Binding OutputFontSizes}"
+                            SelectedItem="{Binding OutputFontSize, Mode=TwoWay}" />
+
+                </StackPanel>
+                <!-- 分割线 -->
+                <Border Grid.Row="8" Height="1" Background="#DDDDDD" Margin="8,0,8,0"/>
+                <!-- 2级标题-数字格式 -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="9">
+                    <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem24]}" VerticalAlignment="Center" Width="150" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+                </StackPanel>
+                <!-- 空白分隔行 -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="10">
+                    <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem241]}" VerticalAlignment="Center" Width="200" HorizontalAlignment="Right"/>
+                    <ComboBox
+                        Width="100"
+                        ItemsSource="{Binding EditorFontSizes}"
+                        SelectedItem="{Binding EditorFontSize, Mode=TwoWay}" />
+                </StackPanel>
+                <!-- 空白分隔行 -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="11">
+                    <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem242]}" VerticalAlignment="Center" Width="200" HorizontalAlignment="Right"/>
+                    <ComboBox
+                        Width="100"
+                        ItemsSource="{Binding EditorFontSizes}"
+                        SelectedItem="{Binding EditorFontSize, Mode=TwoWay}" />
+                </StackPanel>
+                <!-- 空白分隔行 -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="12">
+                    <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem243]}" VerticalAlignment="Center" Width="200" HorizontalAlignment="Right"/>
+                    <ComboBox
+                        Width="100"
+                        ItemsSource="{Binding EditorFontSizes}"
+                        SelectedItem="{Binding EditorFontSize, Mode=TwoWay}" />
+                </StackPanel>
+                <!-- 空白分隔行 -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="13">
+                    <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem244]}" VerticalAlignment="Center" Width="200" HorizontalAlignment="Right"/>
+                    <ComboBox
+                        Width="100"
+                        ItemsSource="{Binding EditorFontSizes}"
+                        SelectedItem="{Binding EditorFontSize, Mode=TwoWay}" />
+                </StackPanel>
+                <!-- 空白分隔行 -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="14">
+                    <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem245]}" VerticalAlignment="Center" Width="200" HorizontalAlignment="Right"/>
+                    <ComboBox
+                        Width="100"
+                        ItemsSource="{Binding EditorFontSizes}"
+                        SelectedItem="{Binding EditorFontSize, Mode=TwoWay}" />
+                </StackPanel>
+                <Border Grid.Row="15" Height="1" Background="#DDDDDD" Margin="8,0,8,0"/>
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="16">
+                <TextBlock Text="{Binding Localized[MainWindow.leftMenuItem25]}" VerticalAlignment="Center" Width="150" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"/>
+                </StackPanel>
+                <!-- FileMenu -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="17">
+                    <TextBlock Text="文件菜单" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding FileMenu, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- NewFileShortcut -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="18">
+                    <TextBlock Text="新建文件" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding NewFileShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- OpenFileShortcut -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="19">
+                    <TextBlock Text="打开文件" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding OpenFileShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- OpenFolderShortcut -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="20">
+                    <TextBlock Text="打开文件夹" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding OpenFolderShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- DefaultFolderShortcut -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="21">
+                    <TextBlock Text="默认文件夹" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding DefaultFolderShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- SaveFileShortcut -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="22">
+                    <TextBlock Text="保存文件" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding SaveFileShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- SaveAsShortcut -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="23">
+                    <TextBlock Text="另存为" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding SaveAsShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- SaveAllShortcut -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="24">
+                    <TextBlock Text="全部保存" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding SaveAllShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- CloseTabShortcut -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="25">
+                    <TextBlock Text="关闭标签" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding CloseTabShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- CloseAllShortcut -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="26">
+                    <TextBlock Text="关闭全部" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding CloseAllShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- ExitAppShortcut -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="27">
+                    <TextBlock Text="退出应用" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding ExitAppShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- CodeMenu -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="28">
+                    <TextBlock Text="代码菜单" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding CodeMenu, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- SearchTextShortcut -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="29">
+                    <TextBlock Text="查找文本" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding SearchTextShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- ReplaceTextShortcut -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="30">
+                    <TextBlock Text="替换文本" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding ReplaceTextShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- FormatCodeShortcut -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="31">
+                    <TextBlock Text="格式化代码" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding FormatCodeShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- CommentSelectionShortcut -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="32">
+                    <TextBlock Text="注释选中" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding CommentSelectionShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- UncommentSelectionShortcut -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="33">
+                    <TextBlock Text="取消注释" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding UncommentSelectionShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- DebugCodeShortcut -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="34">
+                    <TextBlock Text="调试代码" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding DebugCodeShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- RunCodeShortcut -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="35">
+                    <TextBlock Text="运行代码" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding RunCodeShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- AddClassShortcut --><!--
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="19">
+                    <TextBlock Text="添加类" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding AddClassShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                --><!-- AddMethodShortcut --><!--
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="20">
+                    <TextBlock Text="添加方法" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding AddMethodShortcut, Mode=TwoWay}"/>
+                </StackPanel>-->
+                <!-- OutputMenu -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="36">
+                    <TextBlock Text="输出菜单" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding OutputMenu, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- CopyMessageShortcut -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="37">
+                    <TextBlock Text="复制消息" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding CopyMessageShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- ClearMessageShortcut -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="38">
+                    <TextBlock Text="清空消息" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding ClearMessageShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- AllFiguresMinimizedShortcut --><!--
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="24">
+                    <TextBlock Text="最小化全部图形" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding AllFiguresMinimizedShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                --><!-- CloseAllFiguresShortcut --><!--
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="25">
+                    <TextBlock Text="关闭全部图形" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding CloseAllFiguresShortcut, Mode=TwoWay}"/>
+                </StackPanel>-->
+                <!-- HelpMenu -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="39">
+                    <TextBlock Text="帮助菜单" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding HelpMenu, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- GetStartedShortcut --><!--
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="27">
+                    <TextBlock Text="快速开始" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding GetStartedShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                --><!-- VEMSDocsShortcut --><!--
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="28">
+                    <TextBlock Text="VEMS文档" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding VEMSDocsShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                --><!-- LinksShortcut --><!--
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="29">
+                    <TextBlock Text="相关链接" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding LinksShortcut, Mode=TwoWay}"/>
+                </StackPanel>-->
+                <!-- HelpShortcut -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="40">
+                    <TextBlock Text="帮助快捷键" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding HelpShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- LicenseInfoShortcut -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="41">
+                    <TextBlock Text="许可证信息" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding LicenseInfoShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- UpdateAppShortcut -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="42">
+                    <TextBlock Text="更新应用" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding UpdateAppShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- AboutVEMSShortcut -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="43">
+                    <TextBlock Text="关于VEMS" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding AboutVEMSShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- ContactUSShortcut -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="44">
+                    <TextBlock Text="联系我们" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding ContactUSShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- JoinShortcut --><!--
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="35">
+                    <TextBlock Text="加入我们" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding JoinShortcut, Mode=TwoWay}"/>
+                </StackPanel>-->
+                <!-- 打开资源管理器 -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="45">
+                    <TextBlock Text="打开资源管理器" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding OpenExplorerShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- 打开搜索 -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="46">
+                    <TextBlock Text="打开用户习惯" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding OpenSearchShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                
+                <!-- 打开性能设置 -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="47">
+                    <TextBlock Text="打开性能设置" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding OpenUserPreformanceShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- 打开用户习惯 -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="48">
+                    <TextBlock Text="打开搜索" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding OpenUserPreferencesShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- 打开源代码管理 -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="49">
+                    <TextBlock Text="打开源代码管理" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding OpenSourceControlShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- 打开运行和调试 -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="50">
+                    <TextBlock Text="打开运行和调试" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding OpenRunDebugShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- 打开主题 -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="51">
+                    <TextBlock Text="打开主题" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding OpenThemeShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+                <!-- 打开语言 -->
+                <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="52">
+                    <TextBlock Text="打开语言" VerticalAlignment="Center" Width="100" HorizontalAlignment="Right"/>
+                    <TextBox Watermark="请按下快捷键" KeyDown="ShortcutInputBox_KeyDown" IsReadOnly="True" Width="200" HorizontalAlignment="Right"
+                             Text="{Binding OpenLanguageShortcut, Mode=TwoWay}"/>
+                </StackPanel>
+
+
+            </Grid>
+        </ScrollViewer>
+        
+    </Grid>
+</UserControl>

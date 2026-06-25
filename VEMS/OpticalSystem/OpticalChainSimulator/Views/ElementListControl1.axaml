@@ -1,0 +1,256 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:OpticalChainSimulator.ViewModels"
+             xmlns:models="using:OpticalChainSimulator.Models"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:b="clr-namespace:OpticalChainSimulator.Behaviors"
+             xmlns:conv="clr-namespace:OpticalChainSimulator.Converters"
+             mc:Ignorable="d"
+             x:Class="OpticalChainSimulator.Views.ElementListControl1"
+             x:DataType="vm:MainWindowViewModel"
+             HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+	<!-- 控件资源定义：存放各类转换器（用于数据绑定的格式转换） -->
+	<UserControl.Resources>
+		<!-- 布尔值转索引转换器（用于ComboBox选中项） -->
+		<conv:BoolToIndexConverter x:Key="BoolToIndexConverter" />
+		<!-- 布尔值取反转换器（用于控制控件可见性） -->
+		<conv:InverseBooleanConverter x:Key="InverseBooleanConverter" />
+		<!-- 类型判断转换器（用于区分元件类型） -->
+		<conv:TypeEqualsConverter x:Key="TypeEqualsConverter" />
+		<!-- 布尔值转±符号转换器（展开/折叠按钮文本） -->
+		<conv:BoolToPlusMinusConverter x:Key="BoolToPlusMinusConverter" />
+	</UserControl.Resources>
+
+	<!-- 控件样式定义：全局样式复用 -->
+	<UserControl.Styles>
+		<!-- StackPanel.ctrl样式：统一参数编辑行的布局 -->
+		<Style Selector="StackPanel.ctrl">
+			<Setter Property="Margin" Value="8"/>
+			<Setter Property="Orientation" Value="Horizontal"/>
+			<Setter Property="Spacing" Value="8"/>
+		</Style>
+
+		<!-- ListBox.OpticalDrag样式：为列表添加拖拽排序行为 -->
+		<Style Selector="ListBox.OpticalDrag">
+			<Style.Resources>
+				<!-- 拖拽放下处理器：处理列表项拖拽排序逻辑 -->
+				<b:ItemsListBoxDropHandler x:Key="ItemsListBoxDropHandler" />
+			</Style.Resources>
+			<Setter Property="(Interaction.Behaviors)">
+				<BehaviorCollectionTemplate>
+					<BehaviorCollection>
+						<!-- 上下文拖拽行为：绑定自定义放下处理器 -->
+						<ContextDropBehavior Handler="{StaticResource ItemsListBoxDropHandler}" />
+					</BehaviorCollection>
+				</BehaviorCollectionTemplate>
+			</Setter>
+		</Style>
+	</UserControl.Styles>
+
+	<!-- 根布局Grid：确保控件占满父容器 -->
+	<Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+		<!-- DockPanel布局：分为顶部操作栏和下方滚动列表 -->
+		<DockPanel Margin="4">
+			<!-- 顶部操作栏：停靠在DockPanel顶部 -->
+			<Grid DockPanel.Dock="Top" Margin="0,0,0,4" ColumnDefinitions="*,Auto,Auto">
+				<!-- 标题文本：说明列表功能 -->
+				<TextBlock Grid.Column="0"
+                           Text="光学链表（按住一行拖动调整顺序）"
+                           FontWeight="Bold"
+                           VerticalAlignment="Center"/>
+				<!-- 打开元件库按钮：绑定OpenLibraryCommand -->
+				<Button Grid.Column="1"
+                        Margin="8,0,0,0"
+                        ToolTip.Tip="打开元件库"
+                        Content="+"
+                        Command="{Binding OpenLibraryCommand}"
+                        CommandParameter="{Binding VisualRoot, RelativeSource={RelativeSource Self}}" />
+				<!-- 打印元件信息按钮：绑定PrintElementsInfoCommand -->
+				<Button Grid.Column="2"
+                        Margin="8,0,0,0"
+                        ToolTip.Tip="打开元件库"
+                        Content="+"
+                        Command="{Binding PrintElementsInfoCommand}" />
+			</Grid>
+
+			<!-- 滚动容器：列表内容超出时显示滚动条 -->
+			<ScrollViewer>
+				<Grid>
+					<!-- 核心元件列表框：绑定Elements集合，支持拖拽排序和双向选中 -->
+					<ListBox x:Name="ElementsListBox" Classes="OpticalDrag"
+                             ItemsSource="{Binding Elements}"
+                             SelectedItem="{Binding SelectedElement, Mode=TwoWay}"
+                             HorizontalAlignment="Stretch"
+                             VerticalAlignment="Stretch">
+
+						<!-- 列表项模板：定义单个光学元件的展示样式 -->
+						<ListBox.ItemTemplate>
+							<DataTemplate x:DataType="vm:OpticalElementViewModel">
+								<!-- 元件项容器：带边框和圆角的背景 -->
+								<Border Margin="0,0,0,6"
+                                        Padding="6"
+                                        BorderBrush="#CCC"
+                                        BorderThickness="1"
+                                        CornerRadius="4"
+                                        Background="#20202020">
+									<!-- 拖拽行为绑定：添加到Border上，支持整行拖拽 -->
+									<Interaction.Behaviors>
+										<BehaviorCollection>
+											<ContextDragBehavior HorizontalDragThreshold="30" VerticalDragThreshold="30" />
+										</BehaviorCollection>
+									</Interaction.Behaviors>
+
+									<!-- 元件项内容容器：垂直排列标题行和展开区域 -->
+									<StackPanel>
+										<!-- 标题行：展开/折叠按钮 + 元件名称 + 主参数摘要 -->
+										<Grid ColumnDefinitions="Auto,*,Auto" Margin="0,0,0,4">
+											<!-- 展开/折叠切换按钮：绑定IsExpanded，显示±符号 -->
+											<ToggleButton Grid.Column="0"
+                                                          Width="20" Height="20"
+                                                          Margin="0,0,6,0"
+                                                          HorizontalAlignment="Center"
+                                                          VerticalAlignment="Center"
+                                                          Background="#FFE0E0E0"
+                                                          BorderBrush="#FF808080"
+                                                          BorderThickness="1"
+                                                          CornerRadius="2"
+                                                          Padding="0"
+                                                          Content="{Binding IsExpanded, Converter={StaticResource BoolToPlusMinusConverter}}"
+                                                          IsChecked="{Binding IsExpanded, Mode=TwoWay}">
+												<TextBlock Text="{Binding IsExpanded, Converter={StaticResource BoolToPlusMinusConverter}}"
+                                                           FontSize="12" FontWeight="Bold"
+                                                           HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+											</ToggleButton>
+
+											<!-- 元件名称文本 -->
+											<TextBlock Grid.Column="1" Text="{Binding Name}" FontWeight="Bold"/>
+											<!-- 主参数摘要：等宽字体展示关键参数 -->
+											<TextBlock Grid.Column="2"
+                                                       Text="{Binding MainParameterSummary}"
+                                                       HorizontalAlignment="Right"
+                                                       FontFamily="Consolas"
+                                                       FontSize="11"/>
+										</Grid>
+
+										<!-- 展开区域：IsExpanded为true时显示，包含所有参数编辑项 -->
+										<StackPanel IsVisible="{Binding IsExpanded}"
+                                                    Margin="20,0,0,0"
+                                                    Spacing="4">
+
+											<!-- 名称编辑行：双向绑定Name，失焦/回车刷新参数 -->
+											<StackPanel Orientation="Horizontal" Spacing="4">
+												<TextBlock Text="名称:" Width="100" VerticalAlignment="Center"/>
+												<TextBox Width="100"
+                                                         Text="{Binding Name, Mode=TwoWay}"
+                                                         LostFocus="OnParameterTextBoxLostFocus"
+                                                         KeyDown="OnParameterTextBoxKeyDown"/>
+											</StackPanel>
+											<!-- 类型显示行：仅展示，不可编辑 -->
+											<StackPanel Orientation="Horizontal" Spacing="4">
+												<TextBlock Text="TYPE:" Width="100" VerticalAlignment="Center"/>
+												<TextBlock Width="100" Height="25"
+                                                         Text="{Binding Type, Mode=TwoWay}"/>
+											</StackPanel>
+
+											<!-- 附加属性列表：动态展示元件的自定义属性 -->
+											<ItemsControl ItemsSource="{Binding AdditionalProperties}">
+												<ItemsControl.ItemsPanel>
+													<ItemsPanelTemplate>
+														<StackPanel Orientation="Vertical" />
+													</ItemsPanelTemplate>
+												</ItemsControl.ItemsPanel>
+												<ItemsControl.ItemTemplate>
+													<DataTemplate>
+														<StackPanel Orientation="Horizontal" Spacing="4">
+															<TextBlock Text="{Binding Key}:" Width="100" VerticalAlignment="Center"/>
+															<TextBox Width="100"
+                                                                     Text="{Binding Value, Mode=TwoWay}"
+                                                                     LostFocus="OnParameterTextBoxLostFocus"
+                                                                     KeyDown="OnParameterTextBoxKeyDown"/>
+														</StackPanel>
+													</DataTemplate>
+												</ItemsControl.ItemTemplate>
+											</ItemsControl>
+
+											<!-- 坐标参数区域：根据坐标模式（Absolute/Relative）切换显示 -->
+											<StackPanel Orientation="Vertical" Spacing="4">
+												<!-- 坐标模式选择下拉框：绑定UsePrevious，切换绝对/相对坐标 -->
+												<StackPanel Orientation="Horizontal" Spacing="4" VerticalAlignment="Center">
+													<TextBlock Text="坐标模式:" VerticalAlignment="Center" Width="100"/>
+													<ComboBox Width="100"
+                                                              SelectedIndex="{Binding UsePrevious, Converter={StaticResource BoolToIndexConverter}, Mode=TwoWay}">
+														<ComboBoxItem>Absolute</ComboBoxItem>
+														<ComboBoxItem>Relative</ComboBoxItem>
+													</ComboBox>
+												</StackPanel>
+
+												<!-- 绝对坐标（Absolute）：UsePrevious为false时显示 -->
+												<StackPanel Orientation="Vertical" Margin="0,2,0,0"
+                                                            IsVisible="{Binding UsePrevious, Converter={StaticResource InverseBooleanConverter}}">
+													<StackPanel Orientation="Horizontal" Spacing="4" Margin="0,2,0,0">
+														<TextBlock Text="X:" Width="100" VerticalAlignment="Center"/>
+														<TextBox Width="100"
+                                                                 Text="{Binding PointpX, Mode=TwoWay}"
+                                                                 LostFocus="OnParameterTextBoxLostFocus"
+                                                                 KeyDown="OnParameterTextBoxKeyDown"/>
+													</StackPanel>
+													<StackPanel Orientation="Horizontal" Spacing="4" Margin="0,2,0,0">
+														<TextBlock Text="Y:" Width="100" VerticalAlignment="Center"/>
+														<TextBox Width="100"
+                                                                 Text="{Binding PointpY, Mode=TwoWay}"
+                                                                 LostFocus="OnParameterTextBoxLostFocus"
+                                                                 KeyDown="OnParameterTextBoxKeyDown"/>
+													</StackPanel>
+													<StackPanel Orientation="Horizontal" Spacing="4" Margin="0,2,0,0">
+														<TextBlock Text="Z:" Width="100" VerticalAlignment="Center"/>
+														<TextBox Width="100"
+                                                                 Text="{Binding PointpZ, Mode=TwoWay}"
+                                                                 LostFocus="OnParameterTextBoxLostFocus"
+                                                                 KeyDown="OnParameterTextBoxKeyDown"/>
+													</StackPanel>
+												</StackPanel>
+
+												<!-- 相对坐标（Relative）：UsePrevious为true时显示 -->
+												<StackPanel Orientation="Vertical" Margin="0,2,0,0"
+                                                            IsVisible="{Binding UsePrevious}">
+													<StackPanel Orientation="Horizontal" Spacing="4" Margin="0,2,0,0">
+														<TextBlock Text="X1:" Width="100" VerticalAlignment="Center"/>
+														<TextBox Width="100"
+                                                                 Text="{Binding Pointp1X, Mode=TwoWay}"
+                                                                 LostFocus="OnParameterTextBoxLostFocus"
+                                                                 KeyDown="OnParameterTextBoxKeyDown"/>
+													</StackPanel>
+													<StackPanel Orientation="Horizontal" Spacing="4" Margin="0,2,0,0">
+														<TextBlock Text="Y1:" Width="100" VerticalAlignment="Center"/>
+														<TextBox Width="100"
+                                                                 Text="{Binding Pointp1Y, Mode=TwoWay}"
+                                                                 LostFocus="OnParameterTextBoxLostFocus"
+                                                                 KeyDown="OnParameterTextBoxKeyDown"/>
+													</StackPanel>
+													<StackPanel Orientation="Horizontal" Spacing="4" Margin="0,2,0,0">
+														<TextBlock Text="Z1:" Width="100" VerticalAlignment="Center"/>
+														<TextBox Width="100"
+                                                                 Text="{Binding Pointp1Z, Mode=TwoWay}"
+                                                                 LostFocus="OnParameterTextBoxLostFocus"
+                                                                 KeyDown="OnParameterTextBoxKeyDown"/>
+													</StackPanel>
+												</StackPanel>
+											</StackPanel>
+										</StackPanel>
+									</StackPanel>
+								</Border>
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
+
+					<!-- 拖拽插入位置画布：用于显示拖拽排序时的插入线，不可点击 -->
+					<Canvas Name="InsertionCanvas"
+                            IsHitTestVisible="False"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch" />
+				</Grid>
+			</ScrollViewer>
+		</DockPanel>
+	</Grid>
+</UserControl>

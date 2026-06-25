@@ -1,0 +1,114 @@
+﻿<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:OpticalChainSimulator"
+             x:Class="OpticalChainSimulator.App"
+             RequestedThemeVariant="Dark">
+
+  <Application.DataTemplates>
+    <local:ViewLocator/>
+  </Application.DataTemplates>
+
+  <Application.Resources>
+    <SolidColorBrush x:Key="Brush.WindowBg" Color="#0B0F14"/>
+    <SolidColorBrush x:Key="Brush.PanelBg" Color="#111823"/>
+    <SolidColorBrush x:Key="Brush.PanelBgAlt" Color="#0E141D"/>
+    <SolidColorBrush x:Key="Brush.Border" Color="#2A3546"/>
+    <SolidColorBrush x:Key="Brush. Accent" Color="#00D2FF"/>
+    <SolidColorBrush x:Key="Brush.TextPrimary" Color="#E6EDF3"/>
+    <SolidColorBrush x:Key="Brush.TextSecondary" Color="#9FB0C3"/>
+    <SolidColorBrush x:Key="Brush. Danger" Color="#FF4D4D"/>
+  </Application.Resources>
+
+  <Application.Styles>
+    <FluentTheme/>
+    
+    <!-- ✅ Dock 主题 -->
+    <StyleInclude Source="avares://Dock.Avalonia.Themes.Fluent/DockFluentTheme.axaml" />
+
+    <Style Selector="Window">
+      <Setter Property="Background" Value="{StaticResource Brush.WindowBg}"/>
+      <Setter Property="Foreground" Value="{StaticResource Brush.TextPrimary}"/>
+    </Style>
+
+    <Style Selector="Border.Panel">
+      <Setter Property="Background" Value="{StaticResource Brush.PanelBg}"/>
+      <Setter Property="BorderBrush" Value="{StaticResource Brush.Border}"/>
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="CornerRadius" Value="8"/>
+    </Style>
+
+    <Style Selector="Border.PanelAlt">
+      <Setter Property="Background" Value="{StaticResource Brush.PanelBgAlt}"/>
+      <Setter Property="BorderBrush" Value="{StaticResource Brush.Border}"/>
+      <Setter Property="BorderThickness" Value="1"/>
+      <Setter Property="CornerRadius" Value="8"/>
+    </Style>
+
+    <Style Selector="TextBlock.PanelTitle">
+      <Setter Property="FontSize" Value="13"/>
+      <Setter Property="FontWeight" Value="SemiBold"/>
+      <Setter Property="Foreground" Value="{StaticResource Brush.TextPrimary}"/>
+    </Style>
+
+    <Style Selector="TextBlock.Hint">
+      <Setter Property="FontSize" Value="12"/>
+      <Setter Property="Foreground" Value="{StaticResource Brush.TextSecondary}"/>
+    </Style>
+
+    <Style Selector="Border.StatusBar">
+      <Setter Property="Background" Value="#0C121B"/>
+      <Setter Property="BorderBrush" Value="{StaticResource Brush.Border}"/>
+      <Setter Property="BorderThickness" Value="1,1,1,0"/>
+    </Style>
+
+    <!-- ✅ Dock 标签页强化科技风 -->
+    <Style Selector="TabControl">
+      <Setter Property="Background" Value="#0E141D"/>
+    </Style>
+
+    <Style Selector="TabItem">
+      <Setter Property="FontSize" Value="12"/>
+      <Setter Property="Padding" Value="10,6"/>
+    </Style>
+
+    <Style Selector="TabItem:selected /template/ Border#PART_LayoutRoot">
+      <Setter Property="Background" Value="#152B38"/>
+      <Setter Property="BorderBrush" Value="{StaticResource Brush. Accent}"/>
+      <Setter Property="BorderThickness" Value="0,0,0,2"/>
+    </Style>
+
+
+        <!-- ✅ 工具栏按钮样式 -->
+  <Style Selector="Button.ToolBtn">
+    <Setter Property="Background" Value="#1E2731"/>
+    <Setter Property="Foreground" Value="{StaticResource Brush.TextPrimary}"/>
+    <Setter Property="BorderBrush" Value="{StaticResource Brush.Border}"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="Padding" Value="12,6"/>
+    <Setter Property="CornerRadius" Value="4"/>
+    <Setter Property="FontSize" Value="12"/>
+  </Style>
+
+  <Style Selector="Button.ToolBtn:pointerover">
+    <Setter Property="Background" Value="#2A3546"/>
+  </Style>
+
+  <Style Selector="Button.ToolBtn.Primary">
+    <Setter Property="Background" Value="#00A2D8"/>
+    <Setter Property="Foreground" Value="White"/>
+  </Style>
+
+  <Style Selector="Button.ToolBtn.Primary:pointerover">
+    <Setter Property="Background" Value="#00D2FF"/>
+  </Style>
+
+  <Style Selector="Button.ToolBtn.Danger">
+    <Setter Property="Background" Value="#3D1F1F"/>
+    <Setter Property="Foreground" Value="{StaticResource Brush. Danger}"/>
+  </Style>
+
+  <Style Selector="Button.ToolBtn.Danger:pointerover">
+    <Setter Property="Background" Value="#5A2C2C"/>
+  </Style>
+  </Application.Styles>
+</Application>

@@ -1,0 +1,202 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:RoslynPad.Controls;assembly=RoslynPad"
+        xmlns:icon="RoslynPad.IconsFront"
+        xmlns:shapes="clr-namespace:Avalonia.Controls.Shapes;assembly=Avalonia.Controls"
+        >
+
+    <Style Selector="local|Ribbon">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <DockPanel Background="{DynamicResource top.toolbar}">
+                    <DockPanel DockPanel.Dock="Top" Background="{DynamicResource document.tree}" Height="28">
+                        <Image Source="/Resources/VEMS.ico"
+                               Width="20" Height="20"
+                               Margin="8,2,0,0"
+                               VerticalAlignment="Center"
+                               DockPanel.Dock="Left"/>
+
+                        <DockPanel DockPanel.Dock="Top" Background="Transparent">
+                            <ItemsPresenter DockPanel.Dock="Left"
+                                            VerticalAlignment="Center"
+                                            Margin="5,3,0,0">
+                                <ItemsPresenter.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Horizontal"/>
+                                    </ItemsPanelTemplate>
+                                </ItemsPresenter.ItemsPanel>
+                            </ItemsPresenter>
+                            <StackPanel x:Name="CaptionButtonsHost"
+                                        Orientation="Horizontal"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Right"
+                                        Margin="0,0,6,0"
+                                        Spacing="4"
+                                        DockPanel.Dock="Right">
+                                <StackPanel.Styles>
+                                    <Style Selector="#CaptionButtonsHost > Button">
+                                        <Setter Property="Background" Value="Transparent"/>
+                                        <Setter Property="BorderBrush" Value="Transparent"/>
+                                        <Setter Property="Padding" Value="8,4"/>
+                                        <Setter Property="MinWidth" Value="36"/>
+                                        <Setter Property="MinHeight" Value="28"/>
+                                    </Style>
+                                    <Style Selector="#CaptionButtonsHost > Button:pointerover /template/ ContentPresenter">
+                                        <Setter Property="Background" Value="#22000000"/>
+                                    </Style>
+                                    <Style Selector="#CaptionButtonsHost > Button:pressed /template/ ContentPresenter">
+                                        <Setter Property="Background" Value="#33000000"/>
+                                    </Style>
+                                    <Style Selector="#CaptionButtonsHost > Button.Close:pointerover /template/ ContentPresenter">
+                                        <Setter Property="Background" Value="#FFC42B1C"/>
+                                    </Style>
+                                    <Style Selector="#CaptionButtonsHost > Button.Close:pressed /template/ ContentPresenter">
+                                        <Setter Property="Background" Value="#FF9F1E12"/>
+                                    </Style>
+                                </StackPanel.Styles>
+
+                                <Button Name="MinButton" Classes="WindowButton" Command="{Binding MinimizeCommand, RelativeSource={RelativeSource TemplatedParent}}"
+                                    ToolTip.Tip="最小化">
+                                    <Rectangle Width="10"
+                                               Height="1.6"
+                                               RadiusX="0.8" RadiusY="1.8"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"/>
+                                </Button>
+                                <Button Name="MaxButton"
+                                        Classes="WindowButton"
+                                        Command="{Binding MaximizeCommand, RelativeSource={RelativeSource TemplatedParent}}"
+                                        ToolTip.Tip="最大化/还原">
+                                    <Grid Width="14" Height="14">
+                                        <shapes:Path x:Name="MaxIcon"
+                                                     StrokeThickness="1.4"
+                                                     Stretch="Fill"
+                                                     Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"
+                                                     Fill="Transparent"
+                                                     Data="M 3 3 H 13 V 13 H 3 Z"
+                                                     IsVisible="True"/>
+                                        <Canvas x:Name="RestoreIcon" Width="14" Height="14" IsVisible="False">
+                                            <shapes:Path StrokeThickness="1.4"
+                                                         Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"
+                                                         Fill="Transparent"
+                                                         Data="M 5 5 H 13 V 13 H 5 Z"/>
+                                            <shapes:Path StrokeThickness="1.4"
+                                                         Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"
+                                                         Fill="Transparent"
+                                                         Data="M 3 3 H 11 V 11 H 3 Z"/>
+                                        </Canvas>
+                                    </Grid>
+                                </Button>
+                                <Button Name="CloseButton"
+                                        Classes="WindowButton Close"
+                                        Command="{Binding CloseCommand, RelativeSource={RelativeSource TemplatedParent}}"
+                                        ToolTip.Tip="关闭">
+                                    <shapes:Path StrokeThickness="1.8"
+                                                 Stretch="Fill"
+                                                 Width="14" Height="14"
+                                                 Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"
+                                                 Data="M 3 3 L 13 13 M 13 3 L 3 13"/>
+                                </Button>
+                            </StackPanel>
+                            <ToggleButton  x:Name="CollapseButton"
+                                           IsChecked="{Binding IsCollapsed, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                                           Focusable="False"
+                                           DockPanel.Dock="Right"
+                                           VerticalAlignment="Center"
+                                           ToolTip.Tip="最小化功能区"
+                                           Cursor="Hand"
+                                           Background="Transparent"
+                                           BorderBrush="Transparent"
+                                           BorderThickness="0"
+                                           Padding="0"
+                                           Margin="0 0 10 0"
+                                           Width="25" Height="25"
+                                          >
+                                <ToggleButton.Template>
+                                    <ControlTemplate>
+                                        <Grid>
+                                            <Rectangle Fill="Transparent"/>
+                                            <ContentPresenter HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center"
+                                                              Content="{TemplateBinding Content}"
+                                                              ContentTemplate="{TemplateBinding ContentTemplate}"/>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </ToggleButton.Template>
+
+                                <ToggleButton.Styles>
+                                    <Style Selector="ToggleButton#CollapseButton,
+                                         ToggleButton#CollapseButton:pointerover,
+                                         ToggleButton#CollapseButton:pressed,
+                                         ToggleButton#CollapseButton:checked,
+                                         ToggleButton#CollapseButton:checked:pointerover,
+                                         ToggleButton#CollapseButton:checked:pressed,
+                                         ToggleButton#CollapseButton:disabled">
+                                        <Setter Property="Background" Value="Transparent"/>
+                                        <Setter Property="BorderBrush" Value="Transparent"/>
+                                        <Setter Property="BorderThickness" Value="0"/>
+                                        <Setter Property="Padding" Value="0"/>
+                                    </Style>
+                                    <Style Selector="ToggleButton#CollapseButton:pointerover Path#Chevron">
+                                        <Setter Property="Opacity" Value="0.85"/>
+                                        <Setter Property="StrokeThickness" Value="1.7"/>
+                                    </Style>
+                                    <Style Selector="ToggleButton#CollapseButton:pressed Path#Chevron">
+                                        <Setter Property="RenderTransform">
+                                            <ScaleTransform ScaleX="0.92" ScaleY="0.92"/>
+                                        </Setter>
+                                        <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+                                    </Style>
+                                    <Style Selector="ToggleButton#CollapseButton Path#Chevron">
+                                        <Setter Property="Data" Value="M 1 5 L 4 2 L 7 5"/>
+                                    </Style>
+                                    <Style Selector="ToggleButton#CollapseButton:checked Path#Chevron">
+                                        <Setter Property="Data" Value="M 1 2 L 4 5 L 7 2"/>
+                                    </Style>
+                                </ToggleButton.Styles>
+                                <Path x:Name="Chevron"
+                                      Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"
+                                      StrokeThickness="1.5"
+                                      StrokeLineCap="Round"
+                                      StrokeJoin="Round"
+                                      Width="8" Height="6"
+                                      Stretch="Fill"
+                                      Opacity="0.75"/>
+                            </ToggleButton>
+
+                            <!-- 中间拖动区（会自动铺满剩余空间） -->
+                            <Border x:Name="PART_TitleDragArea"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent"
+                                    BorderThickness="0"
+                                    Margin="0"/>
+                        </DockPanel>
+
+                    </DockPanel>
+
+                    <!-- Tab 内容 -->
+                    <ContentPresenter x:Name="PART_ContentPresenter"
+                   Content="{TemplateBinding SelectedContent}"
+                   IsVisible="{TemplateBinding IsCollapsed, Converter={StaticResource InverseBoolConverter}}"/>
+
+
+                </DockPanel>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <!-- 标题栏按钮通用样式 -->
+    <Style Selector="Button.TitleBarButton">
+        <!--<Setter Property="Foreground" Value="Black"/>-->
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Style Selector="^:pointerover">
+            <Setter Property="Background" Value="#E6E6E6"/>
+        </Style>
+        <Style Selector="^:pressed">
+            <Setter Property="Background" Value="#CCCCCC"/>
+        </Style>
+    </Style>
+</Styles>

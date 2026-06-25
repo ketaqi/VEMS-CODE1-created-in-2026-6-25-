@@ -1,0 +1,35 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="OpticalChainSimulator.Views.AboutDialog"
+        Width="520" Height="300"
+	
+	CanResize="False"           
+	Title="关于">             
+
+	<!-- 根容器Border：应用Panel样式，设置内边距，统一对话框外观 -->
+	<Border Classes="Panel" Padding="16">
+		<!-- 垂直堆叠面板：统一管理标题、介绍文本、关闭按钮，间距10px -->
+		<StackPanel Spacing="10">
+			<!-- 软件主标题：应用PanelTitle样式，突出显示软件名称 -->
+			<TextBlock Classes="PanelTitle" Text="Optical Chain Simulator"/>
+
+			<!-- 软件介绍容器：应用PanelAlt样式，带内边距和背景，与其他区域区分 -->
+			<Border Classes="PanelAlt" Padding="12" Margin="0,8,0,0">
+				<!-- 介绍文本容器：垂直排列多行说明文本，行间距6px -->
+				<StackPanel Spacing="6">
+					<TextBlock Text="Optical Chain Simulator 是一款功能强大、界面友好的光学仿真软件，"/>
+					<TextBlock Text="我们致力于不断创新，紧跟光学技术的发展步伐，持续为您提供更强大"/>
+					<TextBlock Text="的功能和更卓越的用户体验。"/>
+					<TextBlock Text="Optical Chain Simulator ——"/>
+					<TextBlock Text="您光学设计与仿真的得力助手，赋能创新，驱动未来"/>
+				</StackPanel>
+			</Border>
+
+			<!-- 操作按钮区：水平排列，靠右对齐，与上方内容间距10px -->
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+				<!-- 关闭按钮：固定宽度110px，点击触发OnCloseClicked方法关闭对话框 -->
+				<Button Width="110" Content="关闭" Click="OnCloseClicked"/>
+			</StackPanel>
+		</StackPanel>
+	</Border>
+</Window>

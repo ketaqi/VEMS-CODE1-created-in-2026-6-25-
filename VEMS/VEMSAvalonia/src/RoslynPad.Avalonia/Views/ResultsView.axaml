@@ -1,0 +1,60 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="RoslynPad.ResultsView"
+             xmlns:local="clr-namespace:RoslynPad;assembly=RoslynPad"
+             xmlns:build="clr-namespace:RoslynPad.Build;assembly=RoslynPad.Build"
+             xmlns:Editor="clr-namespace:RoslynPad.Editor;assembly=RoslynPad.Editor.Avalonia"
+             xmlns:ui="clr-namespace:RoslynPad.UI"
+             xmlns:converters="clr-namespace:RoslynPad.Converters"
+             x:DataType="ui:IResultsViewModel"
+             xmlns:icon="RoslynPad.IconsFront">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <TextBox
+            x:Name="OutputBox1"
+            IsReadOnly="False"
+            BorderThickness="0"
+            AcceptsReturn="True"
+            TextWrapping="Wrap"
+            Text="{Binding ResultsText}"
+            Grid.Column="0"
+            FontSize="{Binding $parent[UserControl].DataContext.FontSize}"
+            FontFamily="{Binding EditorFontFamily1}">
+            <TextBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="{Binding Localized[MainWindow.RightMenuItem8]}" Click="OutputBox1_SelectAll_Click" InputGesture="Ctrl+A"/>
+                    <MenuItem Header="{Binding Localized[MainWindow.RightMenuItem9]}" Click="OutputBox1_Copy_Click" InputGesture="Ctrl+C"/>
+                    <MenuItem Header="{Binding Localized[MainWindow.RightMenuItem10]}" Click="OutputBox1_Cut_Click" InputGesture="Ctrl+X"/>
+                    <MenuItem Header="{Binding Localized[MainWindow.RightMenuItem11]}" Click="OutputBox1_Paste_Click" InputGesture="Ctrl+V"/>
+                </ContextMenu>
+            </TextBox.ContextMenu>
+        </TextBox>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Background="Transparent"
+                                        Foreground="{DynamicResource editor.foreground}"
+                                        Command="{Binding CopyAllResultsCommand}"
+                                        ToolTip.Tip="Copy message"
+                                        Margin="8,0,8,0">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <icon:Icon Value="fa-solid fa-clipboard-check" FontSize="28" />
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="1" Background="Transparent"
+                                        Foreground="{DynamicResource editor.foreground}"
+                                        Command="{Binding ClearResultsCommand}"
+                                        ToolTip.Tip="Clear message"
+                                        Margin="8,0,8,0">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <icon:Icon Value="fa-solid fa-rotate-right" FontSize="28"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>

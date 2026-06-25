@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x64</Platforms>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="_config\**" />
+    <Compile Remove="_sample\**" />
+    <EmbeddedResource Remove="_config\**" />
+    <EmbeddedResource Remove="_sample\**" />
+    <None Remove="_config\**" />
+    <None Remove="_sample\**" />
+    <Page Remove="_config\**" />
+    <Page Remove="_sample\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\iconfont.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="Fluent.Ribbon" Version="10.1.0" />
+    <PackageReference Include="RoslynPad.Editor.Windows" Version="1.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VEMS.EMSolver\VEMS.EMSolver.csproj" />
+    <ProjectReference Include="..\VEMS.MathCore\VEMS.MathCore.csproj" />
+    <ProjectReference Include="..\VEMS.Parallel\VEMS.Parallel.csproj" />
+    <ProjectReference Include="..\VEMS.Plot\VEMS.Plot.csproj" />
+    <ProjectReference Include="..\VEMS.RayTrace\VEMS.RayTrace.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\iconfont.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="AssemblyInfo.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
+</Project>

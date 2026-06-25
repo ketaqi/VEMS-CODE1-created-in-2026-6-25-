@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Preference>
+  <Directory>
+    <WorkingDirectory>C:\VEMSNet6\VEMS\VEMS.WorkBench\_sample</WorkingDirectory>
+  </Directory>
+  <Font>
+    <CodeEditor>
+      <FontFamily>Cascadia Code</FontFamily>
+      <FontSize>20</FontSize>
+    </CodeEditor>
+    <Console>
+      <FontFamily>Cascadia Code</FontFamily>
+      <FontSize>14</FontSize>
+    </Console>
+  </Font>
+  <Number>
+    <Culture>zh</Culture>
+    <NumberFormat>Number</NumberFormat>
+    <NumberOfDigits>3</NumberOfDigits>
+    <ComplexNumberFormat>RealAndImaginary</ComplexNumberFormat>
+    <ColumnSeparator>Tab</ColumnSeparator>
+  </Number>
+</Preference>

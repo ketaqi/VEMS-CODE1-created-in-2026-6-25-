@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>RoslynPad.UI</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="ViewModels\CodeFontFamilyExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="RoslynPad.Common.UI.csproj.DotSettings" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RoslynPad.Build\RoslynPad.Build.csproj" />
+    <ProjectReference Include="..\RoslynPad.Editor.Avalonia\RoslynPad.Editor.Avalonia.csproj" />
+    <ProjectReference Include="..\RoslynPad.Roslyn\RoslynPad.Roslyn.csproj" />
+    <ProjectReference Include="..\RoslynPad.Themes\RoslynPad.Themes.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Desktop" />
+    <PackageReference Include="bodong.Avalonia.PropertyGrid" />
+    <PackageReference Include="MathNet.Numerics" />
+    <PackageReference Include="MessageBox.Avalonia" />
+    <PackageReference Include="NuGet.Commands" />
+    <PackageReference Include="ReactiveUI" />
+    <PackageReference Include="System.Reactive.Core" />
+    <PackageReference Include="Microsoft.Extensions.Logging" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="i18n\Language.cs">
+      <DependentUpon>Language.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="i18n\Language.tt">
+      <LastGenOutput>Language.cs</LastGenOutput>
+      <Generator>TextTemplatingFileGenerator</Generator>
+    </None>
+    <None Update="i18n\MainModule.en-US.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="i18n\MainModule.zh-CN.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+</Project>

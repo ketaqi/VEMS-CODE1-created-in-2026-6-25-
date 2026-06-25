@@ -1,0 +1,21 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:OpticalChainSimulator.ViewModels"
+             x:Class="OpticalChainSimulator.Views.Docks.ProjectToolView"
+             x:DataType="vm:MainWindowViewModel">
+  
+  <Border Classes="Panel" Padding="10">
+    <ScrollViewer>
+      <StackPanel Spacing="10">
+        <TextBlock Classes="PanelTitle" Text="工程概览"/>
+        <Border Classes="PanelAlt" Padding="10">
+          <StackPanel Spacing="6">
+            <TextBlock Text="{Binding ProjectName, StringFormat='名称: {0}'}"/>
+            <TextBlock Text="{Binding Elements.Count, StringFormat='元件数: {0}'}"/>
+            <TextBlock Text="{Binding CurrentProjectFilePath, StringFormat='文件:  {0}'}" TextTrimming="CharacterEllipsis"/>
+          </StackPanel>
+        </Border>
+      </StackPanel>
+    </ScrollViewer>
+  </Border>
+</UserControl>

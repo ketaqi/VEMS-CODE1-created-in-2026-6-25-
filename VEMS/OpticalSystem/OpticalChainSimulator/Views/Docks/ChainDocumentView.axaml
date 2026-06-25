@@ -1,0 +1,8 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="OpticalChainSimulator.Views.Docks.ChainDocumentView">
+  
+  <Border Classes="Panel" Padding="10">
+    <TextBlock Text="光学链表视图（开发中）" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+  </Border>
+</UserControl>

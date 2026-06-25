@@ -1,0 +1,48 @@
+﻿<TemplatedControl xmlns="https://github.com/avaloniaui"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		          xmlns:local="RoslynPad.IconsFront"
+                  x:Class="RoslynPad.IconsFront.Icon">
+
+	<TemplatedControl.Styles>
+		<Style Selector="local|Icon[Animation=Spin]">
+			<Style.Animations>
+				<Animation Duration="0:0:2" IterationCount="INFINITE">
+					<KeyFrame Cue="0%">
+						<Setter Property="RotateTransform.Angle" Value="0" />
+					</KeyFrame>
+					<KeyFrame Cue="100%">
+						<Setter Property="RotateTransform.Angle" Value="360" />
+					</KeyFrame>
+				</Animation>
+			</Style.Animations>
+		</Style>
+		<Style Selector="local|Icon[Animation=Pulse]">
+			<Style.Animations>
+				<Animation Duration="0:0:2"
+						   IterationCount="INFINITE">
+					<Animation.Easing>
+						<local:PulseEasing />
+					</Animation.Easing>
+					<KeyFrame Cue="0%">
+						<Setter Property="RotateTransform.Angle" Value="0" />
+					</KeyFrame>
+					<KeyFrame Cue="100%">
+						<Setter Property="RotateTransform.Angle" Value="360" />
+					</KeyFrame>
+				</Animation>
+			</Style.Animations>
+		</Style>
+	</TemplatedControl.Styles>
+	<TemplatedControl.RenderTransform>
+		<TransformGroup>
+			<RotateTransform />
+		</TransformGroup>
+	</TemplatedControl.RenderTransform>
+	<TemplatedControl.Template>
+		<ControlTemplate>
+			<Image Width="{TemplateBinding FontSize}"
+				   Height="{TemplateBinding FontSize}"
+				   Source="{TemplateBinding Image}" />
+		</ControlTemplate>
+	</TemplatedControl.Template>
+</TemplatedControl>

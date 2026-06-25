@@ -1,0 +1,93 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:OpticalChainSimulator.ViewModels"
+             x:Class="OpticalChainSimulator.Views.ProjectInfoControl"
+             x:DataType="vm:MainWindowViewModel">
+
+	<!-- 根布局容器：DockPanel，用于承载标签页控件 -->
+	<DockPanel>
+
+		<!-- 核心标签页控件：包含工程概览、仿真结果、参数导出三个功能标签 -->
+		<TabControl>
+			<!-- 【概览标签页】展示工程基础信息 -->
+			<TabItem Header="概览">
+				<!-- 滚动容器：内容超出时显示滚动条 -->
+				<ScrollViewer>
+					<!-- 垂直排列容器：控制子元素间距和外边距 -->
+					<StackPanel Margin="12" Spacing="10">
+						<!-- 标签页标题文本 -->
+						<TextBlock Classes="PanelTitle" Text="工程概览"/>
+
+						<!-- 工程信息展示面板：带样式的边框容器 -->
+						<Border Classes="PanelAlt" Padding="10">
+							<!-- 网格布局：2列（标签列+内容列）4行（工程名称/说明/元件数量/文件路径） -->
+							<Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto">
+								<!-- 第0行：工程名称标签 + 绑定显示工程名称 -->
+								<TextBlock Grid.Row="0" Grid.Column="0" Text="工程名称：" Foreground="{StaticResource Brush.TextSecondary}" Margin="0,0,10,0"/>
+								<TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding ProjectName}" FontWeight="SemiBold"/>
+
+								<!-- 第1行：工程说明标签 + 绑定显示工程描述（支持换行） -->
+								<TextBlock Grid.Row="1" Grid.Column="0" Text="说明：" Foreground="{StaticResource Brush.TextSecondary}" Margin="0,6,10,0"/>
+								<TextBlock Grid.Row="1" Grid.Column="1" Margin="0,6,0,0"
+										   Text="{Binding ProjectDescription}"
+										   TextWrapping="Wrap"/>
+
+								<!-- 第2行：元件数量标签 + 绑定显示元件集合总数 -->
+								<TextBlock Grid.Row="2" Grid.Column="0" Text="元件数量：" Foreground="{StaticResource Brush.TextSecondary}" Margin="0,6,10,0"/>
+								<TextBlock Grid.Row="2" Grid.Column="1" Margin="0,6,0,0"
+										   Text="{Binding Elements.Count}"/>
+
+								<!-- 第3行：文件路径标签 + 绑定显示工程文件路径（超出时省略） -->
+								<TextBlock Grid.Row="3" Grid.Column="0" Text="文件路径：" Foreground="{StaticResource Brush.TextSecondary}" Margin="0,6,10,0"/>
+								<TextBlock Grid.Row="3" Grid.Column="1" Margin="0,6,0,0"
+										   Text="{Binding CurrentProjectFilePath}"
+										   TextTrimming="CharacterEllipsis"/>
+							</Grid>
+						</Border>
+
+						<!-- 提示文本块：预留提示信息展示位置（当前为空） -->
+						<TextBlock Classes="Hint"
+								   Text=""
+								   TextWrapping="Wrap"/>
+					</StackPanel>
+				</ScrollViewer>
+			</TabItem>
+
+			<!-- 【仿真结果标签页】展示仿真运行后的输出内容 -->
+			<TabItem Header="仿真结果">
+				<!-- 带样式的边框容器：控制内边距和外边距 -->
+				<Border Margin="12" Classes="PanelAlt" Padding="10">
+					<DockPanel>
+						<!-- 标签页标题：停靠在顶部 -->
+						<TextBlock DockPanel.Dock="Top" Classes="PanelTitle" Text="仿真输出" Margin="0,0,0,8"/>
+						<!-- 滚动容器：输出内容超出时可滚动 -->
+						<ScrollViewer>
+							<!-- 仿真结果文本：等宽字体，支持换行，绑定仿真结果文本 -->
+							<TextBlock Text="{Binding SimulationResultText}"
+									   FontFamily="Consolas"
+									   TextWrapping="Wrap"/>
+						</ScrollViewer>
+					</DockPanel>
+				</Border>
+			</TabItem>
+
+			<!-- 【导出参数标签页】展示导出的元件参数文本 -->
+			<TabItem Header="导出参数">
+				<!-- 带样式的边框容器：控制内边距和外边距 -->
+				<Border Margin="12" Classes="PanelAlt" Padding="10">
+					<DockPanel>
+						<!-- 标签页标题：停靠在顶部 -->
+						<TextBlock DockPanel.Dock="Top" Classes="PanelTitle" Text="参数导出" Margin="0,0,0,8"/>
+						<!-- 滚动容器：参数内容超出时可滚动 -->
+						<ScrollViewer>
+							<!-- 导出参数文本：等宽字体，绑定导出的参数文本 -->
+							<TextBlock Text="{Binding ExportedText}"
+									   FontFamily="Consolas"/>
+						</ScrollViewer>
+					</DockPanel>
+				</Border>
+			</TabItem>
+		</TabControl>
+
+	</DockPanel>
+</UserControl>

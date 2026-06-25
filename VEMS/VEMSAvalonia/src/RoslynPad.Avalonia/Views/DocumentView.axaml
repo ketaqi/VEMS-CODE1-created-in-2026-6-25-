@@ -1,0 +1,41 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="RoslynPad.DocumentView"
+             xmlns:local="clr-namespace:RoslynPad;assembly=RoslynPad"
+             xmlns:build="clr-namespace:RoslynPad.Build;assembly=RoslynPad.Build"
+             xmlns:Editor="clr-namespace:RoslynPad.Editor;assembly=RoslynPad.Editor.Avalonia"
+             xmlns:ui="clr-namespace:RoslynPad.ViewModels"
+             xmlns:converters="clr-namespace:RoslynPad.Converters"
+             x:DataType="ui:OpenDocumentViewModel"
+             xmlns:icon="RoslynPad.IconsFront"
+             >
+  <UserControl.Resources>
+    <converters:DoubleToPercentageTextConverter x:Key="DoubleToPercentageTextConverter" />
+  </UserControl.Resources>
+  <UserControl.KeyBindings>
+      <KeyBinding Gesture="Ctrl+S" Command="{Binding SaveCommand}" />
+  </UserControl.KeyBindings>
+    
+  <Grid RowDefinitions="Auto,*">
+      
+
+
+
+      <Editor:RoslynCodeEditor Name="Editor"
+                               ContextActionsIcon="{DynamicResource Bulb}"
+                               Grid.Row="1"
+                               FontFamily="{Binding EditorFontFamily, Mode=OneWay}"
+                               IsReadOnly="False">
+          <Editor:RoslynCodeEditor.ContextMenu>
+              <ContextMenu>
+                  <MenuItem Header="{Binding Localized[MainWindow.RightMenuItem8]}" Click="MenuItem_SelectAll_Click" InputGesture="Ctrl+A"/>
+                  <MenuItem Header="{Binding Localized[MainWindow.RightMenuItem9]}" Click="MenuItem_Copy_Click" InputGesture="Ctrl+C"/>
+                  <MenuItem Header="{Binding Localized[MainWindow.RightMenuItem10]}" Click="MenuItem_Cut_Click" InputGesture="Ctrl+X"/>
+                  <MenuItem Header="{Binding Localized[MainWindow.RightMenuItem11]}" Click="MenuItem_Paste_Click" InputGesture="Ctrl+V"/>
+              </ContextMenu>
+          </Editor:RoslynCodeEditor.ContextMenu>
+      </Editor:RoslynCodeEditor>
+
+
+  </Grid>
+</UserControl>

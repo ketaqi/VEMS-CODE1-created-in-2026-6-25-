@@ -1,0 +1,36 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:OpticalChainSimulator.ViewModels.Docks"
+             x:Class="OpticalChainSimulator.Views.Docks.SimulationResultDocumentView"
+             x:DataType="vm:SimulationResultDocumentViewModel">
+
+  <Border Classes="Panel" Padding="10">
+    <DockPanel>
+      <TextBlock DockPanel.Dock="Top" 
+                 Classes="PanelTitle" 
+                 Text="{Binding Title}" 
+                 Margin="0,0,0,10"/>
+      <TabControl>
+        <TabItem Header="详细报告">
+          <Border Classes="PanelAlt" Padding="10">
+            <ScrollViewer>
+              <TextBlock Text="{Binding ResultText}"
+                         FontFamily="Consolas"
+                         TextWrapping="Wrap"/>
+            </ScrollViewer>
+          </Border>
+        </TabItem>
+
+        <TabItem Header="ASCII 光路">
+          <Border Classes="PanelAlt" Padding="10">
+            <ScrollViewer>
+              <TextBlock Text="{Binding AsciiPath}"
+                         FontFamily="Consolas"
+                         FontSize="11"/>
+            </ScrollViewer>
+          </Border>
+        </TabItem>
+      </TabControl>
+    </DockPanel>
+  </Border>
+</UserControl>

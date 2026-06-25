@@ -1,0 +1,270 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType Condition=" '$(IsMacOS)' == 'true' ">Exe</OutputType>
+    <OutputType Condition=" '$(IsMacOS)' != 'true' ">WinExe</OutputType>
+    <AssemblyName>RoslynPad</AssemblyName>
+    <RootNamespace>RoslynPad</RootNamespace>
+    <ApplicationId>net.roslynpad</ApplicationId>
+    <ApplicationTitle>RoslynPad</ApplicationTitle>
+
+    <Version>$(RoslynPadVersion)</Version>
+    <TargetFramework Condition=" '$(IsMacBuild)' == 'true' ">$(DefaultTargetFramework)-macos</TargetFramework>
+    <CopyRoslynPadRuntimeAssemblies>true</CopyRoslynPadRuntimeAssemblies>
+    <SelfContained>false</SelfContained>
+    <CreatePackage>false</CreatePackage>
+    <LinkMode>None</LinkMode>
+    <TrimMode>partial</TrimMode>
+    <!--<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsNotAsErrors>nullable;CS8618;CS8602;CS8625;CS8766;CS8767</WarningsNotAsErrors>
+    <AvaloniaUseCompiledBindingsByDefault>false</AvaloniaUseCompiledBindingsByDefault>-->
+    <!-- HotAvalonia --><!--
+    <HotAvaloniaAutoEnable>true</HotAvaloniaAutoEnable>
+    <HotAvaloniaGeneratePathResolver>true</HotAvaloniaGeneratePathResolver>-->
+  </PropertyGroup>
+  <!-- hack to force resizetizer to work outside of MAUI -->
+  <PropertyGroup Condition=" '$(IsMacBuild)' == 'true' ">
+    <_ResizetizerIsiOSApp>true</_ResizetizerIsiOSApp>
+    <ResizetizerIncludeSelfProject>true</ResizetizerIncludeSelfProject>
+    <OptimizePNGs>true</OptimizePNGs>
+    <_XSAppIconAssets>Assets.xcassets/appicon.appiconset</_XSAppIconAssets>
+  </PropertyGroup>
+  <ItemGroup>
+    <MauiIcon Include="$(RepoRoot)/deploy/resources/macos/appicon.svg" />
+    <EmbeddedResource Include="FontAwesome\Assets\icons.json" />
+    <AvaloniaResource Include="App.axaml" />
+    <AvaloniaResource Include="Assets\Localizations\en-US.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Assets\Localizations\ru-RU.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Assets\Localizations\zh-CN.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Resources\Explorer.png" />
+    <AvaloniaResource Include="Resources\Explorer_Hover.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Resources\maxx-H.png" />
+    <AvaloniaResource Include="Resources\maxx.png" />
+    <AvaloniaResource Include="Resources\minn-H.png" />
+    <AvaloniaResource Include="Resources\minn.png" />
+
+    <AvaloniaResource Include="Resources\RunDebug.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Resources\RunDebug_Hover.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Resources\Search.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Resources\Search_Hover.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Resources\SourceControl.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Resources\SourceControl_Hover.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Resources\VEMS.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <AvaloniaResource Include="Resources\zhuti-H.png" />
+    <AvaloniaResource Include="Resources\zhuti.png" />
+
+    <AvaloniaXaml Remove="bin\**\*.axaml;obj\**\*.axaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Controls.DataGrid" />
+    <PackageReference Include="Avalonia.Desktop" />
+    <PackageReference Include="Avalonia.Diagnostics" />
+    <PackageReference Include="Avalonia.Fonts.Inter" />
+    <PackageReference Include="Avalonia.Themes.Fluent" />
+    <PackageReference Include="bodong.Avalonia.PropertyGrid" />
+    <PackageReference Include="DialogHost.Avalonia" />
+    <PackageReference Include="Fody" />
+    <PackageReference Include="HotAvalonia" />
+    <PackageReference Include="Live.Avalonia" />
+    <PackageReference Include="MathNet.Numerics" />
+    <PackageReference Include="MessageBox.Avalonia" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" />
+    <PackageReference Include="Microsoft.Maui.Resizetizer" />
+    <PackageReference Include="NuGet.Commands" />
+    <PackageReference Include="Semi.Avalonia" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RoslynPad.Build\RoslynPad.Build.csproj" />
+    <ProjectReference Include="..\RoslynPad.Roslyn\RoslynPad.Roslyn.csproj" />
+    <ProjectReference Include="..\RoslynPad.Runtime\RoslynPad.Runtime.csproj" SetTargetFramework="TargetFramework=$(EarliestSupportedTargetFramework)" />
+    <ProjectReference Include="..\RoslynPad.Editor.Avalonia\RoslynPad.Editor.Avalonia.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="CommonUI\i18n\Language.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Language.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Views\DocmentMainView.axaml.cs">
+      <DependentUpon>DocmentMainView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="FeatureDemos\Views\FeatureDemoView4.axaml.cs">
+      <DependentUpon>FeatureDemoView4.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="FeatureDemos\Views\FeatureDemoView3.axaml.cs">
+      <DependentUpon>FeatureDemoView3.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="FeatureDemos\Views\FeatureDemoView2.axaml.cs">
+      <DependentUpon>FeatureDemoView2.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="FeatureDemos\Views\FeatureDemoView1.axaml.cs">
+      <DependentUpon>FeatureDemoView1.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\DocmentMainView.axaml.cs">
+      <DependentUpon>DocmentMainView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ResultsView.axaml.cs">
+      <DependentUpon>ResultsView.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\RoslynPad.Themes\Themes\*.json" Exclude="..\RoslynPad.Themes\Themes\vs2019*.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="CustomConverter\RibbonTabKeyToIsSelectedConverter.cs" />
+    <Compile Remove="DLLExpandView.axaml.cs" />
+    <Compile Remove="DockFactoryEx.cs" />
+    <Compile Remove="DocumentCollection.cs" />
+    <Compile Remove="DocumentTreeView4.axaml.cs" />
+    <Compile Remove="FeatureDemos\AssemblyJsonAssetLocalizationService1.cs" />
+    <Compile Remove="FeatureDemos\AssetCultureData.cs" />
+    <Compile Remove="FeatureDemos\Views\CountryView.axaml.cs" />
+    <Compile Remove="FeatureDemos\Views\FeatureDemoView.axaml.cs" />
+    <Compile Remove="FeatureDemos\Views\OnlyButtonCellEditFactory.cs" />
+    <Compile Remove="FeatureDemos\Views\OnlyButtonCellEditFactory1.cs" />
+    <Compile Remove="FeatureDemos\Views\OnlyButtonCellEditFactory2.cs" />
+    <Compile Remove="FeatureDemos\Views\OnlyButtonCellEditFactory3.cs" />
+    <Compile Remove="FeatureDemos\Views\OnlyButtonCellEditFactory4.cs" />
+    <Compile Remove="FeatureDemos\Views\OnlyButtonCellEditFactory5.cs" />
+    <Compile Remove="FeatureDemos\Views\OnlyButtonCellEditFactory6.cs" />
+    <Compile Remove="FeatureDemos\Views\OnlyButtonCellEditFactory7.cs" />
+    <Compile Remove="FeatureDemos\Views\OnlyButtonCellEditFactory8.cs" />
+    <Compile Remove="FeatureDemos\Views\OnlyButtonCellEditFactory9.cs" />
+    <Compile Remove="FeatureDemos\Views\Vector3View.axaml.cs" />
+    <Compile Remove="FolderViewModel.cs" />
+    <Compile Remove="InverseBooleanConverter.cs" />
+    <Compile Remove="MultiBooleanAndConverter.cs" />
+    <Compile Remove="PerformanceSettingsView.axaml.cs" />
+    <Compile Remove="RunAndDebugView.axaml.cs" />
+    <Compile Remove="SaveDocumentDialog.axaml.cs" />
+    <Compile Remove="UserPreferencesView.axaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Assets\Localizations\en-US.json" />
+    <None Remove="Assets\Localizations\ru-RU.json" />
+    <None Remove="Assets\Localizations\zh-CN.json" />
+    <None Remove="CommonUI\i18n\MainModule.en-US.xml" />
+    <None Remove="CommonUI\i18n\MainModule.zh-CN.xml" />
+    <None Remove="FontAwesome\Assets\icons.json" />
+    <None Remove="Resources\Explorer.png" />
+    <None Remove="Resources\Explorer_Hover.png" />
+    <None Remove="Resources\maxx-H.png" />
+
+    <None Remove="Resources\maxx.png" />
+
+    <None Remove="Resources\minn-H.png" />
+
+    <None Remove="Resources\minn.png" />
+
+    <None Remove="Resources\RoslynPad.ico" />
+    <None Remove="Resources\RunDebug.png" />
+    <None Remove="Resources\RunDebug_Hover.png" />
+    <None Remove="Resources\Search.png" />
+    <None Remove="Resources\Search_Hover.png" />
+    <None Remove="Resources\SourceControl.png" />
+    <None Remove="Resources\VEMS.ico" />
+    <None Remove="Resources\zhuti-H.png" />
+    <None Remove="Resources\zhuti.png" />
+    <None Remove="user_shortcuts.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Themes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AvaloniaResource Include="Resources\RoslynPad.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AvaloniaResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="..\RoslynPad.Themes\Themes\dark_modern.json" Link="Themes\dark_modern.json" />
+    <Content Update="..\RoslynPad.Themes\Themes\dark_plus.json" Link="Themes\dark_plus.json" />
+    <Content Update="..\RoslynPad.Themes\Themes\dark_vs.json" Link="Themes\dark_vs.json" />
+    <Content Update="..\RoslynPad.Themes\Themes\KimbieDark_modern.json" Link="Themes\KimbieDark_modern.json" />
+    <Content Update="..\RoslynPad.Themes\Themes\light_modern.json" Link="Themes\light_modern.json" />
+    <Content Update="..\RoslynPad.Themes\Themes\light_plus.json" Link="Themes\light_plus.json" />
+    <Content Update="..\RoslynPad.Themes\Themes\light_vs.json" Link="Themes\light_vs.json" />
+    <Content Update="..\RoslynPad.Themes\Themes\Quiet_modern.json" Link="Themes\Quiet_modern.json" />
+    <Content Update="..\RoslynPad.Themes\Themes\Red_modern.json" Link="Themes\Red_modern.json" />
+    <Content Update="..\RoslynPad.Themes\Themes\Solarized_modern.json" Link="Themes\Solarized_modern.json" />
+    <Content Update="..\RoslynPad.Themes\Themes\VEMS_modern.json" Link="Themes\VEMS_modern.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\RoslynPad.Common.UI\i18n\**\*">
+      <Link>i18n\%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <AvaloniaXaml Remove="App.axaml" />
+    <AvaloniaXaml Remove="DLLExpandView.axaml" />
+    <AvaloniaXaml Remove="DocumentTreeView4.axaml" />
+    <AvaloniaXaml Remove="FeatureDemos\Views\CountryView.axaml" />
+    <AvaloniaXaml Remove="FeatureDemos\Views\FeatureDemoView.axaml" />
+    <AvaloniaXaml Remove="FeatureDemos\Views\Vector3View.axaml" />
+    <AvaloniaXaml Remove="PerformanceSettingsView.axaml" />
+    <AvaloniaXaml Remove="RunAndDebugView.axaml" />
+    <AvaloniaXaml Remove="SaveDocumentDialog.axaml" />
+    <AvaloniaXaml Remove="UserPreferencesView.axaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="..\RoslynPad.Themes\Themes\Abyss_modern.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Dock.Avalonia">
+      <HintPath>..\ThirtyDll\Dock.Avalonia.dll</HintPath>
+    </Reference>
+    <Reference Include="Dock.Controls.ProportionalStackPanel">
+      <HintPath>..\ThirtyDll\Dock.Controls.ProportionalStackPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Dock.Controls.Recycling">
+      <HintPath>..\ThirtyDll\Dock.Controls.Recycling.dll</HintPath>
+    </Reference>
+    <Reference Include="Dock.Controls.Recycling.Model">
+      <HintPath>..\ThirtyDll\Dock.Controls.Recycling.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Dock.MarkupExtension">
+      <HintPath>..\ThirtyDll\Dock.MarkupExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="Dock.Model">
+      <HintPath>..\ThirtyDll\Dock.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Dock.Model.Avalonia">
+      <HintPath>..\ThirtyDll\Dock.Model.Avalonia.dll</HintPath>
+    </Reference>
+    <Reference Include="Dock.Settings">
+      <HintPath>..\ThirtyDll\Dock.Settings.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="CommonUI\i18n\Language.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Language.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+</Project>

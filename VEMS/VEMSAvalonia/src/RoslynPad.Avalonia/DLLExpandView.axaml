@@ -1,0 +1,206 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:roslynPad="using:RoslynPad"
+             xmlns:roslyn="clr-namespace:Microsoft.CodeAnalysis;assembly=Microsoft.CodeAnalysis"
+             xmlns:ui="using:RoslynPad.UI"
+             x:Class="RoslynPad.DLLExpandView"
+             x:DataType="ui:OpenDocumentViewModel"
+             x:Name="DllExpandRoot"
+             >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <!-- 空白分隔行 -->
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <!-- 新增本地DLL导入区域 -->
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="0">
+            <TextBlock
+                x:CompileBindings="False"
+                Text="{Binding DataContext.LM_LeftMenuItem1, RelativeSource={RelativeSource AncestorType=Window}}"
+                VerticalAlignment="Center"
+                Width="150"
+                HorizontalAlignment="Center"
+                FontSize="20"/>
+        </StackPanel>
+
+        <Border Grid.Row="1" Height="1" Background="#DDDDDD" Margin="8,0,8,0"/>
+        <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="2">
+            <TextBlock Text="NuGet"
+                       VerticalAlignment="Center"
+                       Width="150"
+                       HorizontalAlignment="Center"
+                       FontSize="16"
+                       FontWeight="Bold"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="3">
+            <TextBlock x:CompileBindings="False"
+                        Text="{Binding DataContext.LM_LeftMenuItem2, RelativeSource={RelativeSource AncestorType=Window}}"
+                       VerticalAlignment="Center" Width="150" HorizontalAlignment="Right"/>
+            <TextBox Name="NuGetSearch"
+                     BorderBrush="#eeeeee"
+                     Text="{Binding NuGet.SearchTerm}"
+                     Watermark="{OnPlatform Search NuGet (Ctrl+T), macOS=Search NuGet (⌘ T)}"
+                     Width="150" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="4">
+            <TextBlock x:CompileBindings="False"
+                        Text="{Binding DataContext.LM_LeftMenuItem3, RelativeSource={RelativeSource AncestorType=Window}}"
+                       VerticalAlignment="Center" Width="150" HorizontalAlignment="Right"/>
+            <Decorator VerticalAlignment="Center">
+                <CheckBox IsChecked="{Binding NuGet.Prerelease}"
+                          ToolTip.Tip="Include prerelease packages"
+                          Content="Prerelease"
+                          Width="150" />
+            </Decorator>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="5">
+            <TextBlock x:CompileBindings="False"
+                        Text="{Binding DataContext.LM_LeftMenuItem4, RelativeSource={RelativeSource AncestorType=Window}}"
+                       VerticalAlignment="Center" Width="150" HorizontalAlignment="Right"/>
+            <Menu Background="Transparent" Name="RootMenu" Width="150" >
+                <MenuItem Name="RootNuGetMenu"
+                          IsSubMenuOpen="{Binding NuGet.IsPackagesMenuOpen}"
+                          ItemsSource="{Binding NuGet.Packages}"
+                          
+                          Header="{Binding NuGet, Mode=OneTime}"
+                          ToolTip.Tip="NuGet Packages"
+                          Background="{DynamicResource top.toolbar}">
+                    <MenuItem.Styles>
+                        <Style Selector="MenuItem Popup">
+                            <Setter Property="MaxHeight" Value="400" />
+                        </Style>
+                        <Style Selector="MenuItem > MenuItem"
+                               x:DataType="ui:PackageData">
+                            <Setter Property="Command"
+                                    Value="{Binding InstallPackageCommand}" />
+                            <Setter Property="CommandParameter"
+                                    Value="{Binding}" />
+                        </Style>
+                    </MenuItem.Styles>
+                    <MenuItem.DataTemplates>
+                        <DataTemplate DataType="ui:PackageData">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Id, Mode=OneTime}" />
+                                <TextBlock Text="{Binding Version, Mode=OneTime}" />
+                            </StackPanel>
+                        </DataTemplate>
+                        <DataTemplate DataType="ui:NuGetDocumentViewModel">
+                            <Grid  Height="20" Width="100">
+                                <Image Source="{StaticResource NuGet}"
+                                       Height="16"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"/>
+                                <ProgressBar VerticalAlignment="Bottom"
+                                             Height="4"
+                                             MinWidth="0"
+                                             BorderThickness="0"
+                                             IsIndeterminate="{Binding IsSearching}"
+                                             IsVisible="{Binding IsSearching}" />
+                            </Grid>
+                        </DataTemplate>
+                    </MenuItem.DataTemplates>
+                </MenuItem>
+            </Menu>
+        </StackPanel>
+
+        <!-- 分隔线 -->
+        <Border Grid.Row="6" Height="1" Background="#DDDDDD" Margin="8,16,8,8"/>
+
+        <!-- 本地DLL导入标题 -->
+        <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="7">
+            <TextBlock Text="Local DLL Import"
+                       VerticalAlignment="Center"
+                       Width="150"
+                       HorizontalAlignment="Center"
+                       FontSize="16"
+                       FontWeight="Bold"/>
+        </StackPanel>
+
+        <!-- DLL路径显示和选择按钮 -->
+        <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="8">
+            <TextBlock Text="DLL Path"
+                       VerticalAlignment="Center"
+                       Width="150"
+                       HorizontalAlignment="Right"/>
+            <TextBox Name="DllPathTextBox"
+                     BorderBrush="#eeeeee"
+                     Text="{Binding #DllExpandRoot.SelectedDllPath}"
+                     IsReadOnly="True"
+                     Watermark="Select a DLL file..."
+                     Width="150"
+                     Margin="0,0,8,0" />
+        </StackPanel>
+
+        <!-- 选择文件和导入按钮 -->
+        <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="9">
+            <TextBlock Width="150" />
+            <!-- 占位符保持对齐 -->
+            <Button Name="SelectDllButton"
+                    Content="Browse..."
+                    Click="SelectDllButton_Click"
+                    Width="70"
+                    Height="30"
+                    Margin="0,0,8,0" />
+            <Button Name="ImportDllButton"
+                    Content="Import"
+                    Click="ImportDllButton_Click"
+                    Width="70"
+                    Height="30"
+                    IsEnabled="{Binding #DllExpandRoot.CanImportDll}" />
+        </StackPanel>
+
+        <!-- 导入状态显示 -->
+        <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="10">
+            <TextBlock Width="150" />
+            <TextBlock Text="{Binding #DllExpandRoot.DllImportStatus}"
+                       Foreground="{Binding #DllExpandRoot.DllImportStatusColor}"
+                       FontSize="12"
+                       Width="150"
+                       TextWrapping="Wrap" />
+        </StackPanel>
+        <!-- 导入状态显示 -->
+        <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="11">
+            <TextBlock Width="150" />
+            <ComboBox Name="NuGetCombo"
+                      Width="240"
+                      ItemsSource="{Binding NuGet.Packages}">
+                <!-- 使用 DataTemplates 集合来定义多个 DataTemplate -->
+                <ComboBox.DataTemplates>
+                    <DataTemplate DataType="ui:PackageData">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Id}" Margin="0,0,6,0" />
+                            <TextBlock Text="{Binding Version}" Foreground="Gray"/>
+                        </StackPanel>
+                    </DataTemplate>
+
+                    <DataTemplate DataType="ui:NuGetDocumentViewModel">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <Image Source="{StaticResource NuGet}" Height="16" />
+                            <ProgressBar Width="80"
+                                         Height="6"
+                                         Margin="6,0,0,0"
+                                         IsIndeterminate="{Binding IsSearching}"
+                                         IsVisible="{Binding IsSearching}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.DataTemplates>
+            </ComboBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

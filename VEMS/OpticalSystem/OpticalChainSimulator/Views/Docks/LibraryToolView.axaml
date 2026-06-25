@@ -1,0 +1,11 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:OpticalChainSimulator.ViewModels"
+             xmlns:views="using:OpticalChainSimulator.Views"
+             x:Class="OpticalChainSimulator.Views.Docks.LibraryToolView"
+             x:DataType="vm:MainWindowViewModel">
+  
+  <Border Classes="Panel" Padding="10">
+    <views:ElementListControl1 DataContext="{Binding $parent[Window].DataContext}"/>
+  </Border>
+</UserControl>

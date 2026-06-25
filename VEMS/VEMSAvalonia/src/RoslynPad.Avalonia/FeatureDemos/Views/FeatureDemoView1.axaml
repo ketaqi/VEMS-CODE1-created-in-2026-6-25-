@@ -1,0 +1,70 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:RoslynPad.FeatureDemos.ViewModels"
+             xmlns:pgc="clr-namespace:Avalonia.PropertyGrid.Controls;assembly=Avalonia.PropertyGrid"
+		     xmlns:lv="clr-namespace:RoslynPad.FeatureDemos.Views"
+			 xmlns:ll="clr-namespace:Avalonia.PropertyGrid.Localization;assembly=Avalonia.PropertyGrid"
+             xmlns:apu="clr-namespace:Avalonia.PropertyGrid.Utils;assembly=Avalonia.PropertyGrid"
+             xmlns:test="clr-namespace:RoslynPad.FeatureDemos.Views"
+             x:Name="MyPropertyGrid1"
+			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="RoslynPad.FeatureDemos.Views.FeatureDemoView1"
+             x:DataType="vm:FeatureDemoViewModel">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,Background="#FFF0F0F0"
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:FeatureDemoViewModel />
+  </Design.DataContext>
+    <UserControl.Styles>
+        <!--<StyleInclude Source="/FeatureDemos/Views/Vector3View.axaml"></StyleInclude>
+        <StyleInclude Source="/FeatureDemos/Views/CountryView.axaml"></StyleInclude>-->
+
+        <Style Selector="Border.header-border">
+            <Setter Property="BorderBrush" Value="Gray" />
+            <Setter Property="BorderThickness" Value="0.5" />
+            <Setter Property="CornerRadius" Value="5,5,0,0" />
+            <Setter Property="Padding" Value="10" />
+        </Style>
+        <Style Selector="TextBlock.header">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+
+        <Style Selector="Border.thin">
+            <Setter Property="BorderBrush" Value="Gray" />
+            <Setter Property="BorderThickness" Value="0.5" />
+            <Setter Property="CornerRadius" Value="0,0,5,5" />
+            <Setter Property="Margin" Value="0,0,0,15" />
+        </Style>
+    </UserControl.Styles>
+
+
+
+    <Grid ColumnDefinitions="*">
+
+
+                <Grid RowDefinitions="*,Auto">
+                        <!-- ReSharper disable Xaml.PossibleNullReferenceException -->
+                    <test:TestExtendPropertyGrid
+                        x:Name="StylesPropertyGrid"
+                        CustomPropertyDescriptorFilter="OnCustomPropertyDescriptorFilter"
+                        Margin="2"
+                        DataContext="{Binding SimpleObject1}"
+                        CommandExecuted="OnCommandExecuted"
+                        IsHeaderVisible="False"
+                        IsAutoNameWidth="True"
+                        IsTitleVisible="False"
+                        NameWidth="80"
+                        >
+                    </test:TestExtendPropertyGrid>
+
+                </Grid>
+
+
+
+
+
+    </Grid>
+</UserControl>

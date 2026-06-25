@@ -1,0 +1,142 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:OpticalChainSimulator.ViewModels"
+             x:Class="OpticalChainSimulator.Views.TopBar"
+             x:DataType="vm:MainWindowViewModel">
+
+	<!-- 顶部导航栏外层容器：定义背景色和底部边框，作为整个顶部栏的视觉容器 -->
+	<Border Background="#0C121B" BorderBrush="{StaticResource Brush.Border}" BorderThickness="0,0,0,1">
+		<!-- DockPanel布局容器：按上下顺序排列菜单和工具栏（DockPanel.Dock="Top" 表示元素靠上排列） -->
+		<DockPanel>
+
+			<!-- 应用主菜单区域：包含文件、编辑、仿真、视图、工具、帮助等核心功能入口 -->
+			<Menu DockPanel.Dock="Top" Background="#0C121B">
+				<!-- 文件菜单：工程管理（新建/打开/保存）、布局保存/加载、退出应用 -->
+				<MenuItem Header="_文件">
+					<!-- 新建工程：绑定命令+快捷键Ctrl+N，配图标 -->
+					<MenuItem Header="新建工程" Command="{Binding HandleNewProjectClicked1Command}" InputGesture="Ctrl+N">
+						<MenuItem.Icon>
+							<Image Source="/Assets/Icons/Pao.png" Width="16" Height="16"/>
+						</MenuItem.Icon>
+					</MenuItem>
+					<!-- 打开工程：绑定命令+快捷键Ctrl+O，配图标 -->
+					<MenuItem Header="打开工程..." Command="{Binding HandleLoadProjectClickedAsync1Command}" InputGesture="Ctrl+O">
+						<MenuItem.Icon>
+							<Image Source="/Assets/Icons/Pao.png" Width="16" Height="16"/>
+						</MenuItem.Icon>
+					</MenuItem>
+					<!-- 保存工程：绑定命令+快捷键Ctrl+1，配图标 -->
+					<MenuItem Header="保存工程..." Command="{Binding HandleSaveProjectClickedAsync1Command}"  InputGesture="Ctrl+1">
+						<MenuItem.Icon>
+							<Image Source="/Assets/Icons/Pao.png" Width="16" Height="16"/>
+						</MenuItem.Icon>
+					</MenuItem>
+					<!-- 分隔线：区分工程管理和布局管理功能 -->
+					<Separator/>
+					<!-- 布局加载/保存：绑定布局相关命令 -->
+					<MenuItem Header="加载布局..." Command="{Binding LoadLayoutCommand}"/>
+					<MenuItem Header="保存布局..." Command="{Binding SaveLayoutCommand}"/>
+					<!-- 分隔线：区分布局管理和退出功能 -->
+					<Separator/>
+					<!-- 退出应用：绑定退出命令+快捷键Alt+F4 -->
+					<MenuItem Header="退出" Command="{Binding ExitCommand}" InputGesture="Alt+F4"/>
+				</MenuItem>
+
+				<!-- 编辑菜单：元件删除相关操作 -->
+				<MenuItem Header="_编辑">
+					<!-- 删除选中元件：绑定命令+快捷键Delete，配图标 -->
+					<MenuItem Header="删除选中元件" Command="{Binding DeleteElementCommand}" InputGesture="Delete">
+						<MenuItem.Icon>
+							<Image Source="/Assets/Icons/Pao.png" Width="16" Height="16"/>
+						</MenuItem.Icon>
+					</MenuItem>
+					<!-- 清空所有元件：绑定清空命令 -->
+					<!--<MenuItem Header="清空所有元件" Command="{Binding DeleteAllElementsCommand}"/>-->
+				</MenuItem>
+
+				<!-- 仿真菜单：仿真运行、参数导出功能 -->
+				<MenuItem Header="_仿真">
+					<!-- 运行仿真（新窗口）：绑定命令+快捷键Ctrl+R，配图标 -->
+					<MenuItem Header="运行仿真(新窗口)" Command="{Binding RunSimulationAndCreateDocumentCommand}" InputGesture="Ctrl+R">
+						<MenuItem.Icon>
+							<Image Source="/Assets/Icons/Pao.png" Width="16" Height="16"/>
+						</MenuItem.Icon>
+					</MenuItem>
+					<!-- 导出参数列表：绑定导出命令，配图标 -->
+					<MenuItem Header="导出参数列表" Command="{Binding ExportParametersCommand}">
+						<MenuItem.Icon>
+							<Image Source="/Assets/Icons/Pao.png" Width="16" Height="16"/>
+						</MenuItem.Icon>
+					</MenuItem>
+				</MenuItem>
+
+				<!-- 视图菜单：布局模式切换、主题切换 -->
+				<MenuItem Header="_视图">
+					<!-- 布局预设子菜单：不同工作模式的布局切换 -->
+					<MenuItem Header="✅ 布局预设">
+						<MenuItem Header="编辑模式" Command="{Binding LayoutEditModeCommand}"/>
+						<MenuItem Header="分析模式" Command="{Binding LayoutAnalysisModeCommand}"/>
+						<MenuItem Header="仿真模式" Command="{Binding LayoutSimulationModeCommand}"/>
+					</MenuItem>
+					<!-- 分隔线：区分布局预设和主题切换 -->
+					<Separator/>
+					<!-- 切换主题：绑定主题切换命令+快捷键Ctrl+T -->
+					<!--<MenuItem Header="🌓 切换主题" Command="{Binding ToggleThemeCommand}" InputGesture="Ctrl+T"/>-->
+				</MenuItem>
+
+				<!-- 工具菜单：元件库打开功能 -->
+				<MenuItem Header="_工具">
+					<!-- 打开元件库：绑定命令+快捷键Ctrl+Shift+A，配图标 -->
+					<MenuItem Header="打开元件库" Command="{Binding OpenLibraryCommand}" InputGesture="Ctrl+Shift+A">
+						<MenuItem.Icon>
+							<Image Source="/Assets/Icons/Pao.png" Width="16" Height="16"/>
+						</MenuItem.Icon>
+					</MenuItem>
+				</MenuItem>
+
+				<!-- 帮助菜单：关于应用功能 -->
+				<MenuItem Header="_帮助">
+					<!-- 关于：绑定关于弹窗命令，配图标 -->
+					<MenuItem Header="关于" Command="{Binding ShowAboutDialogAsync1Command}">
+						<MenuItem.Icon>
+							<Image Source="/Assets/Icons/Pao.png" Width="16" Height="16"/>
+						</MenuItem.Icon>
+					</MenuItem>
+				</MenuItem>
+			</Menu>
+
+			<!-- 快捷工具栏区域：菜单功能的快捷按钮，提升操作效率 -->
+			<Border DockPanel.Dock="Top" Background="#0E141D" BorderBrush="{StaticResource Brush.Border}" BorderThickness="0,1,0,1" Padding="10,8">
+				<!-- 水平排列的按钮容器：Spacing="8" 控制按钮间距 -->
+				<StackPanel Orientation="Horizontal" Spacing="8">
+					<!-- 新建工程按钮：绑定命令+提示文本（含快捷键） -->
+					<Button Classes="ToolBtn Primary" Content="🗋 新建" Command="{Binding HandleNewProjectClicked1Command}" ToolTip.Tip="新建工程 (Ctrl+N)"/>
+					<!-- 保存工程按钮：绑定命令+提示文本（含快捷键） -->
+					<Button Classes="ToolBtn" Content="💾 保存" Command="{Binding HandleSaveProjectClickedAsync1Command}" ToolTip.Tip="保存工程 (Ctrl+S)"/>
+					<!-- 打开工程按钮：绑定命令+提示文本（含快捷键） -->
+					<Button Classes="ToolBtn" Content="📂 打开" Command="{Binding HandleLoadProjectClickedAsync1Command}" ToolTip.Tip="打开工程 (Ctrl+O)"/>
+
+					<!-- 视觉分隔线：区分工程管理和元件操作按钮 -->
+					<Border Width="1" Background="#263142" Margin="6,0"/>
+
+					<!-- 打开元件库按钮：绑定命令+提示文本（含快捷键） -->
+					<Button Classes="ToolBtn" Content="➕ 元件库" Command="{Binding OpenLibraryCommand}" ToolTip.Tip="打开元件库 (Ctrl+Shift+A)"/>
+
+					<!-- 删除选中元件按钮：危险样式+绑定命令+提示文本（含快捷键） -->
+					<Button Classes="ToolBtn Danger" Content="🗑 删除" Command="{Binding DeleteElementCommand}" ToolTip.Tip="删除选中元件 (Delete)"/>
+					<!-- 清空所有元件按钮：危险样式+绑定命令+提示文本 -->
+					<!--<Button Classes="ToolBtn Danger" Content="✖ 清空" Command="{Binding DeleteAllElementsCommand}" ToolTip.Tip="清空所有元件"/>-->
+
+					<!-- 视觉分隔线：区分元件操作和仿真相关按钮 -->
+					<Border Width="1" Background="#263142" Margin="6,0"/>
+
+					<!-- 导出参数列表按钮：绑定命令+提示文本 -->
+					<Button Classes="ToolBtn" Content="⤓ 导出" Command="{Binding ExportParametersCommand}" ToolTip.Tip="导出参数列表"/>
+					<!-- 运行仿真按钮：主要样式+绑定命令+提示文本（含快捷键） -->
+					<Button Classes="ToolBtn Primary" Content="▶ 运行仿真" Command="{Binding RunSimulationCommand}" ToolTip.Tip="运行仿真 (Ctrl+R)"/>
+				</StackPanel>
+			</Border>
+
+		</DockPanel>
+	</Border>
+</UserControl>

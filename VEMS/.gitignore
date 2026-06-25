@@ -1,0 +1,31 @@
+# Build outputs
+bin/
+obj/
+
+# Native DLLs (MKL, CUDA, etc.)
+*.dll
+*.exe
+*.pdb
+*.so
+*.dylib
+*.exp
+*.lib
+*.ilk
+
+# MKL runtime DLLs
+mkl_*.dll
+libiomp5md.dll
+Ijwhost.dll
+
+# NuGet packages
+packages/
+
+# IDE
+.vs/
+*.user
+*.suo
+.DS_Store
+
+# Temp files
+*.tmp
+*.cache

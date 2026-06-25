@@ -1,0 +1,70 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:OpticalChainSimulator.ViewModels"
+        xmlns:vm1="using:OpticalChainSimulator.Views"
+        xmlns:idc="clr-namespace:Dock.Avalonia.Controls;assembly=Dock.Avalonia"
+        x:Class="OpticalChainSimulator.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/logo.ico"
+        Title="Optical Chain Simulator - Pro Edition"
+        Width="1800" Height="1000">
+
+	<!-- 全局快捷键定义：绑定ViewModel中的命令，支持键盘快捷操作 -->
+	<Window.KeyBindings>
+		<!-- Ctrl+S：保存工程 -->
+		<KeyBinding Gesture="Ctrl+S" Command="{Binding SaveProjectCommand}"/>
+		<!-- Ctrl+O：打开工程 -->
+		<KeyBinding Gesture="Ctrl+O" Command="{Binding LoadProjectCommand}"/>
+		<!-- 注释保留：原仿真运行快捷键（暂未启用） -->
+		<!-- <KeyBinding Gesture="Ctrl+R" Command="{Binding RunSimulationAndCreateDocumentCommand}"/>
+    <KeyBinding Gesture="F5" Command="{Binding RunSimulationAndCreateDocumentCommand}"/>-->
+		<!-- Delete：删除选中元件 -->
+		<KeyBinding Gesture="Delete" Command="{Binding DeleteElementCommand}"/>
+		<!-- Ctrl+Shift+A：打开元件库 -->
+		<KeyBinding Gesture="Ctrl+Shift+A" Command="{Binding OpenLibraryCommand}"/>
+	</Window.KeyBindings>
+
+	<!-- 主窗口核心布局：Grid三行结构（顶部栏→主体内容→底部状态栏） -->
+	<Grid>
+		<!-- Grid行定义：
+         - 第0行（TopBar）：高度自适应内容（Auto）
+         - 第1行（主体DockControl）：占据剩余所有空间（*）
+         - 第2行（状态栏）：高度自适应内容（Auto）
+    -->
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+
+		<!-- 1. 顶部导航栏：放置在Grid第0行，引用自定义TopBar用户控件 -->
+		<vm1:TopBar Grid.Row="0" />
+
+		<!-- 2. 主体内容区域：放置在Grid第1行，DockControl承载可停靠的布局面板
+         - Layout绑定ViewModel的Layout属性，实现动态布局管理
+    -->
+		<idc:DockControl x:Name="DockControl"
+						 Grid.Row="1"
+						 Layout="{Binding Layout}" />
+
+		<!-- 3. 底部状态栏：放置在Grid第2行，展示工程/元件/选中状态等信息 -->
+		<Border Classes="StatusBar"
+				Grid.Row="2"
+				Padding="10,6">
+			<!-- 状态栏内部布局：DockPanel实现左右对齐 -->
+			<DockPanel LastChildFill="True">
+				<!-- 工程名称展示 -->
+				<TextBlock Text="{Binding ProjectName}" Margin="0,0,16,0"/>
+				<!-- 元件数量展示（格式化字符串：元件数：X） -->
+				<TextBlock Text="{Binding Elements.Count, StringFormat=元件数：{0}}" Margin="0,0,16,0"/>
+				<!-- 选中元件名称展示（格式化字符串：选中：X） -->
+				<TextBlock Text="{Binding SelectedElement.Name, StringFormat=选中：{0}}" Margin="0,0,16,0"/>
+				<!-- 工程文件路径：靠右显示，次要文本颜色 -->
+				<TextBlock DockPanel.Dock="Right"
+						   Text="{Binding CurrentProjectFilePath, StringFormat=文件：{0}}"
+						   Foreground="{StaticResource Brush.TextSecondary}"/>
+			</DockPanel>
+		</Border>
+	</Grid>
+
+</Window>

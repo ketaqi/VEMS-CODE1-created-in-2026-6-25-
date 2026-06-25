@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>D:\Vemssentcom\VEMS\x64\Debug\WMathCore.runtimeconfig.json</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\Vemssentcom\VEMS\x64\Debug\WMathCore.dll</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

@@ -1,0 +1,6 @@
+﻿
+
+namespace VEMS.MathCore
+{
+    
+}

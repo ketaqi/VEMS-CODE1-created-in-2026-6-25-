@@ -1,0 +1,118 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="RoslynPad.NewDocumentView"
+             xmlns:local="clr-namespace:RoslynPad;assembly=RoslynPad"
+             xmlns:ui="using:RoslynPad.UI"
+             xmlns:roslyn="clr-namespace:Microsoft.CodeAnalysis;assembly=Microsoft.CodeAnalysis"
+             x:DataType="local:MainViewModelAvalonia">
+  <UniformGrid HorizontalAlignment="Left"
+               VerticalAlignment="Top">
+
+
+    <ScrollViewer  VerticalScrollBarVisibility="Auto">
+          <Grid>
+              <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+
+              </Grid.RowDefinitions>
+
+              <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="0">
+              <TextBlock Text="{Binding Localized[MainWindow.HomeItem]}" VerticalAlignment="Center" Width="150" HorizontalAlignment="Right"/>
+               <TextBlock     Width="200" HorizontalAlignment="Right"
+                   Text="{Binding CurrentOsPlatform, Mode=TwoWay}"/>
+                </StackPanel>
+
+              <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="1">
+                  <TextBlock Text="{Binding Localized[MainWindow.HomeItem1]}" VerticalAlignment="Center" Width="150" HorizontalAlignment="Right"/>
+                  <TextBlock  Width="200" HorizontalAlignment="Right"
+                           Text="{Binding InitialTheme, Mode=TwoWay}"/>
+              </StackPanel>
+              
+              <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="2">
+                  <TextBlock Text="{Binding Localized[MainWindow.HomeItem2]}" VerticalAlignment="Center" Width="150" HorizontalAlignment="Right"/>
+                  <TextBlock     Width="200" HorizontalAlignment="Right"
+                           Text="{Binding InitialLanguage, Mode=TwoWay}"/>
+              </StackPanel>
+
+              <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="3">
+                  <TextBlock Text="{Binding Localized[MainWindow.HomeItem3]}" VerticalAlignment="Center" Width="150" HorizontalAlignment="Right"/>
+                  <TextBlock Text="{Binding EditorFontSize}"  VerticalAlignment="Center" Width="100"/>
+              </StackPanel>
+              
+              <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="4">
+                  <TextBlock Text="{Binding Localized[MainWindow.HomeItem4]}" VerticalAlignment="Center" Width="150"/>
+                  <TextBlock Text="{Binding OutputFontSize}"  VerticalAlignment="Center" Width="60"/>
+              </StackPanel>
+              
+              <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="5">
+                  <TextBlock Text="{Binding Localized[MainWindow.HomeItem5]}" VerticalAlignment="Center" Width="150" HorizontalAlignment="Right"/>
+                  <TextBlock Text="{Binding SelectedFontFamilyObject1}"  VerticalAlignment="Center" Width="60"/>
+              </StackPanel>
+
+              <StackPanel Orientation="Horizontal" Margin="8" Grid.Row="6">
+                  <TextBlock Text="{Binding Localized[MainWindow.HomeItem6]}" VerticalAlignment="Center" Width="150" HorizontalAlignment="Right"/>
+                  <TextBlock Text="{Binding SelectedFontFamilyObject}"  VerticalAlignment="Center" Width="60"/>
+              </StackPanel>
+
+          </Grid>
+      </ScrollViewer>
+      
+  </UniformGrid>
+</UserControl>

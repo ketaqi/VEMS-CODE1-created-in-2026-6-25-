@@ -1,0 +1,18 @@
+{
+    "id": "com.example.beamsplitter",
+    "name": "BeamSplitter PluginJSON111",
+    "version": "1.0.0",
+    "assembly": "ExampleBeamSplitter.dll",
+    "description": "提供一个半透明分束器元件模板",
+    "templates": [
+        {
+            "name": "BeamSplitter (50/50)JSON111",
+            "type": "BeamSplitter",
+            "parameters": {
+                "Reflectance": 0.5,
+                "Transmittance": 0.5,
+                "Loss": 0.99
+            }
+        }
+    ]
+}
